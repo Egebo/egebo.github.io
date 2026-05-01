@@ -247,6 +247,12 @@ img { max-width: 100%; display: block; }
 .project-tech span { font-size: 0.75rem; font-weight: 500; color: var(--clr-text-muted); background: var(--clr-bg); border: 1px solid var(--clr-border); padding: 4px 10px; border-radius: var(--radius-sm); }
 .project-footer { border-top: 1px solid var(--clr-border); padding-top: 1rem; font-size: 0.85rem; font-weight: 600; color: var(--clr-text); display: flex; align-items: center; gap: 6px; margin-top: auto; }
 
+/* Project Links */
+.project-link { display: flex; align-items: center; gap: 8px; text-decoration: none; color: inherit; transition: color 0.2s; width: 100%; }
+.project-link:hover { color: var(--clr-accent); }
+.project-link svg { transition: transform 0.2s; }
+.project-link:hover svg { transform: translate(2px, -2px); }
+
 /* Skills Icons Grid */
 .skills-icons-grid { display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; background: var(--clr-surface); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--clr-border); box-shadow: var(--shadow-sm); }
 .skills-icons-grid img { max-height: 50px; width: auto; transition: transform 0.3s ease; }
