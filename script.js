@@ -137,7 +137,7 @@ const translations = {
     info_pilot: "İHA Pilotu",
     info_pilot_val: "İHA0 & İHA1 Lisanslı",
     section_skills: "beceriler",
-    skills_title: "Teknoloji Yığınım",
+    skills_title: "Kullandığım Teknolojiler",
     skills_desc: "Kullandığım teknolojiler ve araçlar",
     cat_mobile: "Mobil Geliştirme",
     cat_ai: "Yapay Zeka & ML",
