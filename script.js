@@ -470,6 +470,8 @@ if (contactForm) {
         'Accept': 'application/json'
       },
       body: JSON.stringify({
+        _subject: "Portfolyo Sitenizden Yeni Mesaj!",
+        _template: "table",
         name: document.getElementById('name').value,
         email: document.getElementById('email').value,
         message: document.getElementById('message').value
