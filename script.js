@@ -463,7 +463,7 @@ if (contactForm) {
     submitText.innerHTML = sendingText;
     msgDiv.style.opacity = '0';
     
-    fetch('https://formsubmit.co/ajax/tizoci', {
+    fetch('https://formsubmit.co/ajax/bozcaegemen@gmail.com', {
       method: 'POST',
       headers: {
         'Content-Type': 'application/json',
