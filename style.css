@@ -248,8 +248,8 @@ img { max-width: 100%; display: block; }
 .project-footer { border-top: 1px solid var(--clr-border); padding-top: 1rem; font-size: 0.85rem; font-weight: 600; color: var(--clr-text); display: flex; align-items: center; gap: 6px; margin-top: auto; }
 
 /* Skills Icons Grid */
-.skills-icons-grid { display: flex; justify-content: center; margin-bottom: 3.5rem; background: var(--clr-surface); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--clr-border); box-shadow: var(--shadow-sm); }
-.skills-icons-grid img { max-width: 100%; height: auto; transition: transform 0.3s ease; }
+.skills-icons-grid { display: flex; justify-content: center; align-items: center; gap: 1rem; flex-wrap: wrap; margin-bottom: 3.5rem; background: var(--clr-surface); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--clr-border); box-shadow: var(--shadow-sm); }
+.skills-icons-grid img { max-height: 50px; width: auto; transition: transform 0.3s ease; }
 .skills-icons-grid img:hover { transform: scale(1.02); }
 
 /* Projects Featured Layout & Mockups */
