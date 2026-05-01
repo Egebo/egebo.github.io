@@ -9,6 +9,12 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css?v=3" />
+  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+  <script type="text/javascript">
+    (function() {
+      emailjs.init("mzmL-J9Z59jECtnhm");
+    })();
+  </script>
 </head>
 <body>
 
@@ -504,10 +510,7 @@
         <!-- Contact Form -->
         <div class="contact-form-wrapper">
           <h3 data-i18n="form_title">Mesaj Gönder</h3>
-          <form id="contact-form" class="contact-form" action="https://formsubmit.co/bozcaegemen@gmail.com" method="POST">
-            <input type="hidden" name="_captcha" value="false">
-            <input type="hidden" name="_template" value="table">
-            <input type="hidden" name="_subject" value="Portfolyo Sitenizden Yeni Mesaj!">
+          <form id="contact-form" class="contact-form">
             <div class="form-group">
               <label for="name" data-i18n="form_name">Adınız Soyadınız</label>
               <input type="text" id="name" name="name" required />
