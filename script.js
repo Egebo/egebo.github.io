@@ -463,45 +463,35 @@ if (contactForm) {
     submitText.innerHTML = sendingText;
     msgDiv.style.opacity = '0';
     
-    fetch('https://formsubmit.co/ajax/bozcaegemen@gmail.com', {
-      method: 'POST',
-      headers: {
-        'Content-Type': 'application/json',
-        'Accept': 'application/json'
-      },
-      body: JSON.stringify({
-        _subject: "Portfolyo Sitenizden Yeni Mesaj!",
-        _template: "table",
-        name: document.getElementById('name').value,
-        email: document.getElementById('email').value,
-        message: document.getElementById('message').value
-      })
-    })
-    .then(response => response.json())
-    .then(data => {
-      if(data.success === 'false' || data.success === false) {
-        contactForm.submit(); // fallback natively
-        return;
-      }
+    const templateParams = {
+      name: document.getElementById('name').value,
+      email: document.getElementById('email').value,
+      message: document.getElementById('message').value
+    };
+
+    emailjs.send('service_2qwunoe', 'template_60sla98', templateParams)
+    .then(function(response) {
       submitBtn.style.opacity = '1';
       submitBtn.style.background = '#22c55e'; // success green
       submitText.innerHTML = "✓";
-      
       msgDiv.innerHTML = successText;
-      msgDiv.style.color = "#16a34a"; 
+      msgDiv.style.color = "#16a34a";
       msgDiv.style.opacity = '1';
-      
       contactForm.reset();
       
       setTimeout(() => {
-        submitBtn.style.background = ''; // reset to primary class
+        submitBtn.style.background = '';
+        submitBtn.style.opacity = '1';
         submitBtn.disabled = false;
-        submitText.innerHTML = translations[localStorage.getItem('lang') || 'tr']['form_btn'];
+        submitText.innerHTML = originalText;
         msgDiv.style.opacity = '0';
-      }, 3000);
-    })
-    .catch(error => {
-      contactForm.submit(); // fallback natively on fatal CORS
+      }, 5000);
+    }, function(error) {
+      console.error('EmailJS Error:', error);
+      submitBtn.disabled = false;
+      submitBtn.style.opacity = '1';
+      submitText.innerHTML = originalText;
+      alert("Bir hata oluştu, lütfen daha sonra tekrar deneyin.");
     });
   });
 }
