@@ -247,6 +247,27 @@ img { max-width: 100%; display: block; }
 .project-tech span { font-size: 0.75rem; font-weight: 500; color: var(--clr-text-muted); background: var(--clr-bg); border: 1px solid var(--clr-border); padding: 4px 10px; border-radius: var(--radius-sm); }
 .project-footer { border-top: 1px solid var(--clr-border); padding-top: 1rem; font-size: 0.85rem; font-weight: 600; color: var(--clr-text); display: flex; align-items: center; gap: 6px; margin-top: auto; }
 
+/* Skills Icons Grid */
+.skills-icons-grid { display: flex; justify-content: center; margin-bottom: 3.5rem; background: var(--clr-surface); padding: 2rem; border-radius: var(--radius-lg); border: 1px solid var(--clr-border); box-shadow: var(--shadow-sm); }
+.skills-icons-grid img { max-width: 100%; height: auto; transition: transform 0.3s ease; }
+.skills-icons-grid img:hover { transform: scale(1.02); }
+
+/* Projects Featured Layout & Mockups */
+.project-item.featured { display: grid; grid-template-columns: 1.2fr 1fr; gap: 4rem; align-items: center; margin-bottom: 6rem; background: var(--clr-surface); padding: 3rem; border-radius: var(--radius-lg); border: 1px solid var(--clr-border); box-shadow: var(--shadow-card); overflow: hidden; }
+.project-visual { position: relative; display: flex; justify-content: center; }
+.mockup-container { display: flex; gap: 20px; perspective: 1000px; }
+.phone-mockup { width: 220px; height: 460px; background: #1a1a1a; border: 8px solid #333; border-radius: 36px; overflow: hidden; position: relative; box-shadow: 0 20px 40px rgba(0,0,0,0.4); transform: rotateY(-10deg) rotateX(5deg); transition: transform 0.5s ease; }
+.phone-mockup:hover { transform: rotateY(0) rotateX(0); }
+.phone-mockup.second { transform: rotateY(15deg) translateY(30px); margin-left: -60px; z-index: 1; }
+.phone-mockup.second:hover { transform: translateY(0); z-index: 10; }
+.mockup-img { width: 100%; height: 100%; object-fit: cover; }
+
+@media (max-width: 992px) {
+  .project-item.featured { grid-template-columns: 1fr; gap: 2rem; padding: 2rem; }
+  .project-visual { order: 2; }
+  .mockup-container { justify-content: center; transform: scale(0.85); }
+}
+
 /* ============================================================
    EXPERIENCE
    ============================================================ */
