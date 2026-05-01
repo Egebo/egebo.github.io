@@ -9,6 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css?v=4" />
+  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
   <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
   <script type="text/javascript">
     (function() {
@@ -101,10 +102,10 @@
   <section id="about" class="section about">
     <div class="container">
       <div class="section-header">
-        <span class="section-tag" data-i18n="section_about">hakkımda</span>
-        <h2 class="section-title" data-i18n="about_title">Kim Olduğumu Anlayın</h2>
+        <span class="section-tag" data-i18n="section_about" data-aos="fade-up">hakkımda</span>
+        <h2 class="section-title" data-i18n="about_title" data-aos="fade-up" data-aos-delay="100">Kim Olduğumu Anlayın</h2>
       </div>
-      <div class="about-grid">
+      <div class="about-grid" data-aos="fade-up" data-aos-delay="200">
         <div class="about-image-col">
           <div class="about-avatar-card">
             <span class="avatar-initials">EB</span>
@@ -156,10 +157,15 @@
   <section id="skills" class="section skills">
     <div class="container">
       <div class="section-header centered">
-        <span class="section-tag" data-i18n="section_skills">beceriler</span>
-        <h2 class="section-title" data-i18n="skills_title">Teknoloji Yığınım</h2>
-        <p class="section-desc" data-i18n="skills_desc">Kullandığım teknolojiler ve araçlar</p>
+        <span class="section-tag" data-i18n="section_skills" data-aos="fade-up">beceriler</span>
+        <h2 class="section-title" data-i18n="skills_title" data-aos="fade-up" data-aos-delay="100">Teknoloji Yığınım</h2>
+        <p class="section-desc" data-i18n="skills_desc" data-aos="fade-up" data-aos-delay="150">Kullandığım teknolojiler ve araçlar</p>
       </div>
+
+      <div class="skills-icons-grid" data-aos="zoom-in" data-aos-delay="200">
+        <img src="https://skillicons.dev/icons?i=react,native,js,html,css,python,firebase,git,figma,postman,pytorch,mysql" alt="Skills Icons" />
+      </div>
+
       <div class="skills-grid">
         <div class="skill-category">
           <div class="skill-cat-header">
@@ -246,13 +252,41 @@
   <section id="projects" class="section projects">
     <div class="container">
       <div class="section-header centered">
-        <span class="section-tag" data-i18n="section_projects">projeler</span>
-        <h2 class="section-title" data-i18n="projects_title">Öne Çıkan Projeler</h2>
-        <p class="section-desc" data-i18n="projects_desc">Google Play'de yayınlanmış uygulamalar ve devam eden çalışmalar</p>
+        <span class="section-tag" data-i18n="section_projects" data-aos="fade-up">projeler</span>
+        <h2 class="section-title" data-i18n="projects_title" data-aos="fade-up" data-aos-delay="100">Öne Çıkan Projeler</h2>
+        <p class="section-desc" data-i18n="projects_desc" data-aos="fade-up" data-aos-delay="150">Google Play'de yayınlanmış uygulamalar ve devam eden çalışmalar</p>
       </div>
+
+      <div class="projects-list">
+        <!-- Featured Project: Looked -->
+        <div class="project-item featured" data-aos="fade-up">
+          <div class="project-visual">
+            <div class="mockup-container">
+              <div class="phone-mockup">
+                <img src="looked_ss/Screenshot_20260402_000300_Looked.jpg" alt="Looked App Screen" class="mockup-img">
+              </div>
+              <div class="phone-mockup second">
+                <img src="looked_ss/Screenshot_20260402_000500_Looked.jpg" alt="Looked App Screen" class="mockup-img">
+              </div>
+            </div>
+          </div>
+          <div class="project-info">
+            <div class="project-header">
+              <div class="project-status" style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;" data-i18n="p5_status">Tamamlandı</div>
+            </div>
+            <h3 class="project-title" data-i18n="p5_title">Looked: Stil Asistanı</h3>
+            <p class="project-desc" data-i18n="p5_desc">Looked, yapay zekâyı kişisel bir stil danışmanına dönüştürür. Kullanıcılar fotoğraf yükleyerek anında kombin yorumu alabilir, gardıroplarını sisteme ekleyerek yapay zekânın ya da kendilerinin oluşturduğu kombinleri keşfedebilir. Firebase ve Google Sign-In ile tüm veriler güvenle korunur.</p>
+            <div class="project-tech">
+              <span>React Native</span><span>AI Styling</span><span>Firebase</span>
+            </div>
+            <div class="project-footer" data-i18n="p5_footer">📱 Google Play</div>
+          </div>
+        </div>
+      </div>
+
       <div class="projects-grid">
 
-        <div class="project-card">
+        <div class="project-card" data-aos="fade-up">
           <div class="project-header">
             <div class="project-status live" data-i18n="p1_status">Devam Ediyor</div>
           </div>
@@ -264,7 +298,7 @@
           <div class="project-footer" data-i18n="p1_footer">🎓 Bitirme Projesi</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
           <div class="project-header">
             <div class="project-status" style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;" data-i18n="p2_status">Tamamlandı</div>
           </div>
@@ -276,7 +310,7 @@
           <div class="project-footer" data-i18n="p2_footer">📱 Google Play</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
           <div class="project-header">
             <div class="project-status" style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;" data-i18n="p3_status">Tamamlandı</div>
           </div>
@@ -288,7 +322,7 @@
           <div class="project-footer" data-i18n="p3_footer">📱 Google Play</div>
         </div>
 
-        <div class="project-card">
+        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
           <div class="project-header">
             <div class="project-status" style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;" data-i18n="p4_status">Tamamlandı</div>
           </div>
@@ -305,19 +339,9 @@
       <!-- HIDDEN PROJECTS (Expands) -->
       <div id="hidden-projects" class="projects-grid" style="display: none; margin-top: 1.5rem;">
 
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-status" style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;" data-i18n="p5_status">Tamamlandı</div>
-          </div>
-          <h3 class="project-title" data-i18n="p5_title">Looked: Stil Asistanı</h3>
-          <p class="project-desc" data-i18n="p5_desc">Looked, yapay zekâyı kişisel bir stil danışmanına dönüştürür. Kullanıcılar fotoğraf yükleyerek anında kombin yorumu alabilir, gardıroplarını sisteme ekleyerek yapay zekânın ya da kendilerinin oluşturduğu kombinleri keşfedebilir. Firebase ve Google Sign-In ile tüm veriler güvenle korunur.</p>
-          <div class="project-tech">
-            <span>React Native</span><span>AI Styling</span><span>Firebase</span>
-          </div>
-          <div class="project-footer" data-i18n="p5_footer">📱 Google Play</div>
-        </div>
 
-        <div class="project-card">
+
+        <div class="project-card" data-aos="fade-up">
           <div class="project-header">
             <div class="project-status" style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;" data-i18n="p6_status">Tamamlandı</div>
           </div>
@@ -439,10 +463,10 @@
   <section id="experience" class="section experience">
     <div class="container">
       <div class="section-header centered">
-        <span class="section-tag" data-i18n="section_exp">deneyim</span>
-        <h2 class="section-title" data-i18n="exp_title">Deneyim & Eğitim</h2>
+        <span class="section-tag" data-i18n="section_exp" data-aos="fade-up">deneyim</span>
+        <h2 class="section-title" data-i18n="exp_title" data-aos="fade-up" data-aos-delay="100">Deneyim & Eğitim</h2>
       </div>
-      <div class="timeline">
+      <div class="timeline" data-aos="fade-up" data-aos-delay="200">
         <div class="timeline-item">
           <div class="timeline-marker current"></div>
           <div class="timeline-content">
@@ -473,12 +497,12 @@
   <section id="contact" class="section contact">
     <div class="container">
       <div class="section-header centered">
-        <span class="section-tag" data-i18n="section_contact">iletişim</span>
-        <h2 class="section-title" data-i18n="contact_title">Benimle İletişime Geç</h2>
-        <p class="section-desc" data-i18n="contact_desc">Bir proje fikrin mi var? Birlikte harika şeyler üretelim!</p>
+        <span class="section-tag" data-i18n="section_contact" data-aos="fade-up">iletişim</span>
+        <h2 class="section-title" data-i18n="contact_title" data-aos="fade-up" data-aos-delay="100">Benimle İletişime Geç</h2>
+        <p class="section-desc" data-i18n="contact_desc" data-aos="fade-up" data-aos-delay="150">Bir proje fikrin mi var? Birlikte harika şeyler üretelim!</p>
       </div>
 
-      <div class="contact-combined-layout">
+      <div class="contact-combined-layout" data-aos="fade-up" data-aos-delay="200">
         <!-- Contact Context Info -->
         <div class="contact-grid">
           <a href="mailto:bozcaegemen@gmail.com" target="_blank" rel="noopener" class="contact-card">
@@ -549,5 +573,13 @@
   </footer>
 
   <script src="script.js?v=4"></script>
+  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+  <script>
+    AOS.init({
+      duration: 1000,
+      once: true,
+      offset: 100
+    });
+  </script>
 </body>
 </html>
