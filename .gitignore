@@ -1,0 +1,15 @@
+# Python files
+*.py
+__pycache__/
+
+# PDFs and Documents
+*.pdf
+*.docx
+
+# Test files
+test.js
+debug.js
+
+# OS files
+.DS_Store
+Thumbs.db
