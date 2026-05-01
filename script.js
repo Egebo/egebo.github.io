@@ -496,6 +496,29 @@ if (contactForm) {
   });
 }
 
+function copyEmailToClipboard() {
+  const email = document.getElementById('email-address').innerText;
+  const status = document.getElementById('copy-status');
+  const currentLang = localStorage.getItem('lang') || 'tr';
+  
+  navigator.clipboard.writeText(email).then(() => {
+    const originalText = "→";
+    const copiedText = currentLang === 'tr' ? "Kopyalandı!" : "Copied!";
+    
+    status.innerText = copiedText;
+    status.style.color = "#22c55e";
+    
+    setTimeout(() => {
+      status.innerText = originalText;
+      status.style.color = "";
+    }, 2000);
+  }).catch(err => {
+    console.error('Could not copy text: ', err);
+    // Fallback: trigger mailto if clipboard fails
+    window.location.href = `mailto:${email}`;
+  });
+}
+
 // Toggle Hidden Projects
 const toggleProjBtn = document.getElementById('toggle-projects-btn');
 const hiddenProjects = document.getElementById('hidden-projects');
