@@ -1,663 +1,576 @@
 <!DOCTYPE html>
 <html lang="tr">
-
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Egemen Bozca — Bilgisayar Mühendisi & Mobil Geliştirici</title>
-  <meta name="description"
-    content="Egemen Bozca — Sakarya Üniversitesi Bilgisayar Mühendisliği öğrencisi, React Native ile Google Play'de 4+ uygulama yayınlamış mobil geliştirici." />
-  <link rel="preconnect" href="https://fonts.googleapis.com" />
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link
-    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=Space+Grotesk:wght@400;500;600;700&display=swap"
-    rel="stylesheet" />
-  <link rel="stylesheet" href="style.css?v=13" />
-  <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
-  <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-  <script type="text/javascript">
-    (function () {
-      emailjs.init("mzmL-J9Z59jECtnhm");
-    })();
-  </script>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Egemen Bozca — Mobil Ürün Geliştiricisi</title>
+<meta name="description" content="Egemen Bozca — Sakarya Üniversitesi Bilgisayar Mühendisliği öğrencisi, React Native ile Google Play'de 4+ uygulama yayınlamış mobil geliştirici.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css?v=14">
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
+<script type="text/javascript">
+  (function () {
+    emailjs.init("mzmL-J9Z59jECtnhm");
+  })();
+</script>
 </head>
-
 <body>
 
-  <!-- NAV -->
-  <nav id="navbar">
-    <div class="container nav-container">
-      <a href="#hero" class="nav-logo">Egemen Bozca<span class="dot">.</span></a>
-      <ul class="nav-links">
-        <li><a href="#about" data-i18n="nav_about">Hakkımda</a></li>
-        <li><a href="#skills" data-i18n="nav_skills">Beceriler</a></li>
-        <li><a href="#achievements" data-i18n="nav_achievements">Başarılar</a></li>
-        <li><a href="#projects" data-i18n="nav_projects">Projeler</a></li>
-        <li><a href="#experience" data-i18n="nav_experience">Deneyim</a></li>
-        <li><a href="#contact" class="nav-cta" data-i18n="nav_contact">İletişim</a></li>
-      </ul>
-      <div class="lang-toggle-wrap">
-        <button id="theme-btn" class="lang-btn" aria-label="Toggle Theme"
-          style="display: flex; align-items: center; justify-content: center; padding: 6px;">
-          <svg id="theme-icon" xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none"
-            stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-            <path d="M21 12.79A9 9 0 1 1 11.21 3 7 7 0 0 0 21 12.79z"></path>
-          </svg>
-        </button>
-        <button id="lang-btn" class="lang-btn" aria-label="Toggle Language">
-          <span class="lang-opt active" data-lang="tr">TR</span>|<span class="lang-opt" data-lang="en">EN</span>
-        </button>
-        <button id="hamburger" class="hamburger" aria-label="Menüyü Aç">
-          <span></span><span></span><span></span>
-        </button>
-      </div>
-    </div>
+<!-- Custom cursor -->
+<div class="cursor" id="cursor" aria-hidden="true">
+  <div class="c-dot"></div>
+  <div class="c-ring"></div>
+</div>
+
+<!-- Film grain -->
+<div class="grain-overlay" aria-hidden="true"></div>
+
+<!-- Scroll progress bar -->
+<div class="scroll-prog" aria-hidden="true"></div>
+
+<!-- ============ NAV ============ -->
+<header class="nav" id="nav">
+  <a href="#top" class="brand"><span class="dot"></span>Egemen Bozca</a>
+  <nav class="nav-links" aria-label="Sayfa gezintisi">
+    <a href="#about"><span class="ix">01</span><span data-i18n="nav.about">Hakkımda</span></a>
+    <a href="#skills"><span class="ix">02</span><span data-i18n="nav.skills">Beceriler</span></a>
+    <a href="#work"><span class="ix">03</span><span data-i18n="nav.work">Başarılar</span></a>
+    <a href="#projects"><span class="ix">04</span><span data-i18n="nav.projects">Projeler</span></a>
+    <a href="#path"><span class="ix">05</span><span data-i18n="nav.path">Deneyim</span></a>
   </nav>
-
-  <!-- MOBILE MENU -->
-  <div id="mobile-menu" class="mobile-menu">
-    <ul>
-      <li><a href="#about" class="mobile-link" data-i18n="nav_about">Hakkımda</a></li>
-      <li><a href="#skills" class="mobile-link" data-i18n="nav_skills">Beceriler</a></li>
-      <li><a href="#achievements" class="mobile-link" data-i18n="nav_achievements">Başarılar</a></li>
-      <li><a href="#projects" class="mobile-link" data-i18n="nav_projects">Projeler</a></li>
-      <li><a href="#experience" class="mobile-link" data-i18n="nav_experience">Deneyim</a></li>
-      <li><a href="#contact" class="mobile-link" data-i18n="nav_contact">İletişim</a></li>
-    </ul>
+  <div class="nav-right">
+    <div class="lang-toggle" role="group" aria-label="Language">
+      <button data-lang="tr" class="on">TR</button>
+      <button data-lang="en">EN</button>
+    </div>
+    <a href="#contact" class="btn btn--primary"><span data-i18n="nav.cta">İletişime geç</span></a>
   </div>
+</header>
 
-  <!-- HERO -->
-  <section id="hero" class="hero">
-    <div class="hero-bg"></div>
-    <div class="hero-content">
-      <div class="hero-badge">
-        <span class="badge-dot"></span>
-        <span data-i18n="hero_badge">Açık Pozisyonlara Başvuruyorum</span>
-      </div>
-      <h1 class="hero-title" data-i18n="hero_title">
-        Merhaba, ben<br />
-        <span class="accent-text">Egemen Bozca</span>
-      </h1>
-      <p class="hero-desc" data-i18n="hero_subtitle">
-        React Native ile Google Play'de 4+ uygulama geliştirdim. Hem üniversitede okuyorum hem de freelance projeler yapıyorum — kullanıcılar için iyi hissettiren şeyler çıkarmak en büyük motivasyonum. 📱
-      </p>
-      <div class="hero-buttons">
-        <a href="#projects" class="btn btn-primary" data-i18n="hero_btn_projects">Projelerimi Gör</a>
-        <a href="#contact" class="btn btn-outline" data-i18n="hero_btn_contact">İletişime Geç</a>
-      </div>
-      <div class="hero-stats">
-        <div class="stat">
-          <span class="stat-number" data-target="4">4+</span>
-          <span class="stat-label" data-i18n="stat_published">Yayınlanmış Uygulama</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number" data-target="10">10+</span>
-          <span class="stat-label" data-i18n="stat_completed">Tamamlanan Proje</span>
-        </div>
-        <div class="stat-divider"></div>
-        <div class="stat">
-          <span class="stat-number" data-target="3">3+</span>
-          <span class="stat-label" data-i18n="stat_award">TÜBİTAK Ödülü</span>
-        </div>
-      </div>
-    </div>
-  </section>
+<main id="top">
 
-  <!-- ABOUT -->
-  <section id="about" class="section about">
-    <div class="container">
-      <div class="section-header">
-        <span class="section-tag" data-i18n="section_about" data-aos="fade-up">hakkımda</span>
-        <h2 class="section-title" data-i18n="about_title" data-aos="fade-up" data-aos-delay="100">Biraz Kendimden</h2>
-      </div>
-      <div class="about-grid" data-aos="fade-up" data-aos-delay="200">
-        <div class="about-image-col">
-          <div class="about-avatar-card">
-            <span class="avatar-initials">EB</span>
-          </div>
+<!-- ============ HERO ============ -->
+<section class="hero" id="hero">
+  <canvas id="heroCanvas" aria-hidden="true"></canvas>
+  <div class="coord-label" aria-hidden="true">40.7569° N · 30.3735° E</div>
+  <div class="wrap">
+    <div class="hero-grid">
+      <div class="hero-copy">
+        <div class="hero-eyebrow reveal">
+          <span class="status-dot"></span>
+          <span class="mono" data-i18n="hero.eyebrow">Açık pozisyonlara bakıyorum</span>
         </div>
-        <div class="about-text-col">
-          <p class="about-intro" data-i18n="about_intro">
-            <strong>React Native</strong> ile şimdiye kadar 4 uygulama geliştirip Google Play'de yayınladım. Her projede bir öncekinden daha iyi bir şey öğrendim ve kullanıcı deneyimine takıntılı hale geldim — iyi görünen uygulama kullanılır.
-          </p>
-          <p class="about-body" data-i18n="about_body">
-            Üniversitede drone yarışmalarıyla başladım; Romanya'da <strong>dünya birincisi</strong> olduk, TÜBİTAK'ta dereceler geldik. Sonunda mobil tarafa geçtim çünkü burada hem kod yazıyorsun hem de insanların eline bir şey geçiyor.
-          </p>
-          <div class="about-info-grid">
-            <div class="info-item">
-              <div>
-                <span class="info-label" data-i18n="info_uni">Üniversite</span>
-                <span class="info-value" data-i18n="info_uni_val">Sakarya Üniversitesi</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <div>
-                <span class="info-label" data-i18n="info_loc">Konum</span>
-                <span class="info-value" data-i18n="info_loc_val">Türkiye</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <div>
-                <span class="info-label" data-i18n="info_lang">Diller</span>
-                <span class="info-value" data-i18n="info_lang_val">TR • EN • ES</span>
-              </div>
-            </div>
-            <div class="info-item">
-              <div>
-                <span class="info-label" data-i18n="info_pilot">İHA Pilotu</span>
-                <span class="info-value" data-i18n="info_pilot_val">İHA0 & İHA1 Lisanslı</span>
-              </div>
-            </div>
+        <h1 class="reveal" data-d="1">
+          <span data-i18n="hero.h1a">Mobil ürünleri</span>
+          <span class="rw-wrap"><span id="rotWord">fikirden</span></span><br>
+          <span class="light" data-i18n="hero.h1c">yayına taşıyorum.</span>
+        </h1>
+        <p class="hero-sub reveal" data-d="2" data-i18n="hero.sub">React Native ile dört uygulama geliştirip Google Play'de yayınladım. Otonom drone yazılımıyla dünya birincisi oldum. Şimdi hem okuyor hem ürün geliştiriyorum.</p>
+        <div class="hero-cta reveal" data-d="3">
+          <a href="#projects" class="btn btn--accent"><span data-i18n="hero.cta1">Projelere bak</span><span class="arr">→</span></a>
+          <a href="#contact" class="btn btn--ghost"><span data-i18n="hero.cta2">İletişime geç</span></a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal" data-d="2">
+        <div class="chip c1"><span class="d"></span>React Native</div>
+        <div class="chip c2">AI · ML</div>
+        <div class="chip c3"><span class="d"></span>Google Play · Live</div>
+        <div class="phone">
+          <div class="phone-notch"></div>
+          <div class="phone-screen">
+            <img src="looked_ss/looked_1.png" alt="Looked uygulama ekran görüntüsü" class="phone-shot">
           </div>
         </div>
       </div>
     </div>
-  </section>
 
-  <!-- SKILLS -->
-  <section id="skills" class="section skills">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-tag" data-i18n="section_skills" data-aos="fade-up">beceriler</span>
-        <h2 class="section-title" data-i18n="skills_title" data-aos="fade-up" data-aos-delay="100">Kullandığım
-          Teknolojiler</h2>
-        <p class="section-desc" data-i18n="skills_desc" data-aos="fade-up" data-aos-delay="150">React Native ağırlıklı, zaman zaman AI tarafına da atlıyorum</p>
+    <div class="hero-stats">
+      <div class="stat reveal" data-d="1">
+        <div class="num"><span data-count="4" data-pad="1">04</span></div>
+        <div class="lbl" data-i18n="stat.apps">Google Play'de yayında uygulama</div>
       </div>
-
-      <div class="skills-icons-grid" data-aos="zoom-in" data-aos-delay="200">
-        <img src="https://skillicons.dev/icons?i=react,js,ts,html,css,py,supabase,firebase,git,pytorch,mysql&perline=11" alt="Skills Icons" />
+      <div class="stat reveal" data-d="2">
+        <div class="num"><span data-count="1" data-pad="1">01</span><span class="suf">.</span></div>
+        <div class="lbl" data-i18n="stat.world">Otonom drone — dünya birinciliği</div>
       </div>
-
-      <div class="skills-grid">
-        <div class="skill-category">
-          <div class="skill-cat-header">
-            <h3 data-i18n="cat_mobile">Mobil Geliştirme</h3>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag primary">React Native</span>
-            <span class="skill-tag">Firebase Auth</span>
-            <span class="skill-tag">Firestore</span>
-            <span class="skill-tag">Firebase Storage</span>
-            <span class="skill-tag">Google Sign-In</span>
-            <span class="skill-tag">Supabase</span>
-            <span class="skill-tag">Expo</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <div class="skill-cat-header">
-            <h3 data-i18n="cat_ai">Yapay Zeka & ML</h3>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag primary">Python</span>
-            <span class="skill-tag">YOLO v8</span>
-            <span class="skill-tag">LLM</span>
-            <span class="skill-tag">RAG</span>
-            <span class="skill-tag">Computer Vision</span>
-            <span class="skill-tag">Agent Mimarisi</span>
-          </div>
-        </div>
-
-        <div class="skill-category">
-          <div class="skill-cat-header">
-            <h3 data-i18n="cat_other">Diğer Araçlar</h3>
-          </div>
-          <div class="skill-tags">
-            <span class="skill-tag">Web Geliştirme</span>
-            <span class="skill-tag">Algoritma Tasarımı</span>
-            <span class="skill-tag">Blender</span>
-            <span class="skill-tag">Fusion 360</span>
-            <span class="skill-tag">Proje Yönetimi</span>
-            <span class="skill-tag">3D Modelleme</span>
-          </div>
-        </div>
+      <div class="stat reveal" data-d="3">
+        <div class="num"><span data-count="3">3</span><span class="suf">+</span></div>
+        <div class="lbl" data-i18n="stat.awards">Yarışma derecesi (TÜBİTAK & uluslararası)</div>
+      </div>
+      <div class="stat reveal" data-d="4">
+        <div class="num"><span data-count="10">10</span><span class="suf">+</span></div>
+        <div class="lbl" data-i18n="stat.completed">Tamamlanan proje</div>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- ACHIEVEMENTS -->
-  <section id="achievements" class="section achievements">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-tag" data-i18n="section_achievements">başarılar</span>
-        <h2 class="section-title" data-i18n="achievements_title">Ödüller & Dereceler</h2>
-        <p class="section-desc" data-i18n="achievements_desc">Ulusal ve uluslararası yarışmalardaki başarılarım</p>
+<!-- ============ MARQUEE ============ -->
+<div class="marquee-band" aria-hidden="true">
+  <div class="marquee-track">
+    <span class="marquee-item">
+      <span class="ms">React Native</span><span class="mx">·</span>
+      <span class="ms">Google Play</span><span class="mx">·</span>
+      <span class="ms">AI-Powered</span><span class="mx">·</span>
+      <span class="ms">Dünya 1.'si</span><span class="mx">·</span>
+      <span class="ms">Otonom Drone</span><span class="mx">·</span>
+      <span class="ms">TÜBİTAK</span><span class="mx">·</span>
+      <span class="ms">Freelance</span><span class="mx">·</span>
+      <span class="ms">Mobil Geliştirici</span><span class="mx">·</span>
+      <span class="ms">4 Uygulama</span><span class="mx">·</span>
+      <span class="ms">Sakarya Ü.</span><span class="mx">·</span>
+    </span>
+    <span class="marquee-item">
+      <span class="ms">React Native</span><span class="mx">·</span>
+      <span class="ms">Google Play</span><span class="mx">·</span>
+      <span class="ms">AI-Powered</span><span class="mx">·</span>
+      <span class="ms">Dünya 1.'si</span><span class="mx">·</span>
+      <span class="ms">Otonom Drone</span><span class="mx">·</span>
+      <span class="ms">TÜBİTAK</span><span class="mx">·</span>
+      <span class="ms">Freelance</span><span class="mx">·</span>
+      <span class="ms">Mobil Geliştirici</span><span class="mx">·</span>
+      <span class="ms">4 Uygulama</span><span class="mx">·</span>
+      <span class="ms">Sakarya Ü.</span><span class="mx">·</span>
+    </span>
+  </div>
+</div>
+
+<!-- ============ ABOUT ============ -->
+<section class="section wrap" id="about">
+  <div class="sec-head reveal">
+    <span class="mono idx" data-i18n="about.idx">01</span>
+    <h2 data-i18n="about.title">Hakkımda</h2>
+    <span class="rule"></span>
+  </div>
+  <div class="about-grid">
+    <div>
+      <p class="about-lead reveal" data-i18n="about.lead">Ben sadece kod yazan bir öğrenci değilim; <strong>fikri ürüne, ürünü de kullanıcıya</strong> dönüştürmeye çalışıyorum. Bir problemi görüp onu Play Store'da yayınlanan bir uygulamaya çevirmek beni motive ediyor.</p>
+      <p class="about-body reveal" data-d="1" data-i18n="about.body">Sakarya Üniversitesi'nde Bilgisayar Mühendisliği okurken bir yandan freelance mobil geliştirme yapıyorum. Geçmişte otonom drone yazılımlarıyla uğraştım, Romanya'da dünya birincisi oldum; şimdi odağım React Native ile hızlı ve kullanışlı mobil ürünler kurmak.</p>
+    </div>
+    <div class="meta-list reveal" data-d="1">
+      <div class="meta-row">
+        <span class="k" data-i18n="meta.edu.k">Eğitim</span>
+        <span class="v"><span data-i18n="meta.edu.v">Bilgisayar Mühendisliği</span><small data-i18n="meta.edu.s">Sakarya Üniversitesi</small></span>
       </div>
-      <div class="achievements-grid">
-
-        <div class="achievement-card">
-          <div class="achievement-badge-label" data-i18n="badge_world">Dünya Birincisi</div>
-          <h3 data-i18n="ach_1_title">RoboChallenge AirRace</h3>
-          <p data-i18n="ach_1_desc">Romanya, 2022 — YOLO v8 destekli otonom drone yazılımı geliştirerek dünya birincisi
-            oldum.</p>
-          <span class="achievement-year">2022</span>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-badge-label" data-i18n="badge_tr2">Türkiye 2.'si</div>
-          <h3 data-i18n="ach_2_title">Teknofest İHA Yarışması</h3>
-          <p data-i18n="ach_2_desc">Liselerarası İnsansız Hava Araçları yarışmasında Türkiye ikinciliği kazandım.</p>
-          <span class="achievement-year">2021-2022</span>
-        </div>
-
-        <div class="achievement-card">
-          <div class="achievement-badge-label" data-i18n="badge_tr3">Türkiye 3.'sü</div>
-          <h3 data-i18n="ach_3_title">TÜBİTAK — Araç Çocuk Kilidi</h3>
-          <p data-i18n="ach_3_desc">Arabalarda çocuk kilitleri kontrolü projesiyle TÜBİTAK'ta Türkiye üçüncülüğü
-            kazandım.</p>
-          <span class="achievement-year">2019</span>
-        </div>
-
+      <div class="meta-row">
+        <span class="k" data-i18n="meta.loc.k">Konum</span>
+        <span class="v"><span data-i18n="meta.loc.v">Türkiye</span><small data-i18n="meta.loc.s">Uzaktan çalışmaya açık</small></span>
+      </div>
+      <div class="meta-row">
+        <span class="k" data-i18n="meta.lang.k">Diller</span>
+        <span class="v"><span data-i18n="meta.lang.v">Türkçe — anadil</span><small data-i18n="meta.lang.s">İngilizce, İspanyolca</small></span>
+      </div>
+      <div class="meta-row">
+        <span class="k" data-i18n="meta.lic.k">Lisans</span>
+        <span class="v"><span data-i18n="meta.lic.v">İHA0 & İHA1</span><small data-i18n="meta.lic.s">Drone pilotu lisansı</small></span>
       </div>
     </div>
-  </section>
+  </div>
+</section>
 
-  <!-- PROJECTS -->
-  <section id="projects" class="section projects">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-tag" data-i18n="section_projects" data-aos="fade-up">projeler</span>
-        <h2 class="section-title" data-i18n="projects_title" data-aos="fade-up" data-aos-delay="100">Öne Çıkan Projeler
-        </h2>
-        <p class="section-desc" data-i18n="projects_desc" data-aos="fade-up" data-aos-delay="150">Google Play'de
-          yayınlanmış uygulamalar ve devam eden çalışmalar</p>
+<!-- ============ MANIFESTO ============ -->
+<section class="manifesto" id="mf">
+  <div class="mf-bg-num" aria-hidden="true">4</div>
+  <div class="wrap">
+    <div class="mf-lines">
+      <span class="mf-line">4 uygulama.</span>
+      <span class="mf-line">1 dünya birinciliği.</span>
+      <span class="mf-line">Sayısız commit.</span>
+    </div>
+    <p class="mf-coda" data-i18n="mf.coda">Hepsi aynı sorudan başladı.</p>
+  </div>
+</section>
+
+<!-- ============ SKILLS ============ -->
+<section class="section section--alt" id="skills">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="mono idx" data-i18n="skills.idx">02</span>
+      <h2 data-i18n="skills.title">Nasıl inşa ediyorum</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="skill-block reveal">
+      <div>
+        <span class="sb-num">A / 03</span>
+        <div class="sb-title" data-i18n="skills.m.title">Mobil Geliştirme</div>
       </div>
-
-      <div class="projects-list">
-        <!-- Featured Project: Looked -->
-        <div class="project-item featured" data-aos="fade-up">
-          <div class="project-visual">
-            <div class="mockup-container">
-              <div class="phone-mockup">
-                <img src="looked_ss/looked_1.png" alt="Looked App Screen" class="mockup-img">
-              </div>
-              <div class="phone-mockup second">
-                <img src="looked_ss/looked_6.png" alt="Looked App Screen" class="mockup-img">
-              </div>
-            </div>
-          </div>
-          <div class="project-info">
-            <div class="project-header">
-              <div class="project-status"
-                style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;"
-                data-i18n="p5_status">Tamamlandı</div>
-            </div>
-            <h3 class="project-title" data-i18n="p5_title">Looked: Stil Asistanı</h3>
-            <p class="project-desc" data-i18n="p5_desc">Looked, yapay zekâyı kişisel bir stil danışmanına dönüştürür.
-              Kullanıcılar fotoğraf yükleyerek anında kombin yorumu alabilir, gardıroplarını sisteme ekleyerek yapay
-              zekânın ya da kendilerinin oluşturduğu kombinleri keşfedebilir. Firebase ve Google Sign-In ile tüm veriler
-              güvenle korunur.</p>
-            <div class="project-tech">
-              <span>React Native</span><span>AI Styling</span><span>Firebase</span>
-            </div>
-            <div class="project-footer">
-              <a href="https://play.google.com/store/apps/details?id=com.egebo.looked&pcampaignid=web_share"
-                target="_blank" rel="noopener" class="project-link">
-                <span data-i18n="p5_footer">Google Play</span>
-                <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none"
-                  stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                  <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"></path>
-                  <polyline points="15 3 21 3 21 9"></polyline>
-                  <line x1="10" y1="14" x2="21" y2="3"></line>
-                </svg>
-              </a>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <div class="projects-grid">
-
-        <div class="project-card" data-aos="fade-up">
-          <div class="project-header">
-            <div class="project-status live" data-i18n="p1_status">Devam Ediyor</div>
-          </div>
-          <h3 class="project-title" data-i18n="p1_title">Akıllı Danışman</h3>
-          <p class="project-desc" data-i18n="p1_desc">Üniversite öğrencileri ve akademik personel için geliştirilmiş
-            yapay zekâ destekli bir danışman sistemi. Kullanıcının sorusuna göre üniversite veritabanını sorgulayabilir,
-            yüklenen belgeleri analiz edebilir ya da internette arama yapabilir. Gradio tabanlı web arayüzü ve mobil
-            uyumlu tasarımıyla her cihazdan erişilebilir. Bilmediği sorularda cevap uydurmak yerine bunu açıkça
-            belirtmesi, sistemi güvenilir kılan temel özelliğidir.</p>
-          <div class="project-tech">
-            <span>Python</span><span>LLM</span><span>Gradio</span>
-          </div>
-          <div class="project-footer" data-i18n="p1_footer">🎓 Bitirme Projesi</div>
-        </div>
-
-        <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-          <div class="project-header">
-            <div class="project-status"
-              style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;"
-              data-i18n="p2_status">Tamamlandı</div>
-          </div>
-          <h3 class="project-title" data-i18n="p2_title">WhatToDo</h3>
-          <p class="project-desc" data-i18n="p2_desc">Günlük kaosu düzene sokan WhatToDo, kullanıcıların görevlerini
-            önceliklerine göre düzenleyip ilerleyen günleri önceden planlamasına olanak tanır. Firebase ve Google
-            Sign-In entegrasyonu sayesinde veriler güvenle bulutta saklanır; her cihazda kesintisiz erişim sağlanır.</p>
-          <div class="project-tech">
-            <span>React Native</span><span>Firebase</span><span>Productivity</span>
-          </div>
-          <div class="project-footer" data-i18n="p2_footer">📱 Google Play</div>
-        </div>
-
-        <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-          <div class="project-header">
-            <div class="project-status"
-              style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;"
-              data-i18n="p3_status">Tamamlandı</div>
-          </div>
-          <h3 class="project-title" data-i18n="p3_title">Game Hub</h3>
-          <p class="project-desc" data-i18n="p3_desc">XOX, Dama ve Satranç'ı tek çatı altında toplayan Game Hub,
-            internet bağlantısına ihtiyaç duymadan oynanabilir. Yapay zekâya meydan okumak ya da aynı telefondan
-            arkadaşla oynamak gibi iki farklı mod sunarak her seviyeden oyuncuya hitap eder.</p>
-          <div class="project-tech">
-            <span>React Native</span><span>Board Games</span><span>Offline Mode</span>
-          </div>
-          <div class="project-footer" data-i18n="p3_footer">📱 Google Play</div>
-        </div>
-
-        <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-          <div class="project-header">
-            <div class="project-status"
-              style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;"
-              data-i18n="p4_status">Tamamlandı</div>
-          </div>
-          <h3 class="project-title" data-i18n="p4_title">Periyodik Tablo</h3>
-          <p class="project-desc" data-i18n="p4_desc">Kimya öğrenimini görselleştiren bu uygulama, kullanıcıların
-            elementlere tıklayarak fotoğraf, 3D/2D Bohr modeli ve spektral çizgi gibi zengin içeriklere anında
-            ulaşmasını sağlar. Kuru bilgiyi etkileşimli bir keşfe dönüştürmek için tasarlanmıştır.</p>
-          <div class="project-tech">
-            <span>React Native</span><span>3D Viewer</span><span>Science</span>
-          </div>
-          <div class="project-footer" data-i18n="p4_footer">📱 Google Play</div>
-        </div>
-
-      </div>
-
-      <!-- HIDDEN PROJECTS (Expands) -->
-      <div id="hidden-projects" class="projects-grid" style="display: none; margin-top: 1.5rem;">
-
-
-
-        <div class="project-card" data-aos="fade-up">
-          <div class="project-header">
-            <div class="project-status"
-              style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;"
-              data-i18n="p6_status">Tamamlandı</div>
-          </div>
-          <h3 class="project-title" data-i18n="p6_title">TÜBİTAK - Sualtı Aracı</h3>
-          <p class="project-desc" data-i18n="p6_desc">Deniz ekosistemlerinin korunması için yapay zekâ destekli su
-            altı-su üstü entegre cihaz geliştirmeyi amaçlayan projede; özel sensörler ve kameralar kullanılarak deniz
-            suyundaki kirleticiler tespit edilmektedir.</p>
-          <div class="project-tech">
-            <span>AI/ML</span><span>Hardware</span><span>Sensors</span>
-          </div>
-          <div class="project-footer" data-i18n="p6_footer">🏆 TÜBİTAK</div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-status"
-              style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;"
-              data-i18n="p7_status">Tamamlandı</div>
-          </div>
-          <h3 class="project-title" data-i18n="p7_title">TÜBİTAK - DepMap</h3>
-          <p class="project-desc" data-i18n="p7_desc">Görsel verileri analiz ederek şehri deprem öncesi ve sonrası
-            karşılaştıran, kapanan yolları tespit eden ve acil ekipler için en kısa rotayı belirleyen bir sistem.
-            Binalardaki tahmini insan sayısı arama-kurtarma ekiplerine iletilmektedir.</p>
-          <div class="project-tech">
-            <span>Computer Vision</span><span>AI/ML</span><span>Mapping</span>
-          </div>
-          <div class="project-footer" data-i18n="p7_footer">🏆 TÜBİTAK</div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-status"
-              style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;"
-              data-i18n="p8_status">Tamamlandı</div>
-          </div>
-          <h3 class="project-title" data-i18n="p8_title">Teknofest Ulaşımda YZ</h3>
-          <p class="project-desc" data-i18n="p8_desc">Ucan bir araçtan toplanan görsel verilerle makine öğrenimi
-            kullanılarak yerdeki insanlar, araçlar ve iniş alanları tespit edilmektedir. GPS ariza senaryoları için
-            görsel konum belirleme algoritmaları da geliştirilmiştir.</p>
-          <div class="project-tech">
-            <span>Computer Vision</span><span>AI/ML</span><span>UAV</span>
-          </div>
-          <div class="project-footer" data-i18n="p8_footer">🏆 Yarışma Projesi</div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-status live" data-i18n="p9_status">🏆 Dünya Birincisi</div>
-          </div>
-          <h3 class="project-title" data-i18n="p9_title">RoboChallenge AirRace</h3>
-          <p class="project-desc" data-i18n="p9_desc">YOLO V8 kullanılarak dronun iki direk arasına yerleştirilen
-            çizgileri takip etmesini sağlayan otonom uçuş yazılımı geliştirilmiştir.</p>
-          <div class="project-tech">
-            <span>YOLO v8</span><span>Autonomous</span><span>Drone</span>
-          </div>
-          <div class="project-footer" data-i18n="p9_footer">🏆 RoboChallenge</div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-status live" data-i18n="p10_status">🏅 Türkiye Finalisti</div>
-          </div>
-          <h3 class="project-title" data-i18n="p10_title">TÜBİTAK - Akdoğan</h3>
-          <p class="project-desc" data-i18n="p10_desc">Denize yerleştirilen dron şarj istasyonlarına dalgaların kinetik
-            enerjisini elektrik enerjisine dönüştürerek güç sağlayan sistem üzerine çalışmalar yürütülmüştür.</p>
-          <div class="project-tech">
-            <span>Hardware</span><span>Renewable Energy</span><span>IoT</span>
-          </div>
-          <div class="project-footer" data-i18n="p10_footer">🏆 TÜBİTAK</div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-status live" data-i18n="p11_status">🥈 Türkiye 2.'si</div>
-          </div>
-          <h3 class="project-title" data-i18n="p11_title">Teknofest İHA</h3>
-          <p class="project-desc" data-i18n="p11_desc">Pisti en hızlı tamamlama ve yükü istenilen bölgeye bırakma
-            görevleri için dron tasarlanmış, imal edilmiş ve otonom uçuş yazılımı geliştirilmiştir.</p>
-          <div class="project-tech">
-            <span>Hardware</span><span>Autonomous Flight</span><span>UAV Design</span>
-          </div>
-          <div class="project-footer" data-i18n="p11_footer">🏆 Teknofest</div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-status"
-              style="background:var(--clr-surface2); color:var(--clr-accent); border-color:#bfdbfe;"
-              data-i18n="p12_status">Tamamlandı</div>
-          </div>
-          <h3 class="project-title" data-i18n="p12_title">TÜBİTAK - YZ Hız Sınırlayıcı</h3>
-          <p class="project-desc" data-i18n="p12_desc">Görüntü işleme ve harita API'leri ile trafik levhalarından hız
-            limiti ögrenen ve araçların ECU birimine müdahale ederek limit aşılmasını engelleyen sistem.</p>
-          <div class="project-tech">
-            <span>Computer Vision</span><span>Map API</span><span>ECU Control</span>
-          </div>
-          <div class="project-footer" data-i18n="p12_footer">🏆 TÜBİTAK</div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-status live" data-i18n="p13_status">🥉 Türkiye 3.'sü</div>
-          </div>
-          <h3 class="project-title" data-i18n="p13_title">Akıllı Çocuk Kilidi</h3>
-          <p class="project-desc" data-i18n="p13_desc">TÜBİTAK kapsamında geliştirilen bu projede arka koltukta oturan
-            çocuklar yüz tanıma ve ağırlık verileriyle tespit edilerek araç kilitleri otomatik kontrol altına
-            alınmaktadır.</p>
-          <div class="project-tech">
-            <span>Computer Vision</span><span>Sensors</span><span>Automotive</span>
-          </div>
-          <div class="project-footer" data-i18n="p13_footer">🏆 TÜBİTAK</div>
-        </div>
-
-        <div class="project-card">
-          <div class="project-header">
-            <div class="project-status live" data-i18n="p14_status">🥉 Türkiye 3.'sü</div>
-          </div>
-          <h3 class="project-title" data-i18n="p14_title">Serum Yönetim Sistemi</h3>
-          <p class="project-desc" data-i18n="p14_desc">Hastalara takılan serumun damla sayısı motorlarla kontrol
-            edilmekte, serumun bitiş suresi hesaplanmakta ve hemşire odasına uyarı gönderilmektedir.</p>
-          <div class="project-tech">
-            <span>Hardware</span><span>IoT</span><span>Biomedical</span>
-          </div>
-          <div class="project-footer" data-i18n="p14_footer">🏆 Samsung Mucitleri</div>
-        </div>
-
-      </div>
-
-      <div class="projects-more" style="text-align: center; margin-top: 3.5rem;">
-        <button id="toggle-projects-btn" class="btn btn-outline"
-          style="cursor:pointer; background:var(--clr-surface); color:var(--clr-text); border:1.5px solid var(--clr-border); padding:12px 28px; border-radius:999px; font-size:0.95rem; font-weight:500;">
-          <span id="toggle-projects-text" data-i18n="projects_see_all">Tüm Projeleri Gör</span>
-        </button>
+      <div class="tags">
+        <span class="tag">React Native</span>
+        <span class="tag">Expo</span>
+        <span class="tag">Firebase Auth</span>
+        <span class="tag">Firestore</span>
+        <span class="tag">Firebase Storage</span>
+        <span class="tag">Google Sign-In</span>
+        <span class="tag">Supabase</span>
       </div>
     </div>
-  </section>
-
-  <!-- EXPERIENCE -->
-  <section id="experience" class="section experience">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-tag" data-i18n="section_exp" data-aos="fade-up">deneyim</span>
-        <h2 class="section-title" data-i18n="exp_title" data-aos="fade-up" data-aos-delay="100">Deneyim & Eğitim</h2>
+    <div class="skill-block reveal" data-d="1">
+      <div>
+        <span class="sb-num">B / 03</span>
+        <div class="sb-title" data-i18n="skills.ai.title">Yapay Zeka & ML</div>
       </div>
-      <div class="timeline" data-aos="fade-up" data-aos-delay="200">
-        <div class="timeline-item">
-          <div class="timeline-marker current"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3 data-i18n="exp_1_title">Freelance Mobil Geliştirici</h3>
-              <span class="timeline-date" data-i18n="exp_1_date">2025 — Günümüz</span>
-            </div>
-            <span class="timeline-company" data-i18n="exp_1_comp">Serbest Çalışma</span>
-            <p data-i18n="exp_1_desc">React Native ile uygulamalar geliştirdim. Uçtan uca UI/UX tasarımı ve Firebase
-              yöneticiliği yaptım.</p>
-          </div>
-        </div>
-        <div class="timeline-item">
-          <div class="timeline-marker"></div>
-          <div class="timeline-content">
-            <div class="timeline-header">
-              <h3 data-i18n="exp_3_title">Bilgisayar Mühendisliği</h3>
-              <span class="timeline-date" data-i18n="exp_3_date">2022 — Devam Ediyor</span>
-            </div>
-            <span class="timeline-company" data-i18n="exp_3_comp">Sakarya Üniversitesi</span>
-            <p data-i18n="exp_3_desc">Lisans eğitimi devam etmektedir. Akademik/proje bazlı mühendislik yeteneklerimi
-              geliştiriyorum.</p>
-          </div>
-        </div>
+      <div class="tags">
+        <span class="tag">Python</span>
+        <span class="tag">YOLO v8</span>
+        <span class="tag">LLM</span>
+        <span class="tag">RAG</span>
+        <span class="tag">Computer Vision</span>
+        <span class="tag">Agent Mimarisi</span>
       </div>
     </div>
-  </section>
-
-  <!-- CONTACT -->
-  <section id="contact" class="section contact">
-    <div class="container">
-      <div class="section-header centered">
-        <span class="section-tag" data-i18n="section_contact" data-aos="fade-up">iletişim</span>
-        <h2 class="section-title" data-i18n="contact_title" data-aos="fade-up" data-aos-delay="100">Yazın Bana</h2>
-        <p class="section-desc" data-i18n="contact_desc" data-aos="fade-up" data-aos-delay="150">Bir fikrin varsa, bir projen varsa ya da sadece merhaba demek istiyorsan — yaz.</p>
+    <div class="skill-block reveal" data-d="2">
+      <div>
+        <span class="sb-num">C / 03</span>
+        <div class="sb-title" data-i18n="skills.tools.title">Diğer Araçlar</div>
       </div>
+      <div class="tags">
+        <span class="tag">Git & GitHub</span>
+        <span class="tag">Algoritma Tasarımı</span>
+        <span class="tag">Blender</span>
+        <span class="tag">Fusion 360</span>
+        <span class="tag">3D Modelleme</span>
+        <span class="tag">Proje Yönetimi</span>
+      </div>
+    </div>
+  </div>
+</section>
 
-      <div class="contact-combined-layout" data-aos="fade-up" data-aos-delay="200">
-        <!-- Contact Context Info -->
-        <div class="contact-grid">
-          <div class="contact-card email-copy-card" onclick="copyEmailToClipboard()" style="cursor: pointer;">
-            <div class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
-                <polyline points="22,6 12,13 2,6"></polyline>
-              </svg>
-            </div>
-            <h3 data-i18n="contact_email">E-posta</h3>
-            <p id="email-address">bozcaegemen@gmail.com</p>
-            <span class="contact-arrow" id="copy-status">→</span>
-          </div>
-          <a href="https://www.linkedin.com/in/egemen-bozca/" target="_blank" rel="noopener" class="contact-card">
-            <div class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
-                <rect x="2" y="9" width="4" height="12"></rect>
-                <circle cx="4" cy="4" r="2"></circle>
-              </svg>
-            </div>
-            <h3>LinkedIn</h3>
-            <p>in/egemen-bozca</p>
-            <span class="contact-arrow">→</span>
+<!-- ============ ACHIEVEMENTS ============ -->
+<section class="section wrap" id="work">
+  <div class="sec-head reveal">
+    <span class="mono idx" data-i18n="ach.idx">03</span>
+    <h2 data-i18n="ach.title">Başarılar</h2>
+    <span class="rule"></span>
+  </div>
+  <div class="ach-grid">
+    <article class="ach-card reveal">
+      <span class="ach-year">2022</span>
+      <div class="ach-rank" data-i18n="ach.1.rank">Dünya 1.'si</div>
+      <div class="ach-medal">01<span class="sm">/ World</span></div>
+      <h3 data-i18n="ach.1.title">RoboChallenge AirRace</h3>
+      <p data-i18n="ach.1.desc">Romanya, 2022 — İki direk arasındaki kesikli çizgileri otonom takip eden drone yazılımıyla dünya birincisi olduk.</p>
+    </article>
+    <article class="ach-card reveal" data-d="1">
+      <span class="ach-year">2021-2022</span>
+      <div class="ach-rank" data-i18n="ach.2.rank">Türkiye 2.'si</div>
+      <div class="ach-medal">02<span class="sm">/ TR</span></div>
+      <h3 data-i18n="ach.2.title">Teknofest İHA Yarışması</h3>
+      <p data-i18n="ach.2.desc">Liselerarası İnsansız Hava Araçları yarışmasında Türkiye ikinciliği kazandım.</p>
+    </article>
+    <article class="ach-card reveal" data-d="2">
+      <span class="ach-year">2019</span>
+      <div class="ach-rank" data-i18n="ach.3.rank">Türkiye 3.'sü</div>
+      <div class="ach-medal">03<span class="sm">/ TR</span></div>
+      <h3 data-i18n="ach.3.title">TÜBİTAK — Araç Çocuk Kilidi</h3>
+      <p data-i18n="ach.3.desc">Arabalarda çocuk kilitleri kontrolü projesiyle TÜBİTAK'ta Türkiye üçüncülüğü kazandım.</p>
+    </article>
+  </div>
+</section>
+
+<!-- ============ PROJECTS ============ -->
+<section class="section section--alt" id="projects">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="mono idx" data-i18n="proj.idx">04</span>
+      <h2 data-i18n="proj.title">Projeler</h2>
+      <span class="rule"></span>
+    </div>
+
+    <article class="featured reveal">
+      <div class="f-copy">
+        <span class="f-tag"><span class="status-dot"></span><span data-i18n="proj.featured.tag">Öne çıkan ürün</span></span>
+        <h3 data-i18n="proj.featured.name">Looked</h3>
+        <p data-i18n="proj.featured.desc">Yapay zekâyı kişisel bir stil danışmanına dönüştüren uygulama. Fotoğraf yükle, anında kombin yorumu al; gardırobunu sisteme ekleyip AI'nın ya da kendi oluşturduğun kombinleri keşfet. Firebase ve Google Sign-In ile veriler güvende.</p>
+        <div class="f-meta">
+          <span>React Native</span><span>AI Styling</span><span>Firebase</span>
+        </div>
+        <a href="https://play.google.com/store/apps/details?id=com.egebo.looked&pcampaignid=web_share" target="_blank" rel="noopener" class="btn btn--accent"><span data-i18n="proj.featured.cta">Google Play'de gör</span><span class="arr">→</span></a>
+      </div>
+      <div class="f-visual">
+        <img src="looked_ss/looked_6.png" alt="Looked — yapay zekâ ile stil puanlama ekranı">
+      </div>
+    </article>
+
+    <div class="proj-grid">
+      <article class="proj-card reveal">
+        <div class="proj-thumb">
+          <div class="ph-stripe"></div>
+          <span class="live status" data-i18n="proj.status.progress">Devam ediyor</span>
+          <span class="cap" data-i18n="proj.cap">ekran görüntüsü</span>
+        </div>
+        <div class="proj-body">
+          <h4><span data-i18n="proj.1.name">Akıllı Danışman</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.1.desc">Üniversite öğrencileri için yapay zekâ destekli danışman sistemi — veritabanını sorgular, belge analiz eder, bilmediğinde bunu açıkça söyler. Bitirme projem.</p>
+          <div class="pstack"><span>Python</span><span>LLM</span><span>Gradio</span></div>
+        </div>
+      </article>
+      <article class="proj-card reveal" data-d="1">
+        <div class="proj-thumb">
+          <div class="ph-stripe"></div>
+          <span class="live"><span class="ld"></span><span data-i18n="proj.live">Yayında</span></span>
+          <span class="cap" data-i18n="proj.cap">ekran görüntüsü</span>
+        </div>
+        <div class="proj-body">
+          <h4><span data-i18n="proj.2.name">WhatToDo</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.2.desc">Görevlerini önceliğine göre sırala, günlerini önceden planla. Firebase ile bulutta güvenli, her cihazdan erişilebilir.</p>
+          <div class="pstack"><span>React Native</span><span>Firebase</span></div>
+        </div>
+      </article>
+      <article class="proj-card reveal" data-d="2">
+        <div class="proj-thumb">
+          <div class="ph-stripe"></div>
+          <span class="live"><span class="ld"></span><span data-i18n="proj.live">Yayında</span></span>
+          <span class="cap" data-i18n="proj.cap">ekran görüntüsü</span>
+        </div>
+        <div class="proj-body">
+          <h4><span data-i18n="proj.3.name">Game Hub</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.3.desc">XOX, Dama ve Satranç tek çatı altında — internetsiz oynanır. Yapay zekâya meydan oku ya da arkadaşınla aynı telefondan oyna.</p>
+          <div class="pstack"><span>React Native</span><span>Offline</span></div>
+        </div>
+      </article>
+
+      <article class="proj-card hidden-proj">
+        <div class="proj-thumb">
+          <div class="ph-stripe"></div>
+          <span class="live"><span class="ld"></span><span data-i18n="proj.live">Yayında</span></span>
+          <span class="cap" data-i18n="proj.cap">ekran görüntüsü</span>
+        </div>
+        <div class="proj-body">
+          <h4><span data-i18n="proj.4.name">Periyodik Tablo</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.4.desc">Elemente dokun; fotoğrafını, 3D Bohr modelini ve spektral çizgisini anında gör. Kuru bilgiyi keşfe çeviren bir öğrenme aracı.</p>
+          <div class="pstack"><span>React Native</span><span>3D Viewer</span></div>
+        </div>
+      </article>
+      <article class="proj-card hidden-proj">
+        <div class="proj-thumb">
+          <div class="ph-stripe"></div>
+          <span class="live status accent" data-i18n="ach.1.rank">Dünya 1.'si</span>
+          <span class="cap" data-i18n="proj.cap">ekran görüntüsü</span>
+        </div>
+        <div class="proj-body">
+          <h4><span data-i18n="proj.5.name">RoboChallenge AirRace</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.5.desc">YOLO v8 ile iki direk arasındaki çizgileri takip eden otonom uçuş yazılımı — Romanya'da dünya birinciliği getirdi.</p>
+          <div class="pstack"><span>YOLO v8</span><span>Autonomous</span><span>Drone</span></div>
+        </div>
+      </article>
+      <article class="proj-card hidden-proj">
+        <div class="proj-thumb">
+          <div class="ph-stripe"></div>
+          <span class="live status accent" data-i18n="ach.2.rank">Türkiye 2.'si</span>
+          <span class="cap" data-i18n="proj.cap">ekran görüntüsü</span>
+        </div>
+        <div class="proj-body">
+          <h4><span data-i18n="proj.6.name">Teknofest İHA</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.6.desc">Pisti en hızlı tamamlama ve yük bırakma görevleri için tasarlanan, üretilen ve uçurulan otonom drone.</p>
+          <div class="pstack"><span>Hardware</span><span>Autonomous Flight</span></div>
+        </div>
+      </article>
+      <article class="proj-card hidden-proj">
+        <div class="proj-thumb">
+          <div class="ph-stripe"></div>
+          <span class="live status" data-i18n="proj.status.done">Tamamlandı</span>
+          <span class="cap" data-i18n="proj.cap">ekran görüntüsü</span>
+        </div>
+        <div class="proj-body">
+          <h4><span data-i18n="proj.7.name">TÜBİTAK — Akdoğan</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.7.desc">Denizdeki drone şarj istasyonlarına, dalga enerjisini elektriğe çevirerek güç sağlayan sistem.</p>
+          <div class="pstack"><span>Hardware</span><span>Renewable Energy</span><span>IoT</span></div>
+        </div>
+      </article>
+      <article class="proj-card hidden-proj">
+        <div class="proj-thumb">
+          <div class="ph-stripe"></div>
+          <span class="live status" data-i18n="proj.status.done">Tamamlandı</span>
+          <span class="cap" data-i18n="proj.cap">ekran görüntüsü</span>
+        </div>
+        <div class="proj-body">
+          <h4><span data-i18n="proj.8.name">TÜBİTAK — Deniz Kirliliği Tespiti</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.8.desc">Su altı-su üstü entegre cihazla deniz suyundaki kirleticileri tespit eden, yapay zekâ destekli koruma sistemi.</p>
+          <div class="pstack"><span>AI/ML</span><span>Hardware</span><span>Sensors</span></div>
+        </div>
+      </article>
+      <article class="proj-card hidden-proj">
+        <div class="proj-thumb">
+          <div class="ph-stripe"></div>
+          <span class="live status" data-i18n="proj.status.done">Tamamlandı</span>
+          <span class="cap" data-i18n="proj.cap">ekran görüntüsü</span>
+        </div>
+        <div class="proj-body">
+          <h4><span data-i18n="proj.9.name">TÜBİTAK — DepMap</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.9.desc">Deprem öncesi/sonrası görselleri kıyaslayıp kapanan yolları bulan, ekiplere en kısa rotayı çizen sistem.</p>
+          <div class="pstack"><span>Computer Vision</span><span>Mapping</span></div>
+        </div>
+      </article>
+      <article class="proj-card hidden-proj">
+        <div class="proj-thumb">
+          <div class="ph-stripe"></div>
+          <span class="live status" data-i18n="proj.status.done">Tamamlandı</span>
+          <span class="cap" data-i18n="proj.cap">ekran görüntüsü</span>
+        </div>
+        <div class="proj-body">
+          <h4><span data-i18n="proj.10.name">Teknofest Ulaşımda YZ</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.10.desc">Havadan toplanan görüntülerle insan, araç ve iniş alanı tespiti; GPS arızası için görsel konumlama algoritmaları.</p>
+          <div class="pstack"><span>Computer Vision</span><span>UAV</span></div>
+        </div>
+      </article>
+      <article class="proj-card hidden-proj">
+        <div class="proj-thumb">
+          <div class="ph-stripe"></div>
+          <span class="live status" data-i18n="proj.status.done">Tamamlandı</span>
+          <span class="cap" data-i18n="proj.cap">ekran görüntüsü</span>
+        </div>
+        <div class="proj-body">
+          <h4><span data-i18n="proj.11.name">TÜBİTAK — YZ Hız Sınırlayıcı</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.11.desc">Trafik levhalarından hız limitini öğrenip aracın ECU'suna müdahale ederek limit aşımını önleyen sistem.</p>
+          <div class="pstack"><span>Computer Vision</span><span>ECU Control</span></div>
+        </div>
+      </article>
+      <article class="proj-card hidden-proj">
+        <div class="proj-thumb">
+          <div class="ph-stripe"></div>
+          <span class="live status" data-i18n="proj.status.done">Tamamlandı</span>
+          <span class="cap" data-i18n="proj.cap">ekran görüntüsü</span>
+        </div>
+        <div class="proj-body">
+          <h4><span data-i18n="proj.12.name">Akıllı Çocuk Kilidi</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.12.desc">Arka koltuktaki çocukları yüz tanıma ve ağırlık verisiyle tespit edip kilitleri otomatik kontrol eden sistem.</p>
+          <div class="pstack"><span>Computer Vision</span><span>Automotive</span></div>
+        </div>
+      </article>
+      <article class="proj-card hidden-proj">
+        <div class="proj-thumb">
+          <div class="ph-stripe"></div>
+          <span class="live status" data-i18n="proj.status.done">Tamamlandı</span>
+          <span class="cap" data-i18n="proj.cap">ekran görüntüsü</span>
+        </div>
+        <div class="proj-body">
+          <h4><span data-i18n="proj.13.name">Serum Yönetim Sistemi</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.13.desc">Serum damla sayısını motorlarla kontrol eden, bitiş süresini hesaplayıp hemşireyi uyaran sistem.</p>
+          <div class="pstack"><span>IoT</span><span>Biomedical</span></div>
+        </div>
+      </article>
+    </div>
+
+    <div class="proj-more">
+      <button class="btn btn--ghost" id="projMore"><span class="more-label" data-i18n="proj.more">Tüm projeleri göster</span><span class="arr">↓</span></button>
+    </div>
+  </div>
+</section>
+
+<!-- ============ PATH ============ -->
+<section class="section wrap" id="path">
+  <div class="sec-head reveal">
+    <span class="mono idx" data-i18n="path.idx">05</span>
+    <h2 data-i18n="path.title">Deneyim & Eğitim</h2>
+    <span class="rule"></span>
+  </div>
+  <div class="timeline">
+    <div class="tl-item reveal">
+      <div class="tl-when" data-i18n="path.1.when">2025 — Şimdi</div>
+      <div class="tl-body">
+        <span class="tl-kind" data-i18n="path.1.kind">İş</span>
+        <div class="role" data-i18n="path.1.role">Freelance Mobil Geliştirici</div>
+        <div class="org" data-i18n="path.1.org">Bağımsız</div>
+        <p class="desc" data-i18n="path.1.desc">React Native ile uçtan uca mobil uygulama geliştiriyorum; UI/UX tasarımından Firebase yönetimine kadar tüm süreç bende.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal" data-d="1">
+      <div class="tl-when" data-i18n="path.2.when">2024 — Şimdi</div>
+      <div class="tl-body">
+        <span class="tl-kind" data-i18n="path.2.kind">Ürün</span>
+        <div class="role" data-i18n="path.2.role">Geliştirici — Looked</div>
+        <div class="org" data-i18n="path.2.org">Kişisel ürün</div>
+        <p class="desc" data-i18n="path.2.desc">AI destekli stil asistanını fikirden Google Play yayınına taşıdım.</p>
+      </div>
+    </div>
+    <div class="tl-item reveal" data-d="2">
+      <div class="tl-when" data-i18n="path.3.when">2019 — 2022</div>
+      <div class="tl-body">
+        <span class="tl-kind" data-i18n="path.3.kind">Yarışma</span>
+        <div class="role" data-i18n="path.3.role">Otonom Drone Yazılım Ekibi</div>
+        <div class="org" data-i18n="path.3.org">Uluslararası & TÜBİTAK</div>
+        <p class="desc" data-i18n="path.3.desc">Otonom uçuş algoritmaları geliştirdik; Romanya'da dünya birinciliği, Teknofest'te Türkiye ikinciliği ve TÜBİTAK derecesi kazandık.</p>
+      </div>
+    </div>
+    <div class="tl-item edu reveal" data-d="3">
+      <div class="tl-when" data-i18n="path.4.when">2022 — Devam Ediyor</div>
+      <div class="tl-body">
+        <span class="tl-kind" data-i18n="path.4.kind">Eğitim</span>
+        <div class="role" data-i18n="path.4.role">Bilgisayar Mühendisliği</div>
+        <div class="org" data-i18n="path.4.org">Sakarya Üniversitesi</div>
+        <p class="desc" data-i18n="path.4.desc">Lisans öğrenimim sürüyor; akademik ve proje bazlı çalışmalarla mühendislik becerilerimi geliştiriyorum.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="section section--alt" id="contact">
+  <div class="wrap">
+    <div class="sec-head reveal">
+      <span class="mono idx" data-i18n="contact.idx">06</span>
+      <h2 data-i18n="contact.title">Yazın bana</h2>
+      <span class="rule"></span>
+    </div>
+    <div class="contact-grid">
+      <div>
+        <p class="about-body reveal" style="margin-top:0;font-size:1.1rem;" data-i18n="contact.lead">Bir fikrin mi var, yoksa freelance bir iş mi? En hızlı yanıtı e-postadan alırsın.</p>
+        <div class="social-list reveal" data-d="1" style="margin-top:1.6rem;">
+          <button type="button" class="social" id="emailCopy">
+            <span class="s-left"><span class="s-ic">@</span><span><span class="s-name" data-i18n="social.email">E-posta</span><br><span class="s-handle" id="email-address">bozcaegemen@gmail.com</span></span></span>
+            <span class="s-arr" id="copy-status">↗</span>
+          </button>
+          <a href="https://www.linkedin.com/in/egemen-bozca/" target="_blank" rel="noopener" class="social">
+            <span class="s-left"><span class="s-ic">in</span><span><span class="s-name" data-i18n="social.linkedin">LinkedIn</span><br><span class="s-handle">/in/egemen-bozca</span></span></span>
+            <span class="s-arr">↗</span>
           </a>
-          <a href="https://github.com/Egebo" target="_blank" rel="noopener" class="contact-card">
-            <div class="contact-icon">
-              <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none"
-                stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                <path
-                  d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22">
-                </path>
-              </svg>
-            </div>
-            <h3>GitHub</h3>
-            <p>github.com/Egebo</p>
-            <span class="contact-arrow">→</span>
+          <a href="https://github.com/Egebo" target="_blank" rel="noopener" class="social">
+            <span class="s-left"><span class="s-ic">gh</span><span><span class="s-name" data-i18n="social.github">GitHub</span><br><span class="s-handle">@Egebo</span></span></span>
+            <span class="s-arr">↗</span>
           </a>
         </div>
-
-        <!-- Contact Form -->
-        <div class="contact-form-wrapper">
-          <h3 data-i18n="form_title">Mesaj Gönder</h3>
-          <form id="contact-form" class="contact-form">
-            <div class="form-group">
-              <label for="name" data-i18n="form_name">Adınız Soyadınız</label>
-              <input type="text" id="name" name="name" required />
-            </div>
-            <div class="form-group">
-              <label for="email" data-i18n="form_email">E-posta Adresiniz</label>
-              <input type="email" id="email" name="email" required />
-            </div>
-            <div class="form-group">
-              <label for="message" data-i18n="form_msg">Mesajınız</label>
-              <textarea id="message" name="message" rows="4" required></textarea>
-            </div>
-            <button type="submit" id="submit-btn" class="btn btn-primary">
-              <span class="submit-text" data-i18n="form_btn">Gönder</span>
-            </button>
-            <div id="form-msg" class="form-msg"></div>
-          </form>
-        </div>
       </div>
-
-    </div>
-  </section>
-
-  <!-- FOOTER -->
-  <footer class="footer">
-    <div class="container">
-      <div class="footer-content">
-        <a href="#hero" class="footer-logo">EB<span class="dot">.</span></a>
-        <p class="footer-copy" data-i18n="footer_copy">© 2025 Egemen Bozca. Tüm haklar saklıdır.</p>
-        <div class="footer-links">
-          <a href="https://github.com/Egebo" target="_blank" rel="noopener">GitHub</a>
-          <a href="https://www.linkedin.com/in/egemen-bozca/" target="_blank" rel="noopener">LinkedIn</a>
+      <form class="form reveal" data-d="1" id="contactForm">
+        <div class="form-fields">
+          <div class="field">
+            <label data-i18n="form.name">İsim</label>
+            <input type="text" id="name" name="name" required data-i18n-ph="form.name.ph" placeholder="Adın">
+          </div>
+          <div class="field">
+            <label data-i18n="form.email">E-posta</label>
+            <input type="email" id="email" name="email" required data-i18n-ph="form.email.ph" placeholder="seninadin@ornek.com">
+          </div>
+          <div class="field">
+            <label data-i18n="form.msg">Mesaj</label>
+            <textarea id="message" name="message" rows="4" required data-i18n-ph="form.msg.ph" placeholder="Projenden bahset…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--accent" id="submit-btn"><span class="submit-text" data-i18n="form.send">Mesaj gönder</span><span class="arr">→</span></button>
         </div>
-      </div>
+        <div class="form-success" id="formSuccess">
+          <div class="check">✓</div>
+          <h3 data-i18n="form.ok.title">Teşekkürler!</h3>
+          <p class="about-body" style="margin:0.5rem auto 0;text-align:center;" data-i18n="form.ok.body">Mesajın alındı — en kısa sürede dönüş yapacağım.</p>
+        </div>
+      </form>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script src="script.js?v=13"></script>
-  <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
-  <script>
-    AOS.init({
-      duration: 1000,
-      once: true,
-      offset: 100
-    });
-  </script>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="footer wrap">
+  <div class="footer-inner">
+    <span class="f-brand">Egemen Bozca</span>
+    <span class="f-meta"><span data-i18n="foot.tag">Türkiye'den, kahveyle yapıldı.</span> · © <span id="year">2026</span></span>
+    <a href="#top" class="to-top"><span data-i18n="foot.top">Yukarı çık</span> ↑</a>
+  </div>
+</footer>
+
+<script src="strings.js?v=14"></script>
+<script src="script.js?v=14"></script>
 </body>
-
 </html>
