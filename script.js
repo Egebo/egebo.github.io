@@ -129,6 +129,8 @@
       var submitText = submitBtn ? submitBtn.querySelector(".submit-text") : null;
       var originalLabel = submitText ? submitText.textContent : null;
 
+      var errEl = document.getElementById("formError");
+      if (errEl) errEl.classList.remove("show");
       submitBtn.setAttribute("disabled", "disabled");
       if (submitText && dict["form.sending"]) submitText.textContent = dict["form.sending"];
 
@@ -147,7 +149,8 @@
         console.error("EmailJS error:", err);
         submitBtn.removeAttribute("disabled");
         if (submitText) submitText.textContent = originalLabel;
-        alert(dict["form.error"] || "Something went wrong, please try again later.");
+        var errEl2 = document.getElementById("formError");
+        if (errEl2) { errEl2.textContent = dict["form.error"] || "Something went wrong, please try again later."; errEl2.classList.add("show"); }
       });
     });
   }

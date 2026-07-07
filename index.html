@@ -5,10 +5,22 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Egemen Bozca — Mobil Ürün Geliştiricisi</title>
 <meta name="description" content="Egemen Bozca — Sakarya Üniversitesi Bilgisayar Mühendisliği öğrencisi, React Native ile Google Play'de 4+ uygulama yayınlamış mobil geliştirici.">
+<link rel="canonical" href="https://egebo.github.io/">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E25A34'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='700' font-size='62' fill='white' text-anchor='middle'>E</text></svg>">
+<!-- Open Graph -->
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://egebo.github.io/">
+<meta property="og:title" content="Egemen Bozca — Mobil Ürün Geliştiricisi">
+<meta property="og:description" content="React Native ile Google Play'de 4 uygulama yayınlamış, otonom drone yarışmasında dünya birincisi, Sakarya Üniversitesi Bilgisayar Mühendisliği öğrencisi.">
+<meta property="og:image" content="https://egebo.github.io/looked_ss/looked_1.png">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Egemen Bozca — Mobil Ürün Geliştiricisi">
+<meta name="twitter:description" content="React Native ile Google Play'de 4 uygulama yayınlamış, otonom drone yarışmasında dünya birincisi.">
+<meta name="twitter:image" content="https://egebo.github.io/looked_ss/looked_1.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
 <link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=14">
+<link rel="stylesheet" href="style.css?v=15">
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
 <script type="text/javascript">
   (function () {
@@ -176,9 +188,9 @@
   <div class="mf-bg-num" aria-hidden="true">4</div>
   <div class="wrap">
     <div class="mf-lines">
-      <span class="mf-line">4 uygulama.</span>
-      <span class="mf-line">1 dünya birinciliği.</span>
-      <span class="mf-line">Sayısız commit.</span>
+      <span class="mf-line" data-i18n="mf.line1">4 uygulama.</span>
+      <span class="mf-line" data-i18n="mf.line2">1 dünya birinciliği.</span>
+      <span class="mf-line" data-i18n="mf.line3">Sayısız commit.</span>
     </div>
     <p class="mf-coda" data-i18n="mf.coda">Hepsi aynı sorudan başladı.</p>
   </div>
@@ -479,7 +491,7 @@
       </div>
     </div>
     <div class="tl-item reveal" data-d="1">
-      <div class="tl-when" data-i18n="path.2.when">2024 — Şimdi</div>
+      <div class="tl-when" data-i18n="path.2.when">2026 — Şimdi</div>
       <div class="tl-body">
         <span class="tl-kind" data-i18n="path.2.kind">Ürün</span>
         <div class="role" data-i18n="path.2.role">Geliştirici — Looked</div>
@@ -538,17 +550,18 @@
         <div class="form-fields">
           <div class="field">
             <label data-i18n="form.name">İsim</label>
-            <input type="text" id="name" name="name" required data-i18n-ph="form.name.ph" placeholder="Adın">
+            <input type="text" id="name" name="name" required autocomplete="name" data-i18n-ph="form.name.ph" placeholder="Adın">
           </div>
           <div class="field">
             <label data-i18n="form.email">E-posta</label>
-            <input type="email" id="email" name="email" required data-i18n-ph="form.email.ph" placeholder="seninadin@ornek.com">
+            <input type="email" id="email" name="email" required autocomplete="email" data-i18n-ph="form.email.ph" placeholder="seninadin@ornek.com">
           </div>
           <div class="field">
             <label data-i18n="form.msg">Mesaj</label>
             <textarea id="message" name="message" rows="4" required data-i18n-ph="form.msg.ph" placeholder="Projenden bahset…"></textarea>
           </div>
           <button type="submit" class="btn btn--accent" id="submit-btn"><span class="submit-text" data-i18n="form.send">Mesaj gönder</span><span class="arr">→</span></button>
+          <div class="form-error-msg" id="formError"></div>
         </div>
         <div class="form-success" id="formSuccess">
           <div class="check">✓</div>
@@ -571,7 +584,7 @@
   </div>
 </footer>
 
-<script src="strings.js?v=14"></script>
-<script src="script.js?v=14"></script>
+<script src="strings.js?v=15"></script>
+<script src="script.js?v=15"></script>
 </body>
 </html>

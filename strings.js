@@ -140,6 +140,9 @@ window.I18N = {
     "form.ok.body": "Mesajın alındı — en kısa sürede dönüş yapacağım.",
     "form.error": "Bir hata oluştu, lütfen daha sonra tekrar dene.",
 
+    "mf.line1": "4 uygulama.",
+    "mf.line2": "1 dünya birinciliği.",
+    "mf.line3": "Sayısız commit.",
     "mf.coda": "Hepsi aynı sorudan başladı.",
     "foot.tag": "Türkiye'den, kahveyle yapıldı.",
     "foot.top": "Yukarı çık"
@@ -282,6 +285,9 @@ window.I18N = {
     "form.ok.body": "Your message has been received — I'll get back to you soon.",
     "form.error": "Something went wrong, please try again later.",
 
+    "mf.line1": "4 apps.",
+    "mf.line2": "1 world championship.",
+    "mf.line3": "Countless commits.",
     "mf.coda": "It all started with one question.",
     "foot.tag": "Made with coffee, from Türkiye.",
     "foot.top": "Back to top"
