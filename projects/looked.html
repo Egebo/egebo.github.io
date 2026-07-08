@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Looked — Egemen Bozca</title>
+<meta name="description" content="Yapay zekâyla kişisel stil danışmanlığı — React Native, Gemini AI, Firebase.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E25A34'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='700' font-size='62' fill='white' text-anchor='middle'>E</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=23">
+<style>
+.cs-nav { display:flex; align-items:center; justify-content:space-between; padding:1rem var(--gutter); border-bottom:1px solid var(--line); position:sticky; top:0; background:color-mix(in srgb,var(--paper) 92%,transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); z-index:100; }
+.cs-back { font-size:0.86rem; font-weight:500; color:var(--ink-2); display:inline-flex; align-items:center; gap:0.4rem; transition:color 0.2s; }
+.cs-back:hover { color:var(--accent); }
+.cs-hero { padding:clamp(4rem,9vw,7rem) 0 clamp(2rem,5vw,4rem); }
+.cs-hero .eyebrow { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--accent); display:inline-flex; align-items:center; gap:0.6rem; margin-bottom:1.2rem; }
+.cs-hero .eyebrow::before { content:""; width:28px; height:1px; background:var(--accent); }
+.cs-title { font-size:clamp(3rem,8vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.96; margin-bottom:1.4rem; }
+.cs-desc { font-size:clamp(1rem,1.8vw,1.22rem); color:var(--ink-2); max-width:52ch; line-height:1.55; margin-bottom:2rem; }
+.cs-meta-row { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2.4rem; }
+.cs-meta-row span { font-family:var(--mono); font-size:0.68rem; padding:0.34rem 0.7rem; border:1px solid var(--line-2); border-radius:99px; color:var(--ink-2); }
+.cs-cta { display:flex; flex-wrap:wrap; gap:0.7rem; }
+.cs-divider { height:1px; background:var(--line-2); margin:clamp(2.5rem,5vw,4rem) 0; }
+.cs-section-label { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:1.6rem; }
+.cs-features { display:grid; grid-template-columns:repeat(2,1fr); gap:1.1rem; }
+.cs-feat { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.6rem; }
+.cs-feat h3 { font-size:1rem; font-weight:600; letter-spacing:-0.01em; margin-bottom:0.6rem; }
+.cs-feat p { font-size:0.88rem; color:var(--ink-2); line-height:1.5; }
+.cs-feat .fi { font-size:1.5rem; margin-bottom:0.8rem; }
+.cs-stack { display:flex; flex-wrap:wrap; gap:0.55rem; }
+.cs-shots { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.4rem; }
+.cs-shots img { width:100%; aspect-ratio:9/19; object-fit:cover; object-position:top center; border-radius:var(--radius); border:1px solid var(--line); }
+.cs-status { display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--mono); font-size:0.62rem; background:rgba(54,179,126,0.12); color:#36b37e; border:1px solid rgba(54,179,126,0.3); border-radius:99px; padding:0.26rem 0.6rem; letter-spacing:0.06em; }
+.cs-status::before { content:""; width:5px; height:5px; border-radius:50%; background:#36b37e; }
+@media (max-width:700px) { .cs-features { grid-template-columns:1fr; } .cs-shots { grid-template-columns:repeat(2,1fr); } }
+</style>
+</head>
+<body>
+
+<nav class="cs-nav">
+  <a href="../index.html" class="cs-back">← Egemen Bozca</a>
+  <span class="cs-status">Google Play & App Store'da yayında</span>
+</nav>
+
+<main>
+<section class="cs-hero wrap">
+  <p class="eyebrow">Mobil Uygulama · Yapay Zekâ</p>
+  <h1 class="cs-title">Looked</h1>
+  <p class="cs-desc">Yapay zekâyı kişisel bir stil danışmanına dönüştüren uygulama. Fotoğraf yükle, anında kombin yorumu al; gardırobunu sisteme ekleyip AI'nın ya da kendi oluşturduğun kombinleri keşfet.</p>
+  <div class="cs-meta-row">
+    <span>v2.1.5</span>
+    <span>React Native · Expo</span>
+    <span>Gemini 2.5 Flash</span>
+    <span>Firebase</span>
+    <span>TypeScript</span>
+    <span>2026 — Aktif</span>
+  </div>
+  <div class="cs-cta">
+    <a href="https://play.google.com/store/apps/details?id=com.egebo.looked" target="_blank" rel="noopener" class="btn btn--accent">Google Play'de gör <span class="arr">→</span></a>
+    <a href="https://apps.apple.com/us/app/looked-dijital-stil-asistan%C4%B1/id6776430564" target="_blank" rel="noopener" class="btn btn--ghost">App Store'da gör <span class="arr">→</span></a>
+  </div>
+</section>
+
+<div class="wrap">
+  <div class="cs-shots">
+    <img src="../looked_ss/looked_1.png" alt="Looked — Ana ekran">
+    <img src="../looked_ss/looked_2.png" alt="Looked — Gardırop">
+    <img src="../looked_ss/looked_3.png" alt="Looked — Takvim">
+  </div>
+</div>
+
+<section class="section wrap">
+  <p class="cs-section-label">Özellikler</p>
+  <div class="cs-features">
+    <div class="cs-feat">
+      <div class="fi">👕</div>
+      <h3>Akıllı Gardırop Yönetimi</h3>
+      <p>Gemini AI fotoğraftan kıyafeti tanıyıp otomatik etiketliyor. Arka plan kaldırma, kategori filtreleme, dijital katalog.</p>
+    </div>
+    <div class="cs-feat">
+      <div class="fi">🧠</div>
+      <h3>AI Stil Danışmanlığı</h3>
+      <p>Kombini yükle, 0–100 arası stil puanı ve profesyonel geri bildirim al. Gardırobundan otomatik kombin önerisi, uyum kontrolü.</p>
+    </div>
+    <div class="cs-feat">
+      <div class="fi">📅</div>
+      <h3>Kombin Takvimi</h3>
+      <p>Gelecek günler için kıyafet planla. Geçmiş analizlerini ve kombinlerini istediğin zaman görüntüle.</p>
+    </div>
+    <div class="cs-feat">
+      <div class="fi">🌗</div>
+      <h3>Çift Dil & Tema</h3>
+      <p>Tüm arayüz ve AI yanıtları Türkçe/İngilizce. Terracotta–Sage–Champagne paletinde light & dark mod.</p>
+    </div>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <p class="cs-section-label">Teknoloji</p>
+  <div class="cs-stack">
+    <span class="tag">React Native</span>
+    <span class="tag">Expo Router</span>
+    <span class="tag">TypeScript</span>
+    <span class="tag">Gemini 2.5 Flash</span>
+    <span class="tag">Firebase Auth</span>
+    <span class="tag">Cloud Firestore</span>
+    <span class="tag">Firebase Storage</span>
+    <span class="tag">Google Sign-In</span>
+    <span class="tag">EAS Build</span>
+    <span class="tag">i18next</span>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <div class="cs-shots">
+    <img src="../looked_ss/looked_4.png" alt="Looked — Ekran 4">
+    <img src="../looked_ss/looked_5.png" alt="Looked — Ekran 5">
+    <img src="../looked_ss/looked_6.png" alt="Looked — Ekran 6">
+  </div>
+</section>
+</main>
+
+<footer class="footer wrap">
+  <div class="footer-inner">
+    <span class="f-brand">Egemen Bozca</span>
+    <a href="../index.html" class="to-top">← Portfolyoya dön</a>
+  </div>
+</footer>
+</body>
+</html>

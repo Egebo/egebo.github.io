@@ -156,11 +156,11 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .phone-screen { width: 100%; height: 100%; border-radius: 26px; overflow: hidden; position: relative; background: linear-gradient(160deg, #f0ece2, #e3ddcf); }
 .phone-screen .phone-shot { width: 100%; height: calc(100% + 2.6rem); margin-top: -2.6rem; object-fit: cover; object-position: top center; }
 .phone-notch { position: absolute; top: 9px; left: 50%; transform: translateX(-50%); width: 34%; height: 18px; background: #11100c; border-radius: 0 0 12px 12px; z-index: 3; }
-.chip { position: absolute; font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.04em; background: var(--card-2); border: 1px solid var(--line); border-radius: 99px; padding: 0.45rem 0.7rem; box-shadow: 0 12px 28px -14px rgba(26,23,18,0.4); display: flex; align-items: center; gap: 0.4rem; animation: float 5s ease-in-out infinite; }
+.chip { position: absolute; z-index: 4; font-family: var(--mono); font-size: 0.64rem; letter-spacing: 0.04em; background: var(--card-2); border: 1px solid var(--line); border-radius: 99px; padding: 0.45rem 0.7rem; box-shadow: 0 12px 28px -14px rgba(26,23,18,0.4); display: flex; align-items: center; gap: 0.4rem; animation: float 5s ease-in-out infinite; white-space: nowrap; }
 .chip .d { width: 6px; height: 6px; border-radius: 50%; background: var(--accent); }
-.chip.c1 { top: 8%; left: -4%; animation-delay: 0s; }
-.chip.c2 { bottom: 16%; right: -8%; animation-delay: 1.4s; }
-.chip.c3 { bottom: 2%; left: 6%; animation-delay: 0.7s; }
+.chip.c1 { top: 8%; left: -6%; animation-delay: 0s; }
+.chip.c2 { top: 42%; right: -10%; animation-delay: 1.4s; }
+.chip.c3 { bottom: 14%; left: -6%; animation-delay: 0.7s; }
 @keyframes float { 0%,100%{transform:translateY(0)}50%{transform:translateY(-9px)} }
 @media (max-width: 900px) { .hero-grid { grid-template-columns: 1fr; } .hero-visual { order: -1; min-height: 300px; } .hero-sub { max-width: 46ch; } }
 @media (max-width: 560px) { .hero-stats { grid-template-columns: repeat(2,1fr); gap: 1.4rem 0.5rem; } }

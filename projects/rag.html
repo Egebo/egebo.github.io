@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Akıllı Danışman — Egemen Bozca</title>
+<meta name="description" content="Üniversite öğrencileri için yapay zekâ destekli danışman sistemi — RAG, Text-SQL, GPT-4o-mini.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E25A34'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='700' font-size='62' fill='white' text-anchor='middle'>E</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=23">
+<style>
+.cs-nav { display:flex; align-items:center; justify-content:space-between; padding:1rem var(--gutter); border-bottom:1px solid var(--line); position:sticky; top:0; background:color-mix(in srgb,var(--paper) 92%,transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); z-index:100; }
+.cs-back { font-size:0.86rem; font-weight:500; color:var(--ink-2); display:inline-flex; align-items:center; gap:0.4rem; transition:color 0.2s; }
+.cs-back:hover { color:var(--accent); }
+.cs-title { font-size:clamp(3rem,8vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.96; margin-bottom:1.4rem; }
+.cs-desc { font-size:clamp(1rem,1.8vw,1.22rem); color:var(--ink-2); max-width:52ch; line-height:1.55; margin-bottom:2rem; }
+.cs-meta-row { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2.4rem; }
+.cs-meta-row span { font-family:var(--mono); font-size:0.68rem; padding:0.34rem 0.7rem; border:1px solid var(--line-2); border-radius:99px; color:var(--ink-2); }
+.cs-divider { height:1px; background:var(--line-2); margin:clamp(2.5rem,5vw,4rem) 0; }
+.cs-section-label { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:1.6rem; }
+.cs-features { display:grid; grid-template-columns:repeat(2,1fr); gap:1.1rem; }
+.cs-feat { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.6rem; }
+.cs-feat h3 { font-size:1rem; font-weight:600; letter-spacing:-0.01em; margin-bottom:0.6rem; }
+.cs-feat p { font-size:0.88rem; color:var(--ink-2); line-height:1.5; }
+.cs-feat .fi { font-size:1.5rem; margin-bottom:0.8rem; }
+.cs-stack { display:flex; flex-wrap:wrap; gap:0.55rem; }
+.cs-terminal { background:#0e0c08; border:1px solid var(--line); border-radius:var(--radius); padding:1.6rem 1.8rem; font-family:var(--mono); font-size:0.8rem; line-height:1.8; color:#e2dccd; overflow-x:auto; margin-top:1.4rem; }
+.cs-terminal .prompt { color:var(--accent); }
+.cs-terminal .out { color:rgba(226,220,205,0.6); }
+.cs-badge { display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--mono); font-size:0.62rem; background:rgba(226,90,52,0.1); color:var(--accent); border:1px solid rgba(226,90,52,0.25); border-radius:99px; padding:0.26rem 0.7rem; }
+.cs-arch { display:grid; grid-template-columns:repeat(3,1fr); gap:0.8rem; margin-top:1.4rem; }
+.cs-arch-step { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.2rem; text-align:center; }
+.cs-arch-step .step-num { font-family:var(--mono); font-size:0.62rem; color:var(--accent); margin-bottom:0.5rem; }
+.cs-arch-step h4 { font-size:0.88rem; font-weight:600; margin-bottom:0.3rem; }
+.cs-arch-step p { font-size:0.78rem; color:var(--ink-2); line-height:1.4; }
+@media (max-width:700px) { .cs-features { grid-template-columns:1fr; } .cs-arch { grid-template-columns:1fr; } }
+</style>
+</head>
+<body>
+
+<nav class="cs-nav">
+  <a href="../index.html" class="cs-back">← Egemen Bozca</a>
+  <span class="cs-badge">Bitirme Projesi · 2025</span>
+</nav>
+
+<main>
+<section class="section wrap" style="padding-top:clamp(4rem,9vw,7rem)">
+  <p class="eyebrow" style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.6rem;margin-bottom:1.2rem;">
+    <span style="width:28px;height:1px;background:var(--accent);display:inline-block;"></span>
+    Yapay Zekâ · RAG Sistemi
+  </p>
+  <h1 class="cs-title">Akıllı Danışman</h1>
+  <p class="cs-desc">Üniversite öğrencileri için yapay zekâ destekli akademik danışman. Doğal dil sorularını anlayıp, gerektiğinde veritabanını SQL ile sorgular; PDF belgelerini vektör arama ile analiz eder; bilmediğini açıkça söyler.</p>
+  <div class="cs-meta-row">
+    <span>Python · Flask</span>
+    <span>GPT-4o-mini</span>
+    <span>Gemini Flash</span>
+    <span>RAG Pipeline</span>
+    <span>ChromaDB</span>
+    <span>2025 — Tamamlandı</span>
+  </div>
+</section>
+
+<section class="section wrap">
+  <div class="cs-terminal">
+    <div><span class="prompt">›</span> Bilgisayar Mühendisliği bölümünde zorunlu dersler neler?</div>
+    <div class="out">// Intent Router → Text-SQL moduna yönlendiriliyor…</div>
+    <div class="out">// Veritabanı sorgulanıyor: SELECT ders_adi, kredi FROM dersler WHERE tur='zorunlu'…</div>
+    <br>
+    <div>Bilgisayar Mühendisliği'nde 42 zorunlu ders var. Bunlar arasında Algoritma Analizi (3 kredi), Veri Tabanı Yönetimi (3 kredi) ve Yazılım Mühendisliği (3 kredi) bulunuyor...</div>
+    <br>
+    <div><span class="prompt">›</span> Staj başvurusu için hangi belgeler gerekiyor?</div>
+    <div class="out">// Intent Router → Document RAG moduna yönlendiriliyor…</div>
+    <div class="out">// PDF vektör araması: "staj başvurusu belgeler"…</div>
+    <br>
+    <div>Staj Yönergesi'ne göre (s.12) başvuru için öğrenci belgesi, sigorta formu ve staj kabul mektubu gerekmektedir...</div>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <p class="cs-section-label">Mimari</p>
+  <div class="cs-arch">
+    <div class="cs-arch-step">
+      <div class="step-num">01</div>
+      <h4>Intent Router</h4>
+      <p>Soru tipini sınıflandırıp doğru modüle yönlendirir: SQL mi, RAG mi, web mi?</p>
+    </div>
+    <div class="cs-arch-step">
+      <div class="step-num">02</div>
+      <h4>Text-SQL</h4>
+      <p>Doğal dil sorusunu SQL sorgusuna çevirir, üniversite veritabanından veri çeker.</p>
+    </div>
+    <div class="cs-arch-step">
+      <div class="step-num">03</div>
+      <h4>Document RAG</h4>
+      <p>PDF'leri vektöre dönüştürür, ChromaDB'de saklar, semantik arama yapar.</p>
+    </div>
+    <div class="cs-arch-step">
+      <div class="step-num">04</div>
+      <h4>Web Crawler</h4>
+      <p>Güncel bilgi için üniversite web sitesini tarayan modül.</p>
+    </div>
+    <div class="cs-arch-step">
+      <div class="step-num">05</div>
+      <h4>Multi-Turn Chat</h4>
+      <p>Konuşma bağlamını korur; önceki sorularla ilişki kurar.</p>
+    </div>
+    <div class="cs-arch-step">
+      <div class="step-num">06</div>
+      <h4>Token Takibi</h4>
+      <p>Her konuşma için kullanılan token miktarını izler ve maliyet kontrolü sağlar.</p>
+    </div>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <p class="cs-section-label">Özellikler</p>
+  <div class="cs-features">
+    <div class="cs-feat">
+      <div class="fi">🎯</div>
+      <h3>Çok Modlu Yanıt</h3>
+      <p>Tek bir sistem içinde Text-SQL, Document RAG ve web crawler'ı koordineli çalıştıran intent yönlendirme motoru.</p>
+    </div>
+    <div class="cs-feat">
+      <div class="fi">🗃️</div>
+      <h3>Vektör Tabanlı Arama</h3>
+      <p>Üniversite PDF belgelerini ChromaDB'ye gömerek semantik arama; sayfa ve kaynak referansıyla birlikte yanıt.</p>
+    </div>
+    <div class="cs-feat">
+      <div class="fi">🔗</div>
+      <h3>Çok Turlu Sohbet</h3>
+      <p>Konuşma geçmişini takip ederek bağlamı korur; "bu derse kayıt yaptırabilir miyim?" gibi bağlama dayalı soruları anlıyor.</p>
+    </div>
+    <div class="cs-feat">
+      <div class="fi">🚫</div>
+      <h3>Dürüst Sınırlar</h3>
+      <p>Bilmediği soruyu "bilmiyorum" diyerek geçiştirir; hallüsinasyon riskini minimize eden retrieval-first tasarım.</p>
+    </div>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <p class="cs-section-label">Teknoloji</p>
+  <div class="cs-stack">
+    <span class="tag">Python</span>
+    <span class="tag">Flask</span>
+    <span class="tag">GPT-4o-mini</span>
+    <span class="tag">Gemini Flash</span>
+    <span class="tag">ChromaDB</span>
+    <span class="tag">LangChain</span>
+    <span class="tag">SQLite</span>
+    <span class="tag">BeautifulSoup</span>
+    <span class="tag">PyPDF2</span>
+    <span class="tag">sentence-transformers</span>
+  </div>
+</section>
+</main>
+
+<footer class="footer wrap">
+  <div class="footer-inner">
+    <span class="f-brand">Egemen Bozca</span>
+    <a href="../index.html" class="to-top">← Portfolyoya dön</a>
+  </div>
+</footer>
+</body>
+</html>

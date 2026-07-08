@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Optura — Egemen Bozca</title>
+<meta name="description" content="Market fişlerinden erzak takibi ve son kullanma tarihi tahmini — Flutter, Supabase, GPT-4o.">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E25A34'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='700' font-size='62' fill='white' text-anchor='middle'>E</text></svg>">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
+<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=23">
+<style>
+.cs-nav { display:flex; align-items:center; justify-content:space-between; padding:1rem var(--gutter); border-bottom:1px solid var(--line); position:sticky; top:0; background:color-mix(in srgb,var(--paper) 92%,transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); z-index:100; }
+.cs-back { font-size:0.86rem; font-weight:500; color:var(--ink-2); display:inline-flex; align-items:center; gap:0.4rem; transition:color 0.2s; }
+.cs-back:hover { color:var(--accent); }
+.cs-title { font-size:clamp(3rem,8vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.96; margin-bottom:1.4rem; }
+.cs-desc { font-size:clamp(1rem,1.8vw,1.22rem); color:var(--ink-2); max-width:52ch; line-height:1.55; margin-bottom:2rem; }
+.cs-meta-row { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2.4rem; }
+.cs-meta-row span { font-family:var(--mono); font-size:0.68rem; padding:0.34rem 0.7rem; border:1px solid var(--line-2); border-radius:99px; color:var(--ink-2); }
+.cs-divider { height:1px; background:var(--line-2); margin:clamp(2.5rem,5vw,4rem) 0; }
+.cs-section-label { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:1.6rem; }
+.cs-features { display:grid; grid-template-columns:repeat(2,1fr); gap:1.1rem; }
+.cs-feat { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.6rem; }
+.cs-feat h3 { font-size:1rem; font-weight:600; letter-spacing:-0.01em; margin-bottom:0.6rem; }
+.cs-feat p { font-size:0.88rem; color:var(--ink-2); line-height:1.5; }
+.cs-feat .fi { font-size:1.5rem; margin-bottom:0.8rem; }
+.cs-stack { display:flex; flex-wrap:wrap; gap:0.55rem; }
+.cs-badge-wip { display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--mono); font-size:0.62rem; background:rgba(255,171,0,0.1); color:#e5970a; border:1px solid rgba(255,171,0,0.3); border-radius:99px; padding:0.26rem 0.7rem; }
+.cs-badge-wip::before { content:""; width:5px; height:5px; border-radius:50%; background:#ffab00; }
+.cs-logo-block { display:flex; align-items:center; justify-content:center; background:#2A5C3C; border-radius:var(--radius); padding:4rem 2rem; margin:2rem 0; }
+.cs-logo-block img { width:clamp(100px,20vw,180px); border-radius:1rem; }
+.cs-flow { display:grid; grid-template-columns:repeat(4,1fr); gap:0.6rem; margin-top:1.4rem; position:relative; }
+.cs-flow-step { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.1rem; text-align:center; }
+.cs-flow-step .fi { font-size:1.4rem; margin-bottom:0.5rem; }
+.cs-flow-step h4 { font-size:0.82rem; font-weight:600; margin-bottom:0.25rem; }
+.cs-flow-step p { font-size:0.74rem; color:var(--ink-2); line-height:1.35; }
+@media (max-width:700px) { .cs-features { grid-template-columns:1fr; } .cs-flow { grid-template-columns:repeat(2,1fr); } }
+</style>
+</head>
+<body>
+
+<nav class="cs-nav">
+  <a href="../index.html" class="cs-back">← Egemen Bozca</a>
+  <span class="cs-badge-wip">Geliştirme Aşamasında</span>
+</nav>
+
+<main>
+<section class="section wrap" style="padding-top:clamp(4rem,9vw,7rem)">
+  <p class="eyebrow" style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.6rem;margin-bottom:1.2rem;">
+    <span style="width:28px;height:1px;background:var(--accent);display:inline-block;"></span>
+    Mobil · Yapay Zekâ · Flutter
+  </p>
+  <h1 class="cs-title">Optura</h1>
+  <p class="cs-desc">Market fişlerini fotoğrafla, uygulama ürünleri tanıyıp ev erzağını otomatik olarak takip etsin. Son kullanma tarihini tahmin eder, bozulmak üzere olan ürünleri önceden bildirir — ve dolaptaki malzemelere göre tarif önerir.</p>
+  <div class="cs-meta-row">
+    <span>Flutter</span>
+    <span>Riverpod</span>
+    <span>Supabase</span>
+    <span>GPT-4o</span>
+    <span>Firebase FCM</span>
+    <span>2025 — Devam ediyor</span>
+  </div>
+</section>
+
+<section class="section wrap">
+  <div class="cs-logo-block">
+    <img src="../looked_ss/optura_logo.png" alt="Optura logo">
+  </div>
+
+  <p class="cs-section-label">Nasıl Çalışır</p>
+  <div class="cs-flow">
+    <div class="cs-flow-step">
+      <div class="fi">🧾</div>
+      <h4>Fiş Tara</h4>
+      <p>Marketten aldıklarının fişini kameraya göster.</p>
+    </div>
+    <div class="cs-flow-step">
+      <div class="fi">🔍</div>
+      <h4>OCR + AI</h4>
+      <p>GPT-4o fişi okur, ürünleri tanır ve kategorize eder.</p>
+    </div>
+    <div class="cs-flow-step">
+      <div class="fi">📦</div>
+      <h4>Erzak Listesi</h4>
+      <p>Ürünler dolabına eklenir, miktarlar takip edilir.</p>
+    </div>
+    <div class="cs-flow-step">
+      <div class="fi">🔔</div>
+      <h4>Akıllı Bildirim</h4>
+      <p>Son kullanma tarihi yaklaşan ürünler için push bildirimi.</p>
+    </div>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <p class="cs-section-label">Özellikler</p>
+  <div class="cs-features">
+    <div class="cs-feat">
+      <div class="fi">🧾</div>
+      <h3>Fiş OCR</h3>
+      <p>GPT-4o Vision ile market fişinden ürünleri otomatik tanıyıp pantriye ekler. Manuel giriş gerekmez.</p>
+    </div>
+    <div class="cs-feat">
+      <div class="fi">⏰</div>
+      <h3>Son Kullanma Tahmini</h3>
+      <p>Ürün kategorisine ve saklama koşullarına göre son kullanma tarihi tahmini; bozulmadan önce uyarır.</p>
+    </div>
+    <div class="cs-feat">
+      <div class="fi">🍳</div>
+      <h3>AI Tarif Önerisi</h3>
+      <p>Dolaptaki malzemelere bakıp yapılabilecek tarifleri öneriyor. Bitmek üzere olan malzemeleri önceliklendiriyor.</p>
+    </div>
+    <div class="cs-feat">
+      <div class="fi">📊</div>
+      <h3>Tüketim Analizi</h3>
+      <p>Hangi ürünleri ne sıklıkla tükettiğini analiz ederek alışveriş planlamaya yardımcı olur.</p>
+    </div>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <p class="cs-section-label">Teknoloji</p>
+  <div class="cs-stack">
+    <span class="tag">Flutter</span>
+    <span class="tag">Dart</span>
+    <span class="tag">Riverpod</span>
+    <span class="tag">Clean Architecture</span>
+    <span class="tag">Supabase</span>
+    <span class="tag">PostgreSQL</span>
+    <span class="tag">OpenAI GPT-4o</span>
+    <span class="tag">Firebase FCM</span>
+    <span class="tag">Go Router</span>
+    <span class="tag">Freezed</span>
+  </div>
+</section>
+</main>
+
+<footer class="footer wrap">
+  <div class="footer-inner">
+    <span class="f-brand">Egemen Bozca</span>
+    <a href="../index.html" class="to-top">← Portfolyoya dön</a>
+  </div>
+</footer>
+</body>
+</html>
