@@ -80,7 +80,7 @@ window.I18N = {
     "proj.3.type": "Mobil · AI",
 
     "path.idx": "05",
-    "path.title": "Deneyim & Eğitim",
+    "path.title": "Deneyim",
     "path.1.kind": "İş",
     "path.1.role": "Freelance Mobil Geliştirici",
     "path.1.org": "Bağımsız",
@@ -96,12 +96,6 @@ window.I18N = {
     "path.3.org": "Uluslararası & TÜBİTAK",
     "path.3.when": "2019 — 2022",
     "path.3.desc": "Otonom uçuş algoritmaları geliştirdik; Romanya'da dünya birinciliği, Teknofest'te Türkiye ikinciliği ve TÜBİTAK derecesi kazandık.",
-    "path.4.kind": "Eğitim",
-    "path.4.role": "Bilgisayar Mühendisliği",
-    "path.4.org": "Sakarya Üniversitesi",
-    "path.4.when": "2022 — Devam Ediyor",
-    "path.4.desc": "Lisans öğrenimim sürüyor; akademik ve proje bazlı çalışmalarla mühendislik becerilerimi geliştiriyorum.",
-
     "contact.idx": "06",
     "contact.title": "Yazın bana",
     "contact.lead": "Bir fikrin mi var, yoksa freelance bir iş mi? En hızlı yanıtı e-postadan alırsın.",
@@ -206,7 +200,7 @@ window.I18N = {
     "proj.3.type": "Mobile · AI",
 
     "path.idx": "05",
-    "path.title": "Experience & Education",
+    "path.title": "Experience",
     "path.1.kind": "Work",
     "path.1.role": "Freelance Mobile Developer",
     "path.1.org": "Independent",
@@ -222,12 +216,6 @@ window.I18N = {
     "path.3.org": "International & TÜBİTAK",
     "path.3.when": "2019 — 2022",
     "path.3.desc": "Built autonomous flight algorithms; won 1st in the world in Romania, 2nd in Turkey at Teknofest, and a TÜBİTAK placement.",
-    "path.4.kind": "Education",
-    "path.4.role": "Computer Engineering",
-    "path.4.org": "Sakarya University",
-    "path.4.when": "2022 — Ongoing",
-    "path.4.desc": "Undergraduate studies — sharpening my engineering skills through coursework and hands-on projects.",
-
     "contact.idx": "06",
     "contact.title": "Drop me a line",
     "contact.lead": "Got an idea, or a freelance project in mind? Email gets the fastest reply.",
