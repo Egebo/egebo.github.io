@@ -286,6 +286,8 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .proj-body p { font-size: 0.88rem; color: var(--ink-2); flex: 1; }
 .proj-body .pstack { display: flex; flex-wrap: wrap; gap: 0.35rem; margin-top: 0.4rem; }
 .proj-body .pstack span { font-family: var(--mono); font-size: 0.62rem; color: var(--muted); padding: 0.2rem 0.45rem; border: 1px solid var(--line); border-radius: 6px; }
+.proj-live-btn { display: inline-flex; align-items: center; gap: 0.3rem; font-family: var(--mono); font-size: 0.64rem; color: var(--accent); margin-top: 0.75rem; transition: opacity 0.2s; }
+.proj-live-btn:hover { opacity: 0.7; }
 .proj-card--wide { grid-column: 1 / -1; flex-direction: row; }
 .proj-card--wide .proj-thumb { width: 380px; flex-shrink: 0; aspect-ratio: unset; min-height: 240px; }
 .proj-card--wide .proj-body { padding: clamp(1.4rem,3vw,2.2rem) clamp(1.4rem,3vw,2.6rem); justify-content: center; }
