@@ -254,10 +254,10 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .featured p { color: #cfc8ba; max-width: 42ch; margin-bottom: 1.6rem; }
 .featured .f-meta { display: flex; flex-wrap: wrap; gap: 0.5rem; margin-bottom: 1.6rem; }
 .featured .f-meta span { font-family: var(--mono); font-size: 0.68rem; padding: 0.34rem 0.65rem; border: 1px solid rgba(245,242,235,0.18); border-radius: 99px; color: #e7e1d6; }
-.featured .f-visual { background: linear-gradient(150deg, #232019, #14120d); border-radius: var(--radius); aspect-ratio: 4/3; position: relative; overflow: hidden; display: flex; align-items: center; justify-content: center; gap: clamp(0.7rem, 2vw, 1.3rem); padding: clamp(1.2rem, 3vw, 2.2rem); }
-.featured .f-visual .f-shot { width: 42%; aspect-ratio: 9/19; border-radius: 18px; object-fit: cover; object-position: center; box-shadow: 0 30px 60px -22px rgba(0,0,0,0.55); }
-.featured .f-visual .f-shot:first-child { transform: translateY(14px) rotate(-4deg); }
-.featured .f-visual .f-shot:last-child { transform: translateY(-14px) rotate(4deg); }
+.featured .f-visual { background: #0e0c08; border-radius: var(--radius); aspect-ratio: 4/3; position: relative; overflow: hidden; display: flex; align-items: stretch; gap: 2px; padding: 0; }
+.featured .f-visual .f-shot { flex: 1; width: auto; height: 100%; aspect-ratio: unset; border-radius: 0; object-fit: cover; object-position: center 35%; box-shadow: none; transform: none; }
+.featured .f-visual .f-shot:first-child { transform: none; }
+.featured .f-visual .f-shot:last-child { transform: none; }
 .f-cta-row { display: flex; flex-wrap: wrap; gap: 0.7rem; align-items: center; }
 .btn--ios { border-color: rgba(245,242,235,0.28); color: var(--paper); background: transparent; }
 .btn--ios:hover { background: rgba(245,242,235,0.1); border-color: rgba(245,242,235,0.55); }
