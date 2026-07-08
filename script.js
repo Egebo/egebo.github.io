@@ -38,7 +38,6 @@
       b.classList.toggle("on", b.dataset.lang === l);
     });
     if (rotWordCtrl) rotWordCtrl.setLang(l);
-    syncMoreBtn();
     localStorage.setItem(LANG_KEY, l);
   }
 
@@ -93,31 +92,6 @@
     sections.forEach(function (s) { if (s.offsetTop <= pos) cur = s.id; });
     navLinks.forEach(function (a) { a.classList.toggle("active", a.getAttribute("href") === "#" + cur); });
   }, { passive: true });
-
-  /* ---------- Projects expand ---------- */
-  var moreBtn = document.getElementById("projMore");
-  var expanded = false;
-  function syncMoreBtn() {
-    if (!moreBtn) return;
-    var lbl = moreBtn.querySelector(".more-label");
-    var dict = window.I18N[lang] || window.I18N.tr;
-    var key = expanded ? "proj.less" : "proj.more";
-    if (lbl) {
-      lbl.setAttribute("data-i18n", key);
-      if (dict[key]) lbl.textContent = dict[key];
-    }
-  }
-  if (moreBtn) {
-    moreBtn.addEventListener("click", function () {
-      expanded = !expanded;
-      document.querySelectorAll(".hidden-proj").forEach(function (el) {
-        el.style.display = expanded ? "flex" : "none";
-      });
-      var arr = moreBtn.querySelector(".arr");
-      if (arr) arr.textContent = expanded ? "↑" : "↓";
-      syncMoreBtn();
-    });
-  }
 
   /* ---------- Contact form (EmailJS) ---------- */
   var form = document.getElementById("contactForm");
