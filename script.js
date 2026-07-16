@@ -206,14 +206,14 @@
       ctx.clearRect(0, 0, w, h);
 
       ctx.lineWidth = 0.5;
-      ctx.strokeStyle = "rgba(155,138,114,0.11)";
+      ctx.strokeStyle = "rgba(91,180,190,0.07)";
       var gs = 58;
       for (var x = 0; x <= w; x += gs) { ctx.beginPath(); ctx.moveTo(x, 0); ctx.lineTo(x, h); ctx.stroke(); }
       for (var y = 0; y <= h; y += gs) { ctx.beginPath(); ctx.moveTo(0, y); ctx.lineTo(w, y); ctx.stroke(); }
 
       if (mx >= 0) {
         ctx.lineWidth = 0.8;
-        ctx.strokeStyle = "rgba(226,90,52,0.10)";
+        ctx.strokeStyle = "rgba(91,180,190,0.12)";
         ctx.setLineDash([4, 7]);
         ctx.beginPath(); ctx.moveTo(mx, 0); ctx.lineTo(mx, h); ctx.stroke();
         ctx.beginPath(); ctx.moveTo(0, my); ctx.lineTo(w, my); ctx.stroke();
@@ -221,7 +221,7 @@
       }
 
       ctx.lineWidth = 0.8;
-      ctx.strokeStyle = "rgba(226,90,52,0.10)";
+      ctx.strokeStyle = "rgba(91,180,190,0.10)";
       ctx.beginPath();
       for (var i = 0; i <= 200; i++) {
         var p = pt(i / 200);
@@ -235,22 +235,22 @@
       if (trail.length > 52) trail.shift();
 
       for (var i = 1; i < trail.length; i++) {
-        var alpha = (i / trail.length) * 0.7;
-        ctx.strokeStyle = "rgba(226,90,52," + alpha + ")";
-        ctx.lineWidth = (i / trail.length) * 2.4;
+        var alpha = (i / trail.length) * 0.65;
+        ctx.strokeStyle = "rgba(91,180,190," + alpha + ")";
+        ctx.lineWidth = (i / trail.length) * 2.0;
         ctx.beginPath(); ctx.moveTo(trail[i - 1].x, trail[i - 1].y); ctx.lineTo(trail[i].x, trail[i].y); ctx.stroke();
       }
 
       var grd = ctx.createRadialGradient(cur.x, cur.y, 0, cur.x, cur.y, 22);
-      grd.addColorStop(0, "rgba(226,90,52,0.52)");
-      grd.addColorStop(1, "rgba(226,90,52,0)");
+      grd.addColorStop(0, "rgba(91,180,190,0.4)");
+      grd.addColorStop(1, "rgba(91,180,190,0)");
       ctx.fillStyle = grd;
       ctx.beginPath(); ctx.arc(cur.x, cur.y, 22, 0, 6.2832); ctx.fill();
 
-      ctx.fillStyle = "#E25A34";
+      ctx.fillStyle = "#5BB4BE";
       ctx.beginPath(); ctx.arc(cur.x, cur.y, 4, 0, 6.2832); ctx.fill();
 
-      ctx.strokeStyle = "rgba(226,90,52,0.55)"; ctx.lineWidth = 1;
+      ctx.strokeStyle = "rgba(91,180,190,0.5)"; ctx.lineWidth = 1;
       ctx.beginPath(); ctx.moveTo(cur.x - 12, cur.y); ctx.lineTo(cur.x - 6, cur.y); ctx.stroke();
       ctx.beginPath(); ctx.moveTo(cur.x + 6, cur.y); ctx.lineTo(cur.x + 12, cur.y); ctx.stroke();
       ctx.beginPath(); ctx.moveTo(cur.x, cur.y - 12); ctx.lineTo(cur.x, cur.y - 6); ctx.stroke();
