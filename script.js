@@ -1,5 +1,5 @@
 /* ============================================================
-   SCRIPT.JS — Egemen Bozca Portfolio
+   SCRIPT.JS - Egemen Bozca Portfolio
    · i18n (TR/EN)
    · counters
    · nav scroll + progress bar
@@ -178,7 +178,7 @@
     return { setLang: setLang };
   })();
 
-  /* ---------- Hero canvas — drone flight path ---------- */
+  /* ---------- Hero canvas - drone flight path ---------- */
   (function () {
     if (prefersReduce) return;
     var canvas = document.getElementById("heroCanvas");
