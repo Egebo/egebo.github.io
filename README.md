@@ -1,4 +1,4 @@
-# Egemen Bozca — Portfolyo
+# Egemen Bozca Portfolyo
 
 Bu repo, kişisel portfolyo sitemin ([egebo.github.io](https://egebo.github.io)) kaynak kodunu barındırır.
 
@@ -16,4 +16,4 @@ Bu proje MIT lisansı ile lisanslanmıştır.
 
 ## İletişim
 
-Egemen Bozca — GitHub: https://github.com/Egebo
+Egemen Bozca GitHub: https://github.com/Egebo
