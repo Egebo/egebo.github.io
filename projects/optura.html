@@ -52,7 +52,7 @@
     Mobil · Yapay Zekâ · Flutter
   </p>
   <h1 class="cs-title">Optura</h1>
-  <p class="cs-desc">Market fişlerini fotoğrafla, uygulama ürünleri tanıyıp ev erzağını otomatik olarak takip etsin. Son kullanma tarihini tahmin eder, bozulmak üzere olan ürünleri önceden bildirir ve dolaptaki malzemelere göre tarif önerir.</p>
+  <p class="cs-desc">Kuzenimle kurduğumuz bir girişim: market fişini fotoğrafla, uygulama ürünleri tanıyıp ev erzağını otomatik olarak takip etsin. Son kullanma tarihini tahmin eder, bozulmak üzere olan ürünleri önceden bildirir ve dolaptaki malzemelere göre tarif önerir. Şu an TestFlight'ta.</p>
   <div class="cs-meta-row">
     <span>Flutter</span>
     <span>Riverpod</span>
@@ -115,6 +115,32 @@
       <div class="fi">📊</div>
       <h3>Tüketim Analizi</h3>
       <p>Hangi ürünleri ne sıklıkla tükettiğini analiz ederek alışveriş planlamaya yardımcı olur.</p>
+    </div>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <p class="cs-section-label">Teknik Kararlar</p>
+  <div class="cs-features">
+    <div class="cs-feat">
+      <div class="fi">🧠</div>
+      <h3>Kanonik Malzeme Eşleştirme</h3>
+      <p>"Domates", "Domates (1kg)", "domates salkım" gibi farklı fiş çıktılarını tek bir kanonik ürüne indirgeyen bir eşleştirme motoru — AI çıktısının tutarsızlığını veri modelinde çözüyor.</p>
+    </div>
+    <div class="cs-feat">
+      <div class="fi">🛡️</div>
+      <h3>4 Katmanlı AI Doğrulama</h3>
+      <p>GPT-4o'nun fiş/tarif çıktıları, uygulamaya yansımadan önce art arda birden fazla mantık katmanından (format, birim dönüşümü, tutarlılık, güvenlik) geçiyor.</p>
+    </div>
+    <div class="cs-feat">
+      <div class="fi">🏗️</div>
+      <h3>Clean Architecture</h3>
+      <p>Domain/data/presentation katmanlarına ayrılmış Flutter yapısı; Riverpod ile durum yönetimi, iş mantığı UI'dan tamamen izole.</p>
+    </div>
+    <div class="cs-feat">
+      <div class="fi">↩️</div>
+      <h3>İyimser Güncelleme (Optimistic UI)</h3>
+      <p>Erzak listesi işlemleri anında arayüze yansır, sunucu hatasında otomatik geri alınır — beklemesiz bir kullanıcı deneyimi için.</p>
     </div>
   </div>
 
