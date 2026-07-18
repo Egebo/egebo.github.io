@@ -12,7 +12,7 @@ window.I18N = {
     "nav.contact": "İletişim",
     "nav.cta": "İletişime geç",
 
-    "hero.eyebrow": "Açık pozisyonlara bakıyorum",
+    "hero.eyebrow": "Freelance projeler alıyorum",
     "hero.h1a": "Mobil ürünleri",
     "hero.h1c": "yayına taşıyorum.",
     "hero.sub": "Mobil ve web alanında freelance çalışıyorum; asıl ilgi alanım yapay zekâ sistemleri. React Native ile dört uygulama yayınladım, RAG tabanlı AI danışman sistemi geliştirdim. Otonom drone yazılımıyla dünya birincisi oldum.",
@@ -78,6 +78,9 @@ window.I18N = {
     "proj.3.name": "Optura",
     "proj.3.desc": "Market fişlerinden ürünleri tanıyıp ev erzakını otomatik takip eden uygulama; son kullanma tarihlerini tahmin ederek bozulmaya başlayan ürünleri önceden haber veriyor. Şu an geliştirme aşamasında.",
     "proj.3.type": "Mobil · AI",
+    "proj.4.name": "Jarvis",
+    "proj.4.desc": "Iron Man'den ilham alan sesli kişisel asistan. Whisper ile sesi metne çevirir, Gemini function-calling ile yorumlar, TTS ile yanıtlar. Windows ve React Native istemcisiyle çapraz platform.",
+    "proj.4.type": "Yapay Zekâ · Ses",
 
     "path.idx": "05",
     "path.title": "Deneyim",
@@ -102,6 +105,7 @@ window.I18N = {
     "social.email": "E-posta",
     "social.email.copy": "Kopyalandı!",
     "social.linkedin": "LinkedIn",
+    "social.upwork": "Upwork",
     "social.github": "GitHub",
     "form.name": "İsim",
     "form.email": "E-posta",
@@ -132,7 +136,7 @@ window.I18N = {
     "nav.contact": "Contact",
     "nav.cta": "Get in touch",
 
-    "hero.eyebrow": "Open to work",
+    "hero.eyebrow": "Available for freelance",
     "hero.h1a": "I take mobile products",
     "hero.h1c": "to launch.",
     "hero.sub": "I freelance in mobile and web; my real focus is AI systems. I've shipped four apps with React Native, built a RAG-powered AI advisor, and won a world championship with autonomous drone software.",
@@ -198,6 +202,9 @@ window.I18N = {
     "proj.3.name": "Optura",
     "proj.3.desc": "An app that recognizes products from grocery receipts to track your pantry automatically; it predicts expiration dates and warns you before items start to spoil. Currently in development.",
     "proj.3.type": "Mobile · AI",
+    "proj.4.name": "Jarvis",
+    "proj.4.desc": "Iron Man-inspired voice personal assistant. Whisper transcribes speech to text, Gemini interprets it via function-calling, TTS speaks the reply. Cross-platform: Windows PC client and React Native mobile.",
+    "proj.4.type": "AI · Voice",
 
     "path.idx": "05",
     "path.title": "Experience",
@@ -222,6 +229,7 @@ window.I18N = {
     "social.email": "Email",
     "social.email.copy": "Copied!",
     "social.linkedin": "LinkedIn",
+    "social.upwork": "Upwork",
     "social.github": "GitHub",
     "form.name": "Name",
     "form.email": "Email",
