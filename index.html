@@ -288,79 +288,96 @@
 <section class="section section--alt" id="projects">
   <div class="wrap">
     <div class="sec-head reveal">
-      <span class="mono idx" data-i18n="proj.idx">04</span>
-      <h2 data-i18n="proj.title">Projeler</h2>
+      <span class="idx mono" data-i18n="proj.idx">04</span>
+      <h2 data-i18n="proj.title">Projects</h2>
       <span class="rule"></span>
     </div>
 
+    <!-- Featured: Looked -->
     <article class="featured reveal">
       <div class="f-copy">
-        <span class="f-tag"><span class="status-dot"></span><span data-i18n="proj.featured.tag">Öne çıkan ürün</span></span>
+        <span class="f-tag"><span class="status-dot"></span><span data-i18n="proj.featured.tag">Featured product</span></span>
         <h3 data-i18n="proj.featured.name">Looked</h3>
-        <p data-i18n="proj.featured.desc">Yapay zekâyı kişisel bir stil danışmanına dönüştüren uygulama. Fotoğraf yükle, anında kombin yorumu al; gardırobunu sisteme ekleyip AI'nın ya da kendi oluşturduğun kombinleri keşfet. Firebase ve Google Sign-In ile veriler güvende.</p>
+        <p data-i18n="proj.featured.desc">AI-powered personal style assistant. Upload a photo, get instant outfit feedback; add your wardrobe and discover combinations the AI — or you — create. Built with React Native, Firebase, and Google Sign-In.</p>
         <div class="f-meta">
-          <span>React Native</span><span>AI Styling</span><span>Firebase</span>
+          <span class="tag">React Native</span><span class="tag">AI Styling</span><span class="tag">Firebase</span>
         </div>
         <div class="f-cta-row">
-          <a href="https://play.google.com/store/apps/details?id=com.egebo.looked&pcampaignid=web_share" target="_blank" rel="noopener" class="btn btn--accent"><span data-i18n="proj.featured.cta">Google Play'de gör</span><span class="arr">→</span></a>
-          <a href="https://apps.apple.com/us/app/looked-dijital-stil-asistan%C4%B1/id6776430564" target="_blank" rel="noopener" class="btn btn--ghost btn--ios"><span data-i18n="proj.featured.cta.ios">App Store'da gör</span><span class="arr">→</span></a>
-          <a href="projects/looked.html" class="btn btn--ghost">Projeyi incele <span class="arr">→</span></a>
+          <a href="https://play.google.com/store/apps/details?id=com.egebo.looked&pcampaignid=web_share" target="_blank" rel="noopener" class="btn btn--accent"><span data-i18n="proj.featured.cta">Google Play</span><span class="arr">→</span></a>
+          <a href="https://apps.apple.com/us/app/looked-dijital-stil-asistan%C4%B1/id6776430564" target="_blank" rel="noopener" class="btn btn--ghost">App Store<span class="arr">→</span></a>
+          <a href="projects/looked.html" class="btn btn--ghost">Case study <span class="arr">→</span></a>
         </div>
       </div>
       <div class="f-visual">
-        <img src="looked_ss/play_1.png" alt="Looked AI stylist ekranı" class="f-shot" style="object-position:center 48%">
-        <img src="looked_ss/play_2.png" alt="Looked stil analizi ekranı" class="f-shot" style="object-position:center 42%">
+        <img src="looked_ss/play_1.png" alt="Looked AI stylist screen" class="f-shot" style="object-position:center 48%">
+        <img src="looked_ss/play_2.png" alt="Looked style analysis screen" class="f-shot" style="object-position:center 42%">
       </div>
     </article>
 
+    <!-- Elevated: AkademikChatbot -->
+    <article class="elevated reveal">
+      <div class="el-copy">
+        <div class="el-meta">
+          <span class="tag">Python · RAG</span>
+          <span class="el-badge" data-i18n="proj.status.done">Completed · Graduation Project</span>
+        </div>
+        <h3 data-i18n="proj.1.name">AkademikChatbot</h3>
+        <p data-i18n="proj.1.desc">Education-focused RAG-based academic advisor. An intent-routing engine directs each query to SQL, vector search, or web crawl. Built with GPT-4o-mini, ChromaDB, and LangChain. Technically the most complex project in this portfolio.</p>
+        <div class="el-stack">
+          <span class="tag">GPT-4o-mini</span><span class="tag">ChromaDB</span><span class="tag">LangChain</span><span class="tag">FastAPI</span><span class="tag">RAG</span>
+        </div>
+        <a href="projects/rag.html" class="btn btn--ghost" style="margin-top:0.5rem;">View project <span class="arr">→</span></a>
+      </div>
+      <div class="el-visual">
+        <div class="el-arch">
+          <div class="arch-node">Query</div>
+          <div class="arch-arr">→</div>
+          <div class="arch-node arch-node--accent">Intent Router</div>
+          <div class="arch-arr">→</div>
+          <div class="arch-node">SQL / Vector / Web</div>
+        </div>
+        <p class="el-caption mono">Intent-routing architecture</p>
+      </div>
+    </article>
+
+    <!-- Regular grid: Optura, Jarvis, Poco Loco -->
     <div class="proj-grid">
-      <a href="projects/rag.html" class="proj-card reveal">
-        <div class="proj-thumb proj-thumb--code">
-          <span class="live status" data-i18n="proj.status.done">Tamamlandı</span>
-        </div>
-        <div class="proj-body">
-          <div class="proj-meta"><span class="proj-num">01</span><span class="proj-type-tag" data-i18n="proj.1.type">Python · RAG</span></div>
-          <h4><span data-i18n="proj.1.name">AkademikChatbot</span><span class="pa">↗</span></h4>
-          <p data-i18n="proj.1.desc">Eğitime özelleştirilmiş RAG tabanlı akademik danışman. Intent-routing motoru her sorguyu SQL, vektör arama veya web taramasına yönlendirir. GPT-4o-mini, ChromaDB, LangChain. Bitirme projem.</p>
-          <div class="pstack"><span>Python</span><span>RAG</span><span>LangChain</span></div>
-        </div>
-      </a>
-      <article class="proj-card reveal" data-d="1" onclick="location.href='projects/poco-loco.html'" style="cursor:pointer">
+      <article class="proj-card reveal" onclick="location.href='projects/optura.html'" style="cursor:pointer">
         <div class="proj-thumb has-thumb">
-          <img src="looked_ss/poco_loco_logo.jpg" alt="Poco Loco logo" class="thumb-img" style="object-fit:contain;object-position:center;background:var(--bg-2);padding:10%;filter:invert(1)">
-          <span class="live"><span class="ld"></span><span data-i18n="proj.live">Yayında</span></span>
+          <img src="looked_ss/optura_1.png" alt="Optura app screen" class="thumb-img" style="object-fit:cover;object-position:center top">
+          <span class="live status" data-i18n="proj.status.progress">In progress</span>
         </div>
         <div class="proj-body">
-          <div class="proj-meta"><span class="proj-num">02</span><span class="proj-type-tag" data-i18n="proj.2.type">Web · E-Ticaret</span></div>
-          <h4><span data-i18n="proj.2.name">Poco Loco</span><span class="pa">↗</span></h4>
-          <p data-i18n="proj.2.desc">İfade özgürlüğü temalı bir çanta markası için sıfırdan tasarlayıp kodladığım e-ticaret sitesi. Ürün kataloğu, sepet, favoriler ve giriş sistemiyle uçtan uca bir mağaza deneyimi.</p>
-          <div class="pstack"><span>Web</span><span>E-Ticaret</span><span>UI/UX</span></div>
-          <a href="https://poco--loco.com" target="_blank" rel="noopener" class="proj-live-btn" onclick="event.stopPropagation()">Siteye git ↗</a>
+          <div class="proj-meta"><span class="proj-num">01</span><span class="proj-type-tag" data-i18n="proj.3.type">Mobile · AI</span></div>
+          <h4><span data-i18n="proj.3.name">Optura</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.3.desc">Scans grocery receipts to track household inventory and predicts expiry dates — alerting you before food goes bad.</p>
+          <div class="pstack"><span class="tag">Flutter</span><span class="tag">OCR</span><span class="tag">AI</span></div>
         </div>
       </article>
-      <a href="projects/optura.html" class="proj-card reveal" data-d="2">
-        <div class="proj-thumb has-thumb">
-          <img src="looked_ss/optura_1.png" alt="Optura uygulama ekranı" class="thumb-img" style="object-fit:cover;object-position:center top">
-          <span class="live status" data-i18n="proj.status.progress">Devam ediyor</span>
-        </div>
-        <div class="proj-body">
-          <div class="proj-meta"><span class="proj-num">03</span><span class="proj-type-tag" data-i18n="proj.3.type">Mobil · AI</span></div>
-          <h4><span data-i18n="proj.3.name">Optura</span><span class="pa">↗</span></h4>
-          <p data-i18n="proj.3.desc">Market fişlerinden ürünleri tanıyıp ev erzakını otomatik takip eden uygulama; son kullanma tarihlerini tahmin ederek bozulmaya başlayan ürünleri önceden haber veriyor. Şu an geliştirme aşamasında.</p>
-          <div class="pstack"><span>Flutter</span><span>OCR</span><span>AI</span></div>
-        </div>
-      </a>
-      <a href="projects/jarvis.html" class="proj-card reveal" data-d="3">
+      <article class="proj-card reveal" data-d="1" onclick="location.href='projects/jarvis.html'" style="cursor:pointer">
         <div class="proj-thumb proj-thumb--voice">
-          <span class="live status" data-i18n="proj.status.progress">Devam ediyor</span>
+          <span class="live status" data-i18n="proj.status.progress">In progress</span>
         </div>
         <div class="proj-body">
-          <div class="proj-meta"><span class="proj-num">04</span><span class="proj-type-tag" data-i18n="proj.4.type">Yapay Zekâ · Ses</span></div>
+          <div class="proj-meta"><span class="proj-num">02</span><span class="proj-type-tag" data-i18n="proj.4.type">AI · Voice</span></div>
           <h4><span data-i18n="proj.4.name">Jarvis</span><span class="pa">↗</span></h4>
-          <p data-i18n="proj.4.desc">Iron Man'den ilham alan sesli kişisel asistan. Whisper ile sesi metne çevirir, Gemini function-calling ile yorumlar, TTS ile yanıtlar. Windows ve React Native istemcisiyle çapraz platform.</p>
-          <div class="pstack"><span>Python</span><span>Whisper</span><span>Gemini</span></div>
+          <p data-i18n="proj.4.desc">Iron Man-inspired voice assistant. Whisper → speech-to-text, Gemini function-calling → reasoning, TTS → response. Cross-platform: Windows + React Native.</p>
+          <div class="pstack"><span class="tag">Python</span><span class="tag">Whisper</span><span class="tag">Gemini</span></div>
         </div>
-      </a>
+      </article>
+      <article class="proj-card reveal" data-d="2" onclick="location.href='projects/poco-loco.html'" style="cursor:pointer">
+        <div class="proj-thumb has-thumb">
+          <img src="looked_ss/poco_loco_logo.jpg" alt="Poco Loco logo" class="thumb-img" style="object-fit:contain;background:var(--bg-2);padding:10%;">
+          <span class="live"><span class="ld"></span><span data-i18n="proj.live">Live</span></span>
+        </div>
+        <div class="proj-body">
+          <div class="proj-meta"><span class="proj-num">03</span><span class="proj-type-tag" data-i18n="proj.2.type">Web · E-Commerce</span></div>
+          <h4><span data-i18n="proj.2.name">Poco Loco</span><span class="pa">↗</span></h4>
+          <p data-i18n="proj.2.desc">Full e-commerce site for a bag brand — product catalog, cart, wishlist, auth. Designed and built end-to-end.</p>
+          <div class="pstack"><span class="tag">Web</span><span class="tag">E-Commerce</span><span class="tag">UI/UX</span></div>
+          <a href="https://poco--loco.com" target="_blank" rel="noopener" class="proj-live-btn" onclick="event.stopPropagation()">Visit site ↗</a>
+        </div>
+      </article>
     </div>
   </div>
 </section>

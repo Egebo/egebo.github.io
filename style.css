@@ -201,3 +201,71 @@ h1 { font-family: var(--sans); font-size: clamp(2.6rem, 6vw, 5rem); font-weight:
 .sb-title { font-family: var(--sans); font-size: 1rem; font-weight: 700; color: var(--accent); letter-spacing: -0.01em; }
 .tags { display: flex; flex-wrap: wrap; gap: 0.4rem; padding-top: 0.3rem; }
 @media (max-width: 600px) { .skill-block { flex-direction: column; gap: 1rem; } .skill-block > div:first-child { flex: none; } }
+
+/* ============================================================
+   PROJECTS: FEATURED (Looked)
+   ============================================================ */
+.featured { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.2rem; background: var(--bg); }
+.f-copy { padding: clamp(2rem, 4vw, 3rem); display: flex; flex-direction: column; justify-content: center; gap: 1rem; border-right: 1px solid var(--line); }
+.f-tag { font-family: var(--mono); font-size: 0.62rem; color: var(--accent); letter-spacing: 0.10em; text-transform: uppercase; display: flex; align-items: center; gap: 0.5rem; }
+.f-copy h3 { font-family: var(--sans); font-size: clamp(1.6rem, 3.2vw, 2.4rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+.f-copy p { font-size: 0.95rem; color: var(--fg-2); line-height: 1.7; }
+.f-meta { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.f-cta-row { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.4rem; }
+.f-visual { min-height: 280px; overflow: hidden; display: flex; align-items: stretch; gap: 1px; background: var(--bg-3); }
+.f-visual .f-shot { flex: 1; width: auto; height: 100%; object-fit: cover; object-position: center 35%; }
+
+/* ============================================================
+   PROJECTS: ELEVATED (AkademikChatbot)
+   ============================================================ */
+.elevated { display: grid; grid-template-columns: 1fr 1fr; border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; margin-bottom: 1.2rem; background: var(--accent-tint); gap: 0; }
+.el-copy { padding: clamp(2rem, 4vw, 2.8rem); display: flex; flex-direction: column; gap: 1rem; border-right: 1px solid var(--line); }
+.el-meta { display: flex; align-items: center; gap: 0.6rem; flex-wrap: wrap; }
+.el-badge { font-family: var(--mono); font-size: 0.6rem; letter-spacing: 0.08em; color: var(--accent); text-transform: uppercase; }
+.el-copy h3 { font-family: var(--sans); font-size: clamp(1.4rem, 2.8vw, 2rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.1; }
+.el-copy p { font-size: 0.93rem; color: var(--fg-2); line-height: 1.7; }
+.el-stack { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.el-visual { display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 1rem; padding: 2rem; background: var(--bg); }
+.el-arch { display: flex; align-items: center; gap: 0.5rem; flex-wrap: wrap; justify-content: center; }
+.arch-node { font-family: var(--mono); font-size: 0.65rem; padding: 0.4rem 0.8rem; border: 1px solid var(--line); border-radius: var(--radius); background: var(--bg-2); color: var(--fg); letter-spacing: 0.04em; }
+.arch-node--accent { border-color: var(--accent); color: var(--accent); background: var(--accent-tint); }
+.arch-arr { color: var(--fg-2); font-size: 0.8rem; }
+.el-caption { font-size: 0.6rem; color: var(--fg-2); text-align: center; }
+
+/* ============================================================
+   PROJECTS: GRID
+   ============================================================ */
+.proj-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+.proj-card { background: var(--bg); display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: background 0.2s; cursor: pointer; }
+.proj-card:hover { background: var(--bg-2); }
+.proj-thumb { aspect-ratio: 4/3; background: var(--bg-2); position: relative; overflow: hidden; display: grid; place-items: center; }
+.proj-thumb--voice { background: var(--bg-2); }
+.proj-thumb--voice::after { content: "STT→LLM→TTS"; font-family: var(--mono); font-size: 0.75rem; font-weight: 700; color: var(--accent); opacity: 0.3; letter-spacing: 0.08em; }
+.has-thumb .thumb-img { width: 100%; height: 100%; display: block; }
+.proj-body { padding: 1.2rem 1.4rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+.proj-meta { display: flex; align-items: center; justify-content: space-between; }
+.proj-num { font-family: var(--mono); font-size: 0.58rem; color: var(--accent); letter-spacing: 0.08em; }
+.proj-type-tag { font-family: var(--mono); font-size: 0.58rem; color: var(--fg-2); letter-spacing: 0.08em; }
+.proj-body h4 { font-family: var(--sans); font-size: 1rem; font-weight: 700; letter-spacing: -0.01em; display: flex; align-items: center; gap: 0.4rem; }
+.proj-body .pa { color: var(--accent); font-size: 0.8em; }
+.proj-body p { font-size: 0.84rem; color: var(--fg-2); line-height: 1.6; flex: 1; }
+.proj-body .pstack { display: flex; flex-wrap: wrap; gap: 0.3rem; }
+.proj-live-btn { display: inline-flex; align-items: center; gap: 0.3rem; font-family: var(--mono); font-size: 0.62rem; color: var(--accent); margin-top: 0.5rem; transition: opacity 0.2s; }
+.proj-live-btn:hover { opacity: 0.7; }
+
+/* Live badges */
+.live { position: absolute; bottom: 0.7rem; left: 0.7rem; font-family: var(--mono); font-size: 0.58rem; background: var(--bg); border: 1px solid var(--line); color: var(--fg-2); padding: 0.22rem 0.5rem; display: flex; align-items: center; gap: 0.35rem; letter-spacing: 0.06em; z-index: 2; border-radius: var(--radius); }
+.live .ld { width: 6px; height: 6px; background: #22c55e; border-radius: 50%; flex-shrink: 0; }
+.live.status { color: var(--fg-2); }
+
+@media (max-width: 900px) {
+  .featured { grid-template-columns: 1fr; }
+  .featured .f-copy { border-right: none; border-bottom: 1px solid var(--line); }
+  .featured .f-visual { order: -1; min-height: 180px; }
+  .elevated { grid-template-columns: 1fr; }
+  .elevated .el-copy { border-right: none; border-bottom: 1px solid var(--line); }
+  .proj-grid { grid-template-columns: 1fr 1fr; }
+}
+@media (max-width: 560px) {
+  .proj-grid { grid-template-columns: 1fr; }
+}
