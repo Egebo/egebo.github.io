@@ -64,20 +64,23 @@
 
 <!-- ============ NAV ============ -->
 <header class="nav" id="nav">
-  <a href="#top" class="brand"><span class="dot"></span>Egemen Bozca</a>
-  <nav class="nav-links" aria-label="Sayfa gezintisi">
-    <a href="#about"><span class="ix">01</span><span data-i18n="nav.about">Hakkımda</span></a>
-    <a href="#skills"><span class="ix">02</span><span data-i18n="nav.skills">Beceriler</span></a>
-    <a href="#work"><span class="ix">03</span><span data-i18n="nav.work">Başarılar</span></a>
-    <a href="#projects"><span class="ix">04</span><span data-i18n="nav.projects">Projeler</span></a>
-    <a href="#path"><span class="ix">05</span><span data-i18n="nav.path">Deneyim</span></a>
+  <a href="#top" class="brand">Egemen Bozca</a>
+  <nav class="nav-links" id="navLinks" aria-label="Page navigation">
+    <a href="#about">About</a>
+    <a href="#skills">Skills</a>
+    <a href="#work">Awards</a>
+    <a href="#projects">Projects</a>
+    <a href="#path">Experience</a>
   </nav>
   <div class="nav-right">
     <div class="lang-toggle" role="group" aria-label="Language">
-      <button data-lang="tr" class="on">TR</button>
-      <button data-lang="en">EN</button>
+      <button data-lang="en" class="on">EN</button>
+      <button data-lang="tr">TR</button>
     </div>
-    <a href="#contact" class="btn btn--primary"><span data-i18n="nav.cta">İletişime geç</span></a>
+    <a href="#contact" class="btn btn--accent" style="font-size:0.8rem;padding:0.45rem 1rem;">Get in touch</a>
+    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
   </div>
 </header>
 

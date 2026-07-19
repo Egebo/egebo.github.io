@@ -96,3 +96,32 @@ body:not(.has-cursor) .cursor { display: none; }
   .reveal { animation: none; opacity: 1; }
   .status-dot, .marquee-track { animation: none; }
 }
+
+/* ============================================================
+   NAV
+   ============================================================ */
+.nav { position: sticky; top: 0; z-index: 100; display: flex; align-items: center; justify-content: space-between; gap: 1.5rem; padding: 0 var(--gutter); height: 60px; background: rgba(250,250,248,0.92); backdrop-filter: blur(12px); border-bottom: 1px solid var(--line); transition: border-color 0.3s; }
+.brand { font-family: var(--sans); font-size: 0.95rem; font-weight: 700; letter-spacing: -0.02em; color: var(--fg); }
+.nav-links { display: flex; gap: 1.8rem; }
+.nav-links a { font-size: 0.85rem; color: var(--fg-2); transition: color 0.15s; font-weight: 500; }
+.nav-links a:hover, .nav-links a.active { color: var(--fg); }
+.nav-right { display: flex; align-items: center; gap: 0.8rem; }
+.lang-toggle { display: flex; border: 1.5px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.lang-toggle button { font-family: var(--mono); font-size: 0.65rem; padding: 0.3rem 0.6rem; color: var(--fg-2); transition: color 0.15s, background 0.15s; letter-spacing: 0.06em; }
+.lang-toggle button.on { background: var(--accent); color: #fff; }
+.lang-toggle button:hover:not(.on) { color: var(--fg); }
+
+/* Hamburger */
+.burger { display: none; flex-direction: column; gap: 5px; padding: 4px; border-radius: var(--radius); }
+.burger span { display: block; width: 22px; height: 2px; background: var(--fg); border-radius: 2px; transition: transform 0.25s var(--ease), opacity 0.2s; }
+.burger[aria-expanded="true"] span:nth-child(1) { transform: translateY(7px) rotate(45deg); }
+.burger[aria-expanded="true"] span:nth-child(2) { opacity: 0; }
+.burger[aria-expanded="true"] span:nth-child(3) { transform: translateY(-7px) rotate(-45deg); }
+
+@media (max-width: 720px) {
+  .nav-links { display: none; flex-direction: column; gap: 0; position: absolute; top: 60px; left: 0; right: 0; background: var(--bg); border-bottom: 1px solid var(--line); padding: 0.5rem 0; z-index: 99; }
+  .nav-links.open { display: flex; }
+  .nav-links a { padding: 0.8rem var(--gutter); font-size: 1rem; border-bottom: 1px solid var(--line); }
+  .nav-links a:last-child { border-bottom: none; }
+  .burger { display: flex; }
+}
