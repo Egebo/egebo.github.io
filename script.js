@@ -36,7 +36,7 @@ if (burger && navLinks) {
 
   /* ---------- i18n ---------- */
   var LANG_KEY = "eb-lang";
-  var lang = localStorage.getItem(LANG_KEY) || "tr";
+  var lang = localStorage.getItem(LANG_KEY) || "en";
   var rotWordCtrl = null;
 
   function applyLang(l) {
