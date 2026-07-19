@@ -195,29 +195,6 @@ if (burger && navLinks) {
     return { setLang: setLang };
   })();
 
-  /* ---------- Manifesto line-by-line reveal ---------- */
-  (function () {
-    var lines = Array.prototype.slice.call(document.querySelectorAll(".mf-line"));
-    var coda = document.querySelector(".mf-coda");
-    if (!lines.length) return;
-    var triggered = false;
-    function trigger() {
-      if (triggered) return;
-      triggered = true;
-      lines.forEach(function (line, i) {
-        setTimeout(function () { line.classList.add("lit"); }, i * 280);
-      });
-      setTimeout(function () { if (coda) coda.classList.add("lit"); }, lines.length * 280 + 200);
-    }
-    if ("IntersectionObserver" in window) {
-      var io = new IntersectionObserver(function (entries) {
-        if (entries[0].isIntersecting) { trigger(); io.disconnect(); }
-      }, { threshold: 0.3 });
-      io.observe(document.querySelector(".mf-lines"));
-    } else {
-      trigger();
-    }
-  })();
 
   /* ==============================================================
      INTERACTIVE EFFECTS (skip if prefers-reduced-motion)
