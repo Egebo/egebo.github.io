@@ -165,3 +165,13 @@ h1 { font-family: var(--sans); font-size: clamp(2.6rem, 6vw, 5rem); font-weight:
 @media (max-width: 480px) {
   .hero-photo { order: -1; }
 }
+
+/* ============================================================
+   MARQUEE
+   ============================================================ */
+.marquee-band { overflow: hidden; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); background: var(--bg-2); padding: 0.8rem 0; }
+.marquee-track { display: flex; width: max-content; animation: marquee 32s linear infinite; }
+@keyframes marquee { from{transform:translateX(0)} to{transform:translateX(-50%)} }
+.marquee-item { display: flex; align-items: center; white-space: nowrap; }
+.marquee-item .ms { font-family: var(--sans); font-size: 0.75rem; font-weight: 500; color: var(--fg-2); padding: 0 1.2rem; }
+.marquee-item .mx { color: var(--accent); font-size: 0.6rem; }
