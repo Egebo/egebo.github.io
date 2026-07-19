@@ -175,3 +175,18 @@ h1 { font-family: var(--sans); font-size: clamp(2.6rem, 6vw, 5rem); font-weight:
 .marquee-item { display: flex; align-items: center; white-space: nowrap; }
 .marquee-item .ms { font-family: var(--sans); font-size: 0.75rem; font-weight: 500; color: var(--fg-2); padding: 0 1.2rem; }
 .marquee-item .mx { color: var(--accent); font-size: 0.6rem; }
+
+/* ============================================================
+   ABOUT
+   ============================================================ */
+.about-grid { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(2rem, 5vw, 4rem); align-items: start; }
+.about-lead { font-size: clamp(1.05rem, 1.8vw, 1.25rem); line-height: 1.72; margin-bottom: 1.4rem; font-weight: 400; }
+.about-lead strong { color: var(--fg); font-weight: 600; }
+.about-body { font-size: 0.97rem; color: var(--fg-2); line-height: 1.75; }
+.meta-list { border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; }
+.meta-row { display: flex; justify-content: space-between; gap: 1rem; padding: 0.9rem 1.2rem; border-bottom: 1px solid var(--line); font-size: 0.82rem; }
+.meta-row:last-child { border-bottom: none; }
+.meta-row .k { color: var(--fg-2); font-weight: 500; flex-shrink: 0; font-size: 0.78rem; }
+.meta-row .v { color: var(--fg); text-align: right; display: flex; flex-direction: column; gap: 0.2rem; font-weight: 500; }
+.meta-row small { color: var(--fg-2); font-size: 0.88em; font-weight: 400; }
+@media (max-width: 720px) { .about-grid { grid-template-columns: 1fr; } }
