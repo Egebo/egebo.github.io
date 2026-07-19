@@ -1,5 +1,5 @@
 /* ============================================================
-   Egemen Bozca — Portfolio · style.css v2
+   Egemen Bozca / Portfolio · style.css v2
    Dark terminal · cyan accent · monospace-first
    ============================================================ */
 
@@ -70,7 +70,7 @@ button { font: inherit; cursor: pointer; border: none; background: none; color: 
 .cursor.hover .c-ring { width: 44px; height: 44px; opacity: 0.9; }
 body:not(.has-cursor) .cursor { display: none; }
 
-/* ---------- Grain overlay — hidden ---------- */
+/* ---------- Grain overlay (hidden) ---------- */
 .grain-overlay { display: none; }
 
 /* ---------- Buttons ---------- */
@@ -204,7 +204,7 @@ h1 .light::after { content: "_"; color: var(--accent); animation: blink 1.1s ste
 .ach-card p { grid-column: 3; grid-row: 1 / 3; font-size: 0.88rem; color: var(--fg-2); line-height: 1.6; padding-top: 0.2rem; }
 
 /* ============================================================
-   PROJECTS — FEATURED
+   PROJECTS: FEATURED
    ============================================================ */
 .featured { display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); margin-bottom: 1.2rem; }
 .f-copy { padding: clamp(2rem, 4vw, 3rem); display: flex; flex-direction: column; justify-content: center; gap: 1rem; border-right: 1px solid var(--line); }
@@ -219,7 +219,7 @@ h1 .light::after { content: "_"; color: var(--accent); animation: blink 1.1s ste
 .f-visual .f-shot { flex: 1; width: auto; height: 100%; aspect-ratio: unset; object-fit: cover; object-position: center 35%; }
 
 /* ============================================================
-   PROJECTS — GRID
+   PROJECTS: GRID
    ============================================================ */
 .proj-grid { display: grid; grid-template-columns: repeat(2, 1fr); gap: 1px; background: var(--line); border: 1px solid var(--line); }
 .proj-card { background: var(--bg); display: flex; flex-direction: column; text-decoration: none; color: inherit; transition: background 0.2s; cursor: pointer; }
@@ -307,7 +307,7 @@ h1 .light::after { content: "_"; color: var(--accent); animation: blink 1.1s ste
 .to-top:hover { color: var(--accent); }
 
 /* ============================================================
-   HERO CHIPS — hidden in new design
+   HERO CHIPS (hidden in new design)
    ============================================================ */
 .chip { display: none; }
 
