@@ -125,3 +125,43 @@ body:not(.has-cursor) .cursor { display: none; }
   .nav-links a:last-child { border-bottom: none; }
   .burger { display: flex; }
 }
+
+/* ============================================================
+   HERO
+   ============================================================ */
+.hero { position: relative; background: var(--bg); padding-block: clamp(5rem, 12vw, 9rem) clamp(2rem, 4vw, 3.5rem); }
+.hero-grid { display: grid; grid-template-columns: 1fr 420px; gap: 4rem; align-items: center; margin-bottom: clamp(3rem, 7vw, 5rem); }
+
+/* Status dot */
+.status-dot { display: inline-block; width: 7px; height: 7px; background: #22c55e; border-radius: 50%; flex-shrink: 0; animation: pulse-dot 2.4s ease-in-out infinite; }
+@keyframes pulse-dot { 0%,100%{opacity:1;transform:scale(1)} 50%{opacity:0.5;transform:scale(0.8)} }
+
+.hero-eyebrow { display: flex; align-items: center; gap: 0.6rem; margin-bottom: 1.4rem; }
+h1 { font-family: var(--sans); font-size: clamp(2.6rem, 6vw, 5rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.05; margin-bottom: 1.4rem; }
+.hero-sub { font-size: clamp(1rem, 1.6vw, 1.12rem); color: var(--fg-2); max-width: 48ch; line-height: 1.7; margin-bottom: 2rem; }
+.hero-cta { display: flex; gap: 0.8rem; flex-wrap: wrap; }
+
+/* Photo */
+.hero-photo { display: flex; flex-direction: column; align-items: flex-end; gap: 0.8rem; }
+.photo-img { width: 100%; max-width: 360px; aspect-ratio: 3/4; object-fit: cover; object-position: center top; border-radius: 0; filter: grayscale(8%); }
+.photo-caption { font-size: 0.62rem; color: var(--fg-2); text-align: right; }
+
+/* Stats */
+.hero-stats { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--line); }
+.stat { padding: 1.6rem 0; padding-right: 1.4rem; padding-left: 1.4rem; border-right: 1px solid var(--line); }
+.stat:last-child { border-right: none; }
+.stat .num { font-family: var(--sans); font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; color: var(--fg); letter-spacing: -0.03em; line-height: 1; margin-bottom: 0.35rem; }
+.stat .num .suf { font-size: 0.55em; color: var(--accent); }
+.stat .lbl { font-size: 0.78rem; color: var(--fg-2); line-height: 1.4; }
+
+@media (max-width: 900px) {
+  .hero-grid { grid-template-columns: 1fr; gap: 2.5rem; }
+  .hero-photo { align-items: center; }
+  .photo-img { max-width: 260px; aspect-ratio: 1/1; object-position: center 15%; }
+  .hero-stats { grid-template-columns: repeat(2, 1fr); }
+  .stat:nth-child(2) { border-right: none; }
+  .stat:nth-child(3) { border-top: 1px solid var(--line); }
+}
+@media (max-width: 480px) {
+  .hero-photo { order: -1; }
+}
