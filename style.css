@@ -273,3 +273,29 @@ h1 .accent { color: var(--accent); }
   .feat-shot { width: 38%; max-width: 170px; }
   .feat-desc { max-width: none; }
 }
+
+/* ============================================================
+   RAG ARCHITECTURE VISUAL
+   ============================================================ */
+.rag-visual {
+  display: flex; flex-direction: column;
+  align-items: center; justify-content: center;
+  gap: 1.5rem; padding: 3rem 2rem;
+  background: var(--bg-3);
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  min-height: 240px;
+}
+.rag-arch { display: flex; align-items: center; gap: 0.75rem; flex-wrap: wrap; justify-content: center; }
+.ra-node {
+  font-family: var(--mono); font-size: 0.62rem; padding: 0.55rem 1rem;
+  border: 1.5px solid var(--line-2); border-radius: var(--radius);
+  background: var(--bg); color: var(--fg-2); letter-spacing: 0.04em;
+}
+.ra-node--accent { border-color: var(--accent); color: var(--accent); background: rgba(var(--accent-rgb), 0.06); }
+.ra-node--in { color: var(--fg); }
+.ra-arr { color: var(--fg-3); font-size: 0.9rem; flex-shrink: 0; }
+.ra-split { display: flex; flex-direction: column; gap: 0.4rem; }
+.rag-caption { font-family: var(--mono); font-size: 0.54rem; color: var(--fg-3); letter-spacing: 0.08em; text-transform: uppercase; }
+.el-badge { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.06em; color: var(--fg-3); text-transform: uppercase; }
+.br-meta { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }

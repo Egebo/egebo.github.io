@@ -157,98 +157,43 @@
     </div>
   </article>
 
-  <!-- ABOUT -->
-  <section class="b-card b-about" id="about">
-    <div class="ba-inner">
-      <span class="b-label mono" data-i18n="about.idx">01 — About</span>
-      <p class="about-lead reveal" data-i18n="about.lead">Ben sadece kod yazan biri değilim; mobil ve web projeler üretirken <strong>asıl ilgim yapay zekâ sistemleri</strong>: LLM entegrasyonlarından RAG mimarilerine kadar.</p>
-      <div class="meta-list reveal" data-d="1">
-        <div class="meta-row">
-          <span class="k" data-i18n="meta.edu.k">Edu</span>
-          <span class="v"><span data-i18n="meta.edu.v">Bilgisayar Müh.</span><small data-i18n="meta.edu.s">Sakarya Üniversitesi</small></span>
-        </div>
-        <div class="meta-row">
-          <span class="k" data-i18n="meta.loc.k">Base</span>
-          <span class="v"><span data-i18n="meta.loc.v">Türkiye</span><small data-i18n="meta.loc.s">Uzaktan çalışmaya açık</small></span>
-        </div>
-        <div class="meta-row">
-          <span class="k" data-i18n="meta.lang.k">Lang</span>
-          <span class="v"><span data-i18n="meta.lang.v">TR (native)</span><small data-i18n="meta.lang.s">EN · ES</small></span>
-        </div>
-        <div class="meta-row">
-          <span class="k" data-i18n="meta.lic.k">Lic.</span>
-          <span class="v"><span data-i18n="meta.lic.v">İHA0 & İHA1</span><small data-i18n="meta.lic.s">Drone pilotu</small></span>
-        </div>
-      </div>
-      <div class="ba-cv reveal" data-d="2">
-        <a href="cv-en.pdf" download class="btn btn--ghost" style="font-size:0.78rem;">CV · EN ↓</a>
-        <a href="cv-tr.pdf" download class="btn btn--ghost" style="font-size:0.78rem;">CV · TR ↓</a>
-      </div>
-    </div>
-  </section>
 
-  <!-- AKADEMIKCHATBOT -->
-  <article class="b-card b-rag proj-card">
-    <div class="br-copy">
-      <div class="br-meta reveal">
-        <span class="tag">Python · RAG</span>
-        <span class="el-badge" data-i18n="proj.status.done">Completed · Graduation Project</span>
+  <!-- AKADEMIKCHATBOT — featured -->
+  <article class="feat-row">
+    <div class="feat-inner wrap">
+      <div class="feat-copy">
+        <div class="br-meta reveal">
+          <span class="f-tag"><span class="status-dot"></span><span data-i18n="proj.1.type">Python · RAG</span></span>
+          <span class="el-badge" data-i18n="proj.status.done">Completed · Graduation Project</span>
+        </div>
+        <h2 class="feat-title reveal" data-d="1" data-i18n="proj.1.name">AkademikChatbot</h2>
+        <p class="feat-desc reveal" data-d="2" data-i18n="proj.1.desc">Education-focused RAG-based academic advisor. An intent-routing engine directs each query to SQL, vector search, or web crawl. Built with GPT-4o-mini, ChromaDB, and LangChain. Technically the most complex project in this portfolio.</p>
+        <div class="feat-tags tags reveal" data-d="2">
+          <span class="tag">GPT-4o-mini</span>
+          <span class="tag">ChromaDB</span>
+          <span class="tag">LangChain</span>
+          <span class="tag">FastAPI</span>
+          <span class="tag">RAG</span>
+        </div>
+        <a href="projects/rag.html" class="btn btn--ghost reveal" data-d="3" style="width:fit-content">Case study <span class="arr">→</span></a>
       </div>
-      <h3 class="reveal" data-d="1" data-i18n="proj.1.name">AkademikChatbot</h3>
-      <p class="reveal" data-d="2" data-i18n="proj.1.desc">Education-focused RAG-based academic advisor. An intent-routing engine directs each query to SQL, vector search, or web crawl. Built with GPT-4o-mini, ChromaDB, and LangChain. Technically the most complex project in this portfolio.</p>
-      <div class="br-stack reveal" data-d="2">
-        <span class="tag">GPT-4o-mini</span><span class="tag">ChromaDB</span><span class="tag">LangChain</span><span class="tag">FastAPI</span><span class="tag">RAG</span>
+      <div class="feat-visual rag-visual">
+        <div class="rag-arch reveal">
+          <div class="ra-node ra-node--in">Query</div>
+          <div class="ra-arr">→</div>
+          <div class="ra-node ra-node--accent">Intent Router</div>
+          <div class="ra-arr">→</div>
+          <div class="ra-split">
+            <div class="ra-node">SQL</div>
+            <div class="ra-node">Vector</div>
+            <div class="ra-node">Web</div>
+          </div>
+        </div>
+        <p class="rag-caption">Intent-routing architecture</p>
       </div>
-      <a href="projects/rag.html" class="btn btn--ghost reveal" data-d="3" style="margin-top:0.5rem;">Case study <span class="arr">→</span></a>
-    </div>
-    <div class="br-visual">
-      <div class="el-arch">
-        <div class="arch-node">Query</div>
-        <div class="arch-arr">→</div>
-        <div class="arch-node arch-node--accent">Intent Router</div>
-        <div class="arch-arr">→</div>
-        <div class="arch-node">SQL / Vector / Web</div>
-      </div>
-      <p class="el-caption">Intent-routing architecture</p>
     </div>
   </article>
 
-  <!-- SKILLS -->
-  <section class="b-card b-skills" id="skills">
-    <div class="bs-inner">
-      <span class="b-label mono" data-i18n="skills.idx">02 — Stack</span>
-      <div class="bs-group reveal">
-        <div class="bs-name" data-i18n="skills.m.title">Mobile</div>
-        <div class="tags">
-          <span class="tag">React Native</span>
-          <span class="tag">Expo</span>
-          <span class="tag">Firebase</span>
-          <span class="tag">Supabase</span>
-          <span class="tag">Flutter</span>
-        </div>
-      </div>
-      <div class="bs-group reveal" data-d="1">
-        <div class="bs-name" data-i18n="skills.ai.title">AI / ML</div>
-        <div class="tags">
-          <span class="tag">Python</span>
-          <span class="tag">LLM</span>
-          <span class="tag">RAG</span>
-          <span class="tag">YOLO v8</span>
-          <span class="tag">LangChain</span>
-          <span class="tag">GPT-4o</span>
-        </div>
-      </div>
-      <div class="bs-group reveal" data-d="2">
-        <div class="bs-name" data-i18n="skills.tools.title">Other</div>
-        <div class="tags">
-          <span class="tag">Git</span>
-          <span class="tag">FastAPI</span>
-          <span class="tag">Blender</span>
-          <span class="tag">3D Modelling</span>
-        </div>
-      </div>
-    </div>
-  </section>
 
   <!-- OPTURA -->
   <article class="b-card b-mini proj-card" onclick="location.href='projects/optura.html'" style="cursor:pointer">
