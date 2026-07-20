@@ -15,6 +15,7 @@ window.I18N = {
     "hero.eyebrow": "Freelance projeler alıyorum",
     "hero.h1a": "Mobil ürünleri",
     "hero.h1c": "yayına taşıyorum.",
+    "hero.h1": "Mobil ürünleri<br><span class=\"accent\">yayına taşıyorum.</span>",
     "hero.sub": "Mobil ve web alanında freelance çalışıyorum; asıl ilgi alanım yapay zekâ sistemleri. React Native ile dört uygulama yayınladım, RAG tabanlı AI danışman sistemi geliştirdim. Otonom drone yazılımıyla dünya birincisi oldum.",
     "hero.cta1": "Projelere bak",
     "hero.cta2": "İletişime geç",
