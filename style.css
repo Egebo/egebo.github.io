@@ -204,3 +204,72 @@ h1 .accent { color: var(--accent); }
 .marquee-item { display: flex; align-items: center; white-space: nowrap; }
 .marquee-item .ms { font-family: var(--sans); font-size: 0.71rem; color: var(--fg-3); padding: 0 1.2rem; letter-spacing: 0.01em; }
 .marquee-item .mx { color: var(--accent); font-size: 0.5rem; opacity: 0.5; }
+
+/* ============================================================
+   PROJECTS HEADING
+   ============================================================ */
+.projects-head {
+  padding: clamp(3.5rem, 7vw, 5.5rem) var(--gutter) clamp(1.5rem, 3vw, 2.5rem);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.ph-title {
+  font-family: var(--display);
+  font-size: clamp(1.8rem, 4vw, 2.8rem);
+  font-weight: 800; letter-spacing: -0.04em; color: var(--fg);
+}
+
+/* ============================================================
+   FEATURED PROJECT ROW
+   ============================================================ */
+.feat-row {
+  padding: clamp(3.5rem, 7vw, 6rem) var(--gutter);
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--line);
+}
+.feat-row + .feat-row { background: var(--bg); }
+
+.feat-inner {
+  display: grid;
+  grid-template-columns: 44fr 56fr;
+  gap: clamp(2.5rem, 5vw, 5rem);
+  align-items: center;
+}
+.feat-copy { display: flex; flex-direction: column; gap: 1.2rem; }
+
+.f-tag {
+  font-family: var(--mono); font-size: 0.62rem; color: var(--accent);
+  letter-spacing: 0.10em; text-transform: uppercase;
+  display: flex; align-items: center; gap: 0.5rem;
+}
+.feat-title {
+  font-family: var(--display);
+  font-size: clamp(2.2rem, 4.5vw, 3.8rem);
+  font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; color: var(--fg);
+}
+.feat-desc {
+  font-size: clamp(0.93rem, 1.3vw, 1.05rem);
+  color: var(--fg-2); line-height: 1.82; max-width: 44ch;
+}
+.feat-tags { display: flex; flex-wrap: wrap; gap: 0.4rem; }
+.feat-cta { display: flex; flex-wrap: wrap; gap: 0.6rem; margin-top: 0.2rem; }
+
+.feat-visual {
+  display: flex; gap: 1rem;
+  justify-content: center; align-items: flex-end;
+}
+.feat-shot {
+  width: 46%; aspect-ratio: 9/19.5;
+  object-fit: cover;
+  border-radius: 16px;
+  border: 1px solid var(--line);
+  box-shadow: 0 8px 40px rgba(0,0,0,0.10);
+}
+.feat-shot--offset { margin-top: 2.5rem; }
+
+@media (max-width: 800px) {
+  .feat-inner { grid-template-columns: 1fr; gap: 2rem; }
+  .feat-visual { order: -1; }
+  .feat-shot { width: 38%; max-width: 170px; }
+  .feat-desc { max-width: none; }
+}
