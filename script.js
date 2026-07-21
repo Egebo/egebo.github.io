@@ -234,11 +234,11 @@ function drawJarvisCanvas(canvas, ctx) {
 }
 
 function drawOpturaCanvas(canvas, ctx) {
-  var scanY = -20;
+  var scanY = -20, dir = 1;
   return function() {
     var W = canvas.offsetWidth, H = canvas.offsetHeight;
     ctx.clearRect(0, 0, W, H);
-    var sy = scanY % (H + 60) - 20;
+    var sy = scanY;
     /* glow trail */
     var grad = ctx.createLinearGradient(0, sy - 24, 0, sy + 24);
     grad.addColorStop(0,   'rgba(212,32,32,0)');
@@ -253,7 +253,10 @@ function drawOpturaCanvas(canvas, ctx) {
     ctx.lineWidth = 1.5;
     ctx.beginPath(); ctx.moveTo(0, sy); ctx.lineTo(W, sy); ctx.stroke();
     ctx.shadowBlur = 0;
-    scanY += 1.4;
+    /* bounce between top and bottom, like a real scanner sweep */
+    scanY += dir * 1.4;
+    if (scanY > H + 20) { scanY = H + 20; dir = -1; }
+    else if (scanY < -20) { scanY = -20; dir = 1; }
   };
 }
 
@@ -277,6 +280,25 @@ function drawSparkle(ctx, x, y, size, alpha) {
   ctx.restore();
 }
 
+function bagBodyPath(ctx, topW, bottomW, top, bottom, r) {
+  var topL = -topW / 2, topR = topW / 2, botL = -bottomW / 2, botR = bottomW / 2;
+  ctx.beginPath();
+  ctx.moveTo(topL, top);
+  ctx.lineTo(topR, top);
+  ctx.lineTo(botR, bottom - r);
+  ctx.arcTo(botR, bottom, botR - r, bottom, r);
+  ctx.lineTo(botL + r, bottom);
+  ctx.arcTo(botL, bottom, botL, bottom - r, r);
+  ctx.closePath();
+}
+
+function drawBagHandle(ctx, xCenter, top, span, loopH) {
+  ctx.beginPath();
+  ctx.moveTo(xCenter - span / 2, top);
+  ctx.bezierCurveTo(xCenter - span / 2, top - loopH, xCenter + span / 2, top - loopH, xCenter + span / 2, top);
+  ctx.stroke();
+}
+
 function drawPocoCanvas(canvas, ctx) {
   var t = 0;
   var sparkles = [];
@@ -288,43 +310,43 @@ function drawPocoCanvas(canvas, ctx) {
     ctx.clearRect(0, 0, W, H);
 
     var cx = W * 0.5, cy = H * 0.56;
-    var bagW = Math.min(W, H) * 0.4;
-    var bagH = bagW * 1.05;
+    var bagW = Math.min(W, H) * 0.32;
+    var bagH = bagW * 1.15;
     var sway = Math.sin(t * 0.015) * 0.05;
 
     ctx.save();
     ctx.translate(cx, cy);
     ctx.rotate(sway);
 
-    var left = -bagW / 2, right = bagW / 2, bodyTop = -bagH / 2 + 14, bottom = bagH / 2;
+    var topW = bagW * 0.72, bottomW = bagW, bodyTop = -bagH / 2, bottom = bagH / 2;
 
-    /* bag body + handles */
+    /* bag body: tapered like a real tote, wider at the base */
     ctx.fillStyle = '#1f1d1a';
     ctx.strokeStyle = 'rgba(212,32,32,0.8)';
     ctx.lineWidth = 1.6;
-    roundRectPath(ctx, left, bodyTop, bagW, bottom - bodyTop, 14);
+    bagBodyPath(ctx, topW, bottomW, bodyTop, bottom, 10);
     ctx.fill(); ctx.stroke();
-    ctx.beginPath(); ctx.arc(left + bagW * 0.28, bodyTop, bagW * 0.16, Math.PI, 0); ctx.stroke();
-    ctx.beginPath(); ctx.arc(left + bagW * 0.72, bodyTop, bagW * 0.16, Math.PI, 0); ctx.stroke();
 
-    /* clasp detail */
-    ctx.strokeStyle = 'rgba(212,32,32,0.4)'; ctx.lineWidth = 1;
-    ctx.beginPath(); ctx.moveTo(-bagW * 0.14, bodyTop + 8); ctx.lineTo(bagW * 0.14, bodyTop + 8); ctx.stroke();
-    ctx.beginPath(); ctx.arc(0, bodyTop + 8, 3, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(212,32,32,0.6)'; ctx.fill();
+    /* handles: arched loops rising above the opening */
+    drawBagHandle(ctx, -topW * 0.24, bodyTop, topW * 0.26, bagH * 0.3);
+    drawBagHandle(ctx, topW * 0.24, bodyTop, topW * 0.26, bagH * 0.3);
+
+    /* top hem fold */
+    ctx.strokeStyle = 'rgba(212,32,32,0.35)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(-topW / 2 + 4, bodyTop + 9); ctx.lineTo(topW / 2 - 4, bodyTop + 9); ctx.stroke();
 
     /* diagonal shine sweep, clipped to the bag body */
     ctx.save();
-    roundRectPath(ctx, left, bodyTop, bagW, bottom - bodyTop, 14);
+    bagBodyPath(ctx, topW, bottomW, bodyTop, bottom, 10);
     ctx.clip();
     var sweep = (t % 220) / 220;
-    var sx = left - bagW * 0.5 + sweep * (bagW * 2);
-    var grad = ctx.createLinearGradient(sx - 26, 0, sx + 26, 0);
+    var sx = -bagW * 0.7 + sweep * (bagW * 1.9);
+    var grad = ctx.createLinearGradient(sx - 24, 0, sx + 24, 0);
     grad.addColorStop(0, 'rgba(255,255,255,0)');
     grad.addColorStop(0.5, 'rgba(255,255,255,0.16)');
     grad.addColorStop(1, 'rgba(255,255,255,0)');
     ctx.fillStyle = grad;
-    ctx.fillRect(left, bodyTop, bagW, bottom - bodyTop);
+    ctx.fillRect(-bagW, bodyTop, bagW * 2, bottom - bodyTop);
     ctx.restore();
 
     ctx.restore();
