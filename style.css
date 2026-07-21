@@ -195,35 +195,35 @@ body:not(.has-cursor) .cursor { display: none; }
 /* ============================================================
    PROJECTS HEAD
    ============================================================ */
-.projects-head { padding: clamp(3rem, 6vw, 5rem) 0 clamp(0.75rem, 1.5vw, 1.25rem); border-top: 1px solid var(--line); scroll-margin-top: 64px; }
+.projects-head { padding: clamp(2rem, 4vw, 3rem) 0 clamp(0.5rem, 1vw, 0.75rem); border-top: 1px solid var(--line); scroll-margin-top: 64px; }
 .ph-title { font-family: var(--display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.04em; }
 
 /* ============================================================
    LOOKED — FAN LAYOUT
    ============================================================ */
 .feat-looked-new { border-bottom: 1px solid var(--line); }
-.feat-looked-inner { display: grid; grid-template-columns: 45% 55%; gap: clamp(3rem, 6vw, 5rem); align-items: center; padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(3rem, 6vw, 5rem); }
-.f-eyebrow { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.10em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.9rem; }
+.feat-looked-inner { display: grid; grid-template-columns: 45% 55%; gap: clamp(2rem, 5vw, 4rem); align-items: center; padding-block: clamp(0.75rem, 1.5vw, 1.25rem) clamp(1.5rem, 3vw, 2.5rem); }
+.f-eyebrow { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.10em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.7rem; }
 .f-eyebrow::before { content: ""; width: 20px; height: 1px; background: var(--accent); }
-.feat-title { font-family: var(--display); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin-bottom: 1rem; }
-.feat-desc { font-size: 1rem; color: var(--fg-2); line-height: 1.6; max-width: 46ch; }
-.feat-meta { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 1.2rem; }
-.feat-cta { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.6rem; }
-.looked-fan { display: flex; flex-direction: column; align-items: center; gap: 1.6rem; }
-.fan-stage { position: relative; width: 280px; height: 395px; flex-shrink: 0; }
-.fan-card { position: absolute; width: 200px; left: 50%; top: 0; border-radius: 16px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.55); transition: transform 0.5s cubic-bezier(0.34,1.15,0.64,1), opacity 0.4s; cursor: pointer; }
+.feat-title { font-family: var(--display); font-size: clamp(2.2rem, 4.5vw, 3.6rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin-bottom: 0.7rem; }
+.feat-desc { font-size: 0.95rem; color: var(--fg-2); line-height: 1.55; max-width: 46ch; }
+.feat-meta { display: flex; flex-wrap: wrap; gap: 0.4rem; margin-top: 0.9rem; }
+.feat-cta { display: flex; gap: 0.6rem; flex-wrap: wrap; margin-top: 1.1rem; }
+.looked-fan { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+.fan-stage { position: relative; width: 230px; height: 325px; flex-shrink: 0; }
+.fan-card { position: absolute; width: 165px; left: 50%; top: 0; border-radius: 14px; overflow: hidden; box-shadow: 0 24px 80px rgba(0,0,0,0.55); transition: transform 0.5s cubic-bezier(0.34,1.15,0.64,1), opacity 0.4s; cursor: pointer; }
 .fan-card img { width: 100%; display: block; }
-.fan-front      { z-index: 3; transform: translateX(-50%) translateY(-10px) rotate(0deg); opacity: 1; }
-.fan-back-right { z-index: 2; transform: translateX(calc(-50% + 52px)) translateY(18px) rotate(10deg); opacity: 0.8; }
-.fan-back-left  { z-index: 1; transform: translateX(calc(-50% - 52px)) translateY(18px) rotate(-10deg); opacity: 0.8; }
+.fan-front      { z-index: 3; transform: translateX(-50%) translateY(-8px) rotate(0deg); opacity: 1; }
+.fan-back-right { z-index: 2; transform: translateX(calc(-50% + 42px)) translateY(14px) rotate(10deg); opacity: 0.8; }
+.fan-back-left  { z-index: 1; transform: translateX(calc(-50% - 42px)) translateY(14px) rotate(-10deg); opacity: 0.8; }
 .fan-tabs { display: flex; gap: 0.4rem; flex-wrap: wrap; justify-content: center; }
 .fan-tab { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.07em; text-transform: uppercase; padding: 0.38rem 0.85rem; border: 1px solid var(--line-2); border-radius: 99px; color: var(--fg-3); background: var(--bg-2); cursor: pointer; transition: background 0.2s, color 0.2s, border-color 0.2s; }
 .fan-tab.active { background: var(--accent); color: #fff; border-color: var(--accent); }
 .fan-tab:not(.active):hover { border-color: var(--line); color: var(--fg); }
 @media (max-width: 780px) {
   .feat-looked-inner { grid-template-columns: 1fr; }
-  .fan-stage { width: 240px; height: 340px; }
-  .fan-card { width: 170px; }
+  .fan-stage { width: 210px; height: 296px; }
+  .fan-card { width: 150px; }
 }
 
 /* ============================================================

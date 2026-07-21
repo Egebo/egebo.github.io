@@ -69,15 +69,26 @@ function initHeroCanvas() {
 
   var nodes = [
     { x: 0.50, y: 0.50, label: 'React Native', t: 0.0 },
-    { x: 0.18, y: 0.22, label: 'Gemini',        t: 1.2 },
-    { x: 0.80, y: 0.18, label: 'Firebase',       t: 0.7 },
-    { x: 0.82, y: 0.70, label: 'ChromaDB',       t: 2.1 },
-    { x: 0.28, y: 0.80, label: 'FastAPI',         t: 1.5 },
-    { x: 0.65, y: 0.42, label: 'Flutter',         t: 0.3 },
-    { x: 0.16, y: 0.60, label: 'Python',          t: 0.9 },
+    { x: 0.18, y: 0.20, label: 'Gemini',        t: 1.2 },
+    { x: 0.80, y: 0.16, label: 'Firebase',       t: 0.7 },
+    { x: 0.86, y: 0.68, label: 'ChromaDB',       t: 2.1 },
+    { x: 0.26, y: 0.82, label: 'FastAPI',        t: 1.5 },
+    { x: 0.66, y: 0.40, label: 'Flutter',        t: 0.3 },
+    { x: 0.14, y: 0.58, label: 'Python',         t: 0.9 },
+    { x: 0.46, y: 0.14, label: 'LangChain',      t: 1.8 },
+    { x: 0.90, y: 0.42, label: 'GPT-4o',         t: 0.5 },
+    { x: 0.34, y: 0.58, label: 'Expo',           t: 2.4 },
   ];
-  var edges = [[0,1],[0,2],[0,5],[1,3],[1,6],[2,5],[3,4],[4,6],[5,3]];
+  var edges = [
+    [0,1],[0,2],[0,5],[1,3],[1,6],[2,5],[3,4],[4,6],[5,3],
+    [0,7],[7,2],[7,1],[5,8],[8,3],[0,9],[9,6],[9,4],[6,4]
+  ];
   var frame = 0;
+
+  /* particles: light pulses traveling along a few edges */
+  var particles = edges.slice(0, 6).map(function(e, i) {
+    return { edge: e, p: (i / 6), speed: 0.0035 + (i % 3) * 0.0008 };
+  });
 
   function draw() {
     var W = canvas.offsetWidth, H = canvas.offsetHeight;
@@ -89,16 +100,36 @@ function initHeroCanvas() {
     edges.forEach(function(e) {
       var a = nodes[e[0]], b = nodes[e[1]];
       ctx.beginPath(); ctx.moveTo(nx(a), ny(a)); ctx.lineTo(nx(b), ny(b));
-      ctx.strokeStyle = 'rgba(212,32,32,0.14)'; ctx.lineWidth = 1; ctx.stroke();
+      ctx.strokeStyle = 'rgba(212,32,32,0.26)'; ctx.lineWidth = 1; ctx.stroke();
     });
+
+    if (!reduced) {
+      particles.forEach(function(pt) {
+        var a = nodes[pt.edge[0]], b = nodes[pt.edge[1]];
+        var ax = nx(a), ay = ny(a), bx = nx(b), by = ny(b);
+        var px = ax + (bx - ax) * pt.p;
+        var py = ay + (by - ay) * pt.p;
+        ctx.shadowColor = 'rgba(212,32,32,0.9)';
+        ctx.shadowBlur = 6;
+        ctx.beginPath(); ctx.arc(px, py, 1.8, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255,90,90,0.95)'; ctx.fill();
+        ctx.shadowBlur = 0;
+        pt.p += pt.speed;
+        if (pt.p > 1) pt.p = 0;
+      });
+    }
 
     nodes.forEach(function(n) {
       var x = nx(n), y = ny(n);
-      ctx.beginPath(); ctx.arc(x, y, 4, 0, Math.PI * 2);
+      var pulse = reduced ? 0 : Math.sin(frame * 0.03 + n.t) * 0.8;
+      ctx.shadowColor = 'rgba(212,32,32,0.5)';
+      ctx.shadowBlur = 5;
+      ctx.beginPath(); ctx.arc(x, y, 4 + pulse, 0, Math.PI * 2);
       ctx.fillStyle = '#1f1d1a'; ctx.fill();
-      ctx.strokeStyle = 'rgba(212,32,32,0.4)'; ctx.lineWidth = 1.5; ctx.stroke();
+      ctx.strokeStyle = 'rgba(212,32,32,0.65)'; ctx.lineWidth = 1.5; ctx.stroke();
+      ctx.shadowBlur = 0;
       ctx.font = '10px "Geist Mono", monospace';
-      ctx.fillStyle = 'rgba(90,88,84,0.9)'; ctx.textAlign = 'center';
+      ctx.fillStyle = 'rgba(154,150,144,0.95)'; ctx.textAlign = 'center';
       ctx.fillText(n.label, x, y + 17);
     });
 
