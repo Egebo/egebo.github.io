@@ -312,7 +312,7 @@ function initLang() {
 
 /* ---------- initContact ---------- */
 function initContact() {
-  emailjs.init('mzmL-J9Z59jECtnhm');
+  if (typeof emailjs !== 'undefined') emailjs.init('mzmL-J9Z59jECtnhm');
 
   /* Email copy */
   var copyBtn = document.getElementById('emailCopy');
