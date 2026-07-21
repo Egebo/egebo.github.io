@@ -32,7 +32,7 @@ window.I18N = {
 
     "about.idx": "01",
     "about.title": "Hakkımda",
-    "about.lead": "Tek bir alanda uzmanlaşmadım açıkçası. Sadece elime geçeni daha iyi yapmayı seviyorum: arayüz olur, AI pipeline'ı olur, kullanıcı akışı olur. Şu an bunu mobil ve AI tarafında yapıyorum. Hedef hep aynı: dokunduğum her proje, başladığından daha iyi bir yerde bitsin.",
+    "about.lead": "Tek bir alanda uzmanlaşmaktansa her alandan biraz bilgi sahibi olmayı tercih ederim. Gerçek hayattaki problemler tek bir alanla sınırlı kalmaz, benim bilgim de kalmıyor. Mobil uygulamalar, AI sistemleri, arayüz tasarımı: aralarında geziniyorum çünkü işler gerçekte böyle çözülüyor. Dar bir uzman problemin tek bir katmanını görür, bense hepsini görür ve daha ileriye taşırım.",
     "about.body": "Sakarya Üniversitesi Bilgisayar Mühendisliği mezunuyum. Mobil ve web alanında freelance çalışıyor, aynı zamanda yapay zekâ sistemleri üzerine projeler üretiyorum. Geçmişte otonom drone yazılımlarıyla uğraştım, Romanya'da dünya birincisi oldum; şimdi odağım AI destekli ürünler ve akıllı sistemler kurmak.",
     "meta.edu.k": "Eğitim",
     "meta.edu.v": "Bilgisayar Mühendisliği",
@@ -196,7 +196,7 @@ window.I18N = {
 
     "about.idx": "01",
     "about.title": "About",
-    "about.lead": "I don't specialize in one thing. I just like making things better: interfaces, AI pipelines, user flows, whatever's in front of me. Right now that's mobile and AI. The goal stays simple: everything I touch should end up working better than it started.",
+    "about.lead": "I'd rather know a bit about everything than everything about one thing. Real-world problems don't stay inside a single field, so my skill set doesn't either. Mobile apps, AI systems, interface design: I move between them because that's how the work actually gets solved. A narrow specialist sees one layer of a problem. I see all of them, and take it further.",
     "about.body": "I recently graduated with a Computer Engineering degree from Sakarya University. I freelance in mobile and web, while building projects around AI systems. I used to work on autonomous drone software and won first place in the world in Romania; now my focus is AI-powered products and intelligent systems.",
     "meta.edu.k": "Education",
     "meta.edu.v": "Computer Engineering",
