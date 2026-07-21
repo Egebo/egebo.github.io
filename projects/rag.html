@@ -37,7 +37,14 @@
 .cs-arch-step .step-num { font-family:var(--mono); font-size:0.62rem; color:var(--accent); margin-bottom:0.5rem; }
 .cs-arch-step h4 { font-size:0.88rem; font-weight:600; margin-bottom:0.3rem; }
 .cs-arch-step p { font-size:0.78rem; color:var(--fg-2); line-height:1.4; }
-@media (max-width:700px) { .cs-features { grid-template-columns:1fr; } .cs-arch { grid-template-columns:1fr; } }
+.cs-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.4rem; }
+.cs-stat { background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius); padding:1.4rem; text-align:center; }
+.cs-stat .num { font-family:var(--display); font-size:1.8rem; font-weight:800; color:var(--accent); letter-spacing:-0.02em; }
+.cs-stat .lbl { font-size:0.78rem; color:var(--fg-2); margin-top:0.3rem; }
+.cs-prose { font-size:0.95rem; color:var(--fg-2); line-height:1.65; max-width:68ch; }
+.cs-callout { background:rgba(212,32,32,0.06); border:1px solid rgba(212,32,32,0.2); border-radius:var(--radius); padding:1.2rem 1.4rem; font-size:0.88rem; color:var(--fg-2); line-height:1.55; margin-top:1rem; }
+.cs-callout strong { color:var(--fg); }
+@media (max-width:700px) { .cs-features { grid-template-columns:1fr; } .cs-arch { grid-template-columns:1fr; } .cs-stats { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -108,7 +115,7 @@
     <div class="cs-arch-step">
       <div class="step-num">04</div>
       <h4>Web Crawler</h4>
-      <p data-i18n="rag.arch.4.desc">Güncel bilgi için üniversite web sitesini tarayan modül.</p>
+      <p data-i18n="rag.arch.4.desc">Güncel bilgi için istenilen web sitesini tarayan modül.</p>
     </div>
     <div class="cs-arch-step">
       <div class="step-num">05</div>
@@ -142,6 +149,40 @@
       <h3 data-i18n="rag.feat.4.title">Dürüst Sınırlar</h3>
       <p data-i18n="rag.feat.4.desc">Bilmediği soruyu "bilmiyorum" diyerek geçiştirir; hallüsinasyon riskini minimize eden retrieval-first tasarım.</p>
     </div>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <p class="cs-section-label" data-i18n="label.tech-decisions">Teknik Kararlar</p>
+  <div class="cs-features">
+    <div class="cs-feat">
+      <h3 data-i18n="rag.tech.1.title">Native Function Calling</h3>
+      <p data-i18n="rag.tech.1.desc">Orkestratör, LLM'e serbest metin/JSON yazdırıp regex ile ayrıştırmak yerine OpenAI/Gemini'nin gerçek <code>bind_tools</code>/<code>tool_calls</code> mekanizmasını kullanacak şekilde yeniden yazıldı; daha güvenilir ve daha az kırılgan bir araç çağırma katmanı.</p>
+    </div>
+    <div class="cs-feat">
+      <h3 data-i18n="rag.tech.2.title">Kalıcı Konuşmalar</h3>
+      <p data-i18n="rag.tech.2.desc">Konuşma geçmişi <code>conversations.db</code>'de tutuluyor, sunucu yeniden başlatıldığında kaybolmuyor; session tabanlı bir login akışı eklendi.</p>
+    </div>
+    <div class="cs-feat">
+      <h3 data-i18n="rag.tech.3.title">Belge Kapsamı</h3>
+      <p data-i18n="rag.tech.3.desc">Her belge sohbete özel ya da global olarak işaretlenebiliyor; başta her belge her sohbete görünürken artık ayrı bir "Yüklü Dosyalar" ekranından kapsam yönetiliyor.</p>
+    </div>
+    <div class="cs-feat">
+      <h3 data-i18n="rag.tech.4.title">RAGAS Değerlendirme Hattı</h3>
+      <p data-i18n="rag.tech.4.desc">Mevcut pytest paketinden ayrı, opt-in bir <code>eval/</code> betiği; cevap kalitesini faithfulness, answer relevancy ve context precision/recall metrikleriyle ölçüyor.</p>
+    </div>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <p class="cs-section-label" data-i18n="label.results">Sonuçlar</p>
+  <div class="cs-stats">
+    <div class="cs-stat"><div class="num">~92</div><div class="lbl" data-i18n="rag.stat.1">geçen pytest testi</div></div>
+    <div class="cs-stat"><div class="num">5/5</div><div class="lbl" data-i18n="rag.stat.2">Text-SQL doğruluğu</div></div>
+    <div class="cs-stat"><div class="num">4/5</div><div class="lbl" data-i18n="rag.stat.3">RAG doğruluğu</div></div>
+  </div>
+  <div class="cs-callout">
+    <strong data-i18n="rag.limit.title">Bilinen sınırlama:</strong> <span data-i18n="rag.limit.desc">RAGAS değerlendirmesi gerçek API'ye karşı çalıştırıldı. Text-SQL sorguları 5/5 mükemmel skor aldı; RAG tarafında "bu belgenin 12. bölümü ne anlatıyor?" gibi yapısal/sıralı sorularda retrieval yanlış chunk getirdi (context recall 0.0) — saf semantik (embedding) aramanın "kaçıncı bölüm" tipi sorularda zayıf kaldığını gösteren somut bir bulgu.</span>
   </div>
 
   <div class="cs-divider"></div>

@@ -35,7 +35,12 @@
 .cs-shots img { width:100%; aspect-ratio:9/19; object-fit:cover; object-position:top center; border-radius:var(--radius); border:1px solid var(--line); }
 .cs-status { display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--mono); font-size:0.62rem; background:rgba(54,179,126,0.12); color:#36b37e; border:1px solid rgba(54,179,126,0.3); border-radius:99px; padding:0.26rem 0.6rem; letter-spacing:0.06em; }
 .cs-status::before { content:""; width:5px; height:5px; border-radius:50%; background:#36b37e; }
-@media (max-width:700px) { .cs-features { grid-template-columns:1fr; } .cs-shots { grid-template-columns:repeat(2,1fr); } }
+.cs-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.4rem; }
+.cs-stat { background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius); padding:1.4rem; text-align:center; }
+.cs-stat .num { font-family:var(--display); font-size:1.8rem; font-weight:800; color:var(--accent); letter-spacing:-0.02em; }
+.cs-stat .lbl { font-size:0.78rem; color:var(--fg-2); margin-top:0.3rem; }
+.cs-prose { font-size:0.95rem; color:var(--fg-2); line-height:1.65; max-width:68ch; }
+@media (max-width:700px) { .cs-features { grid-template-columns:1fr; } .cs-shots { grid-template-columns:repeat(2,1fr); } .cs-stats { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -76,6 +81,11 @@
 </div>
 
 <section class="section wrap">
+  <p class="cs-section-label" data-i18n="looked.why.label">Neden Looked</p>
+  <p class="cs-prose" data-i18n="looked.why">Gardırop uygulamalarının çoğu düzenlemeye odaklanıyor: fotoğrafını çek, kategorile, arşivle. Ama asıl soru "bunu giysem mi?" sorusuna hiçbiri cevap vermiyor. Looked'ın merkezinde bu var — kombini yükle, AI 0-100 arası somut bir stil puanı ve gerekçeli geri bildirim versin. Puanlama mekaniği aynı zamanda paylaşılabilir olacak şekilde tasarlandı; bir kişilik testi gibi organik olarak yayılma potansiyeli taşıyor.</p>
+
+  <div class="cs-divider"></div>
+
   <p class="cs-section-label" data-i18n="label.features">Özellikler</p>
   <div class="cs-features">
     <div class="cs-feat">
@@ -110,6 +120,29 @@
     <span class="tag">Google Sign-In</span>
     <span class="tag">EAS Build</span>
     <span class="tag">i18next</span>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <p class="cs-section-label" data-i18n="label.tech-decisions">Teknik Kararlar</p>
+  <div class="cs-features">
+    <div class="cs-feat">
+      <h3 data-i18n="looked.tech.1.title">Firestore Güvenlik Kuralları</h3>
+      <p data-i18n="looked.tech.1.desc">Güvenlik kuralları en baştan düşünülerek yazıldı: client tarafı bir kullanıcının kendini admin olarak işaretlemesi gibi yetki yükseltme senaryoları veri katmanında engellendi.</p>
+    </div>
+    <div class="cs-feat">
+      <h3 data-i18n="looked.tech.2.title">Gerçek Ürün Gibi Yönetim</h3>
+      <p data-i18n="looked.tech.2.desc">Yatırımcı dosyası ve düzenli versiyon raporlarıyla, tek kişilik bir yan proje değil gerçek bir ticari ürün disipliniyle geliştiriliyor.</p>
+    </div>
+  </div>
+
+  <div class="cs-divider"></div>
+
+  <p class="cs-section-label" data-i18n="label.numbers">Rakamlar</p>
+  <div class="cs-stats">
+    <div class="cs-stat"><div class="num">~23K</div><div class="lbl" data-i18n="looked.stat.1">satır kod</div></div>
+    <div class="cs-stat"><div class="num">150+</div><div class="lbl" data-i18n="looked.stat.2">commit</div></div>
+    <div class="cs-stat"><div class="num">2</div><div class="lbl" data-i18n="looked.stat.3">mağazada yayında</div></div>
   </div>
 
   <div class="cs-divider"></div>

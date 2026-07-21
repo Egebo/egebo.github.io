@@ -32,7 +32,12 @@
 .cs-status-live::before { content:""; width:5px; height:5px; border-radius:50%; background:#36b37e; }
 .cs-logo-hero { display:flex; align-items:center; justify-content:center; background:var(--bg-2); border-radius:var(--radius); padding:4rem 2rem; margin:2rem 0; border:1px solid var(--line); }
 .cs-logo-hero img { width:clamp(160px,28vw,320px); object-fit:contain; }
-@media (max-width:700px) { .cs-features { grid-template-columns:1fr; } }
+.cs-stats { display:grid; grid-template-columns:repeat(3,1fr); gap:1rem; margin-top:1.4rem; }
+.cs-stat { background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius); padding:1.4rem; text-align:center; }
+.cs-stat .num { font-family:var(--display); font-size:1.8rem; font-weight:800; color:var(--accent); letter-spacing:-0.02em; }
+.cs-stat .lbl { font-size:0.78rem; color:var(--fg-2); margin-top:0.3rem; }
+.cs-prose { font-size:0.95rem; color:var(--fg-2); line-height:1.65; max-width:68ch; }
+@media (max-width:700px) { .cs-features { grid-template-columns:1fr; } .cs-stats { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -72,6 +77,20 @@
 </div>
 
 <section class="section wrap">
+  <p class="cs-section-label" data-i18n="poco.why.label">Neden Bu Proje</p>
+  <p class="cs-prose" data-i18n="poco.why">Butik bir çanta markası için sıfırdan kurulan bir e-ticaret sitesi; hazır bir altyapı (Shopify, Ticimax) değil, müşterinin ihtiyacına özel geliştirilen bir sistem. Gerçek para akışı olduğu için ödeme ve sipariş mantığının güvenilir olması kritikti: sunucu taraflı doğrulama, geri bildirim (callback) akışları ve indirim kodu kontrolleri hiçbir noktada istemciye güvenmeyecek şekilde kuruldu.</p>
+
+  <div class="cs-divider"></div>
+
+  <p class="cs-section-label" data-i18n="label.numbers">Rakamlar</p>
+  <div class="cs-stats">
+    <div class="cs-stat"><div class="num">~6</div><div class="lbl" data-i18n="poco.stat.1">haftalık geliştirme</div></div>
+    <div class="cs-stat"><div class="num">240+</div><div class="lbl" data-i18n="poco.stat.2">commit</div></div>
+    <div class="cs-stat"><div class="num">4</div><div class="lbl" data-i18n="poco.stat.3">edge function</div></div>
+  </div>
+
+  <div class="cs-divider"></div>
+
   <p class="cs-section-label" data-i18n="label.features">Özellikler</p>
   <div class="cs-features">
     <div class="cs-feat">
@@ -101,8 +120,8 @@
       <p data-i18n="poco.arch.1.desc"><code>create-order</code>, <code>iyzico-callback</code>, <code>send-order-notification</code>, <code>notify-contact</code> gibi sunucu taraflı fonksiyonlarla ödeme ve bildirim mantığı istemciden ayrıştırıldı.</p>
     </div>
     <div class="cs-feat">
-      <h3 data-i18n="poco.arch.2.title">Aktif Geliştirme</h3>
-      <p data-i18n="poco.arch.2.desc">~6 haftalık düzenli geliştirme sürecinde 240'ın üzerinde commit; gerçek müşteri siparişleriyle canlıda çalışıyor.</p>
+      <h3 data-i18n="poco.arch.2.title">Sunucu Taraflı Doğrulama</h3>
+      <p data-i18n="poco.arch.2.desc">Sipariş tutarı ve indirim kodu geçerliliği ödeme adımında sunucuda yeniden hesaplanır; istemciden gelen fiyata hiçbir noktada güvenilmez.</p>
     </div>
   </div>
 

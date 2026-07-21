@@ -40,6 +40,7 @@
 .cs-flow-step h4 { font-size:0.84rem; font-weight:600; margin-bottom:0.25rem; }
 .cs-flow-step p { font-size:0.75rem; color:var(--fg-2); line-height:1.35; }
 .cs-flow-arrow { display:flex; align-items:center; justify-content:center; color:var(--accent); font-size:1.2rem; padding-top:1.5rem; }
+.cs-prose { font-size:0.95rem; color:var(--fg-2); line-height:1.65; max-width:68ch; }
 @media (max-width:700px) { .cs-features { grid-template-columns:1fr; } .cs-flow { grid-template-columns:1fr; } .cs-flow-arrow { transform:rotate(90deg); } }
 </style>
 </head>
@@ -76,6 +77,11 @@
 </section>
 
 <section class="section wrap">
+  <p class="cs-section-label" data-i18n="jarvis.why.label">Farklılaşma</p>
+  <p class="cs-prose" data-i18n="jarvis.why">Açık kaynak sesli asistan projeleri genelde tek platforma odaklanıyor: ya sadece masaüstü ya sadece mobil. Jarvis'te aynı FastAPI backend, WebSocket üzerinden hem Windows istemcisine hem React Native mobil uca hizmet veriyor — bu kombinasyon nadir görülüyor. Hobi/portfolyo projesi olduğu için önceliği büyüme değil, bulanık uyandırma eşleştirmesi ve follow-up modu gibi teknik detayların doğru çözülmesiydi.</p>
+
+  <div class="cs-divider"></div>
+
   <p class="cs-section-label" data-i18n="label.how">Nasıl Çalışır</p>
   <div class="cs-flow">
     <div class="cs-flow-step">
