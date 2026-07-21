@@ -364,7 +364,7 @@ body:not(.has-cursor) .cursor { display: none; }
 .s-handle { font-family: var(--mono); font-size: 0.65rem; color: var(--fg-3); display: block; }
 .s-arr { color: var(--fg-3); font-size: 0.9rem; transition: transform 0.2s; }
 .social:hover .s-arr { transform: translate(2px, -2px); color: var(--accent); }
-.contact-form-col { }
+.contact-form-col { align-self: center; }
 .form { display: flex; flex-direction: column; gap: 0.75rem; }
 .form-fields { display: flex; flex-direction: column; gap: 0.75rem; }
 .field { display: flex; flex-direction: column; gap: 0.3rem; }
