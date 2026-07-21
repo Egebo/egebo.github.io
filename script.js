@@ -67,26 +67,27 @@ function initHeroCanvas() {
   resize();
   window.addEventListener('resize', resize);
 
+  /* center hub + 9 outer nodes evenly spaced on a circle, for a symmetric wheel layout */
   var nodes = [
-    { x: 0.50, y: 0.50, label: 'React Native', t: 0.0 },
-    { x: 0.18, y: 0.20, label: 'Gemini',        t: 1.2 },
-    { x: 0.80, y: 0.16, label: 'Firebase',       t: 0.7 },
-    { x: 0.86, y: 0.68, label: 'ChromaDB',       t: 2.1 },
-    { x: 0.26, y: 0.82, label: 'FastAPI',        t: 1.5 },
-    { x: 0.66, y: 0.40, label: 'Flutter',        t: 0.3 },
-    { x: 0.14, y: 0.58, label: 'Python',         t: 0.9 },
-    { x: 0.46, y: 0.14, label: 'LangChain',      t: 1.8 },
-    { x: 0.90, y: 0.42, label: 'GPT-4o',         t: 0.5 },
-    { x: 0.34, y: 0.58, label: 'Expo',           t: 2.4 },
+    { x: 0.500, y: 0.500, label: 'React Native', t: 0.0 },
+    { x: 0.500, y: 0.140, label: 'LangChain',     t: 1.2 },
+    { x: 0.731, y: 0.224, label: 'Gemini',        t: 0.7 },
+    { x: 0.855, y: 0.437, label: 'Firebase',      t: 2.1 },
+    { x: 0.812, y: 0.680, label: 'GPT-4o',        t: 1.5 },
+    { x: 0.623, y: 0.838, label: 'ChromaDB',      t: 0.3 },
+    { x: 0.377, y: 0.838, label: 'FastAPI',       t: 0.9 },
+    { x: 0.188, y: 0.680, label: 'Flutter',       t: 1.8 },
+    { x: 0.145, y: 0.437, label: 'Python',        t: 0.5 },
+    { x: 0.269, y: 0.224, label: 'Expo',          t: 2.4 },
   ];
   var edges = [
-    [0,1],[0,2],[0,5],[1,3],[1,6],[2,5],[3,4],[4,6],[5,3],
-    [0,7],[7,2],[7,1],[5,8],[8,3],[0,9],[9,6],[9,4],[6,4]
+    [0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9],
+    [1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,1]
   ];
   var frame = 0;
 
-  /* particles: light pulses traveling along a few edges */
-  var particles = edges.slice(0, 6).map(function(e, i) {
+  /* particles: light pulses traveling along a few spokes */
+  var particles = [[0,1],[0,3],[0,5],[0,7],[0,2],[0,6]].map(function(e, i) {
     return { edge: e, p: (i / 6), speed: 0.0035 + (i % 3) * 0.0008 };
   });
 
