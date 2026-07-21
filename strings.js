@@ -90,7 +90,7 @@ window.I18N = {
     "proj.status.done": "Tamamlandı · Bitirme Projesi",
     "rag.tip.0": "Sorgu türüne göre SQL, RAG veya web taramasına yönlendirir",
     "rag.tip.1": "PDF → ChromaDB embedding → semantik arama",
-    "rag.tip.2": "Güncel bilgi için üniversite sitesini tarar",
+    "rag.tip.2": "Güncel bilgi için istenilen siteyi tarar",
     "rag.tip.3": "Konuşma bağlamını sorgular arasında korur",
     "rag.tip.4": "Her konuşma için token kullanımını takip eder",
 
@@ -264,7 +264,7 @@ window.I18N = {
     "proj.status.done": "Completed · Graduation Project",
     "rag.tip.0": "Routes to SQL, RAG, or web based on query type",
     "rag.tip.1": "PDF → ChromaDB embeddings → semantic search",
-    "rag.tip.2": "Crawls university site for up-to-date info",
+    "rag.tip.2": "Crawls the requested site for up-to-date info",
     "rag.tip.3": "Preserves context across turns",
     "rag.tip.4": "Tracks token usage per conversation",
 
