@@ -32,7 +32,7 @@ window.I18N = {
 
     "about.idx": "01",
     "about.title": "Hakkımda",
-    "about.lead": "Bir alanın uzmanı değilim. Benim olayım akla geleni daha iyi hale getirmek: arayüzler, AI pipeline'ları, kullanıcı akışları fark etmez. Şu an mobil ve AI tarafında üretiyorum ancak asıl hedef basit: dokunduğum her proje, öncekinden daha iyi çalışmalı.",
+    "about.lead": "Bir alanın uzmanı değilim. Benim olayım akla geleni daha iyi hale getirmek: arayüzler, AI pipeline'ları, kullanıcı akışları fark etmez. Şu an mobil ve AI tarafında üretiyorum ancak asıl hedef basit: dokunduğum her proje, önceki halinden daha iyi çalışmalı.",
     "about.body": "Sakarya Üniversitesi Bilgisayar Mühendisliği mezunuyum. Mobil ve web alanında freelance çalışıyor, aynı zamanda yapay zekâ sistemleri üzerine projeler üretiyorum. Geçmişte otonom drone yazılımlarıyla uğraştım, Romanya'da dünya birincisi oldum; şimdi odağım AI destekli ürünler ve akıllı sistemler kurmak.",
     "meta.edu.k": "Eğitim",
     "meta.edu.v": "Bilgisayar Mühendisliği",
@@ -196,7 +196,7 @@ window.I18N = {
 
     "about.idx": "01",
     "about.title": "About",
-    "about.lead": "I'm not a specialist. I'm obsessed with making things better — interfaces, AI pipelines, user flows. Mobile and AI are where I build right now. But the real goal is simpler: whatever I touch should work better than it did before.",
+    "about.lead": "I'm not a specialist. I'm obsessed with making things better: interfaces, AI pipelines, user flows. Mobile and AI are where I build right now. But the real goal is simpler: whatever I touch should work better than it did before.",
     "about.body": "I recently graduated with a Computer Engineering degree from Sakarya University. I freelance in mobile and web, while building projects around AI systems. I used to work on autonomous drone software and won first place in the world in Romania; now my focus is AI-powered products and intelligent systems.",
     "meta.edu.k": "Education",
     "meta.edu.v": "Computer Engineering",
