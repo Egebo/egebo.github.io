@@ -415,9 +415,35 @@ function initLookedScroll() {
   }, { passive: true });
 }
 
+function initRagDiagram() {
+  var nodes = document.querySelectorAll('.rag-node-g');
+  var lines = document.querySelectorAll('.rag-spoke-line');
+  var tooltip = document.getElementById('rag-tooltip');
+  if (!nodes.length) return;
+
+  nodes.forEach(function(node) {
+    var idx = parseInt(node.dataset.idx, 10);
+    var tip = node.dataset.tip || '';
+
+    node.addEventListener('mouseenter', function() {
+      node.classList.add('active');
+      if (lines[idx]) lines[idx].classList.add('active');
+      if (tooltip) { tooltip.textContent = tip; tooltip.classList.add('visible'); }
+    });
+    node.addEventListener('mouseleave', function() {
+      node.classList.remove('active');
+      if (lines[idx]) lines[idx].classList.remove('active');
+      if (tooltip) tooltip.classList.remove('visible');
+    });
+    node.addEventListener('focus', function() { node.dispatchEvent(new Event('mouseenter')); });
+    node.addEventListener('blur', function() { node.dispatchEvent(new Event('mouseleave')); });
+  });
+}
+
 /* ---------- Nav v8 init ---------- */
 initScrollProgress();
 initNav();
 initHeroCanvas();
 initCursor();
 initLookedScroll();
+initRagDiagram();

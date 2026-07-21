@@ -187,6 +187,73 @@
 
 </div>
 
+<!-- AKADEMIKCHATBOT — SVG DIAGRAM -->
+<article class="feat-rag">
+  <div class="wrap">
+
+    <div class="feat-rag-copy">
+      <p class="f-eyebrow"><span data-i18n="proj.1.type">Python · RAG</span></p>
+      <h2 class="feat-title" data-i18n="proj.1.name">AkademikChatbot</h2>
+      <p class="feat-desc" data-i18n="proj.1.desc">Education-focused RAG-based academic advisor. An intent-routing engine directs each query to SQL, vector search, or web crawl. Technically the most complex project in this portfolio.</p>
+      <span class="rag-badge" data-i18n="proj.status.done">Completed · Graduation Project</span>
+      <div class="feat-cta" style="margin-top:1.8rem">
+        <a href="https://github.com/Egebo/AkademikChatbot" target="_blank" rel="noopener" class="btn btn--accent" data-i18n="proj.1.cta">GitHub <span class="arr">→</span></a>
+        <a href="projects/rag.html" class="btn btn--ghost" data-i18n="proj.cs">Case study <span class="arr">→</span></a>
+      </div>
+    </div>
+
+    <div class="rag-diagram-wrap" aria-label="AkademikChatbot architecture diagram">
+      <svg class="rag-diagram" viewBox="0 0 400 320" fill="none" xmlns="http://www.w3.org/2000/svg">
+
+        <!-- Animated dashed ring around center -->
+        <circle class="rag-ring-anim" cx="200" cy="160" r="52" stroke-dasharray="6 4"/>
+
+        <!-- Spoke lines (one per node, data-node matches node index) -->
+        <line class="rag-spoke-line" data-node="0" x1="200" y1="160" x2="200" y2="65"/>
+        <line class="rag-spoke-line" data-node="1" x1="200" y1="160" x2="290" y2="125"/>
+        <line class="rag-spoke-line" data-node="2" x1="200" y1="160" x2="257" y2="238"/>
+        <line class="rag-spoke-line" data-node="3" x1="200" y1="160" x2="143" y2="238"/>
+        <line class="rag-spoke-line" data-node="4" x1="200" y1="160" x2="110" y2="125"/>
+
+        <!-- Center hub: Intent Router -->
+        <circle class="rag-center-node" cx="200" cy="160" r="32"/>
+        <text class="rag-center-label" x="200" y="157">Intent</text>
+        <text class="rag-center-label" x="200" y="170">Router</text>
+
+        <!-- Spoke nodes -->
+        <g class="rag-node-g" data-idx="0" data-tip="Routes to SQL, RAG, or web based on query type">
+          <circle class="rag-node-circle" cx="200" cy="65" r="22"/>
+          <text class="rag-node-label" x="200" y="62">Text</text>
+          <text class="rag-node-label" x="200" y="73">SQL</text>
+        </g>
+        <g class="rag-node-g" data-idx="1" data-tip="PDF → ChromaDB embeddings → semantic search">
+          <circle class="rag-node-circle" cx="290" cy="125" r="22"/>
+          <text class="rag-node-label" x="290" y="122">Doc</text>
+          <text class="rag-node-label" x="290" y="133">RAG</text>
+        </g>
+        <g class="rag-node-g" data-idx="2" data-tip="Crawls university site for up-to-date info">
+          <circle class="rag-node-circle" cx="257" cy="238" r="22"/>
+          <text class="rag-node-label" x="257" y="235">Web</text>
+          <text class="rag-node-label" x="257" y="246">Crawler</text>
+        </g>
+        <g class="rag-node-g" data-idx="3" data-tip="Preserves context across turns">
+          <circle class="rag-node-circle" cx="143" cy="238" r="22"/>
+          <text class="rag-node-label" x="143" y="235">Multi</text>
+          <text class="rag-node-label" x="143" y="246">Turn</text>
+        </g>
+        <g class="rag-node-g" data-idx="4" data-tip="Tracks token usage per conversation">
+          <circle class="rag-node-circle" cx="110" cy="125" r="22"/>
+          <text class="rag-node-label" x="110" y="122">Token</text>
+          <text class="rag-node-label" x="110" y="133">Track</text>
+        </g>
+
+      </svg>
+      <div id="rag-tooltip" class="rag-tooltip" aria-live="polite"></div>
+    </div>
+
+  </div>
+</article>
+
 <!-- ============ BENTO GRID ============ -->
 <main id="top">
 
