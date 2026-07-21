@@ -237,83 +237,98 @@ function drawOpturaCanvas(canvas, ctx) {
   };
 }
 
-function roundRectPath(ctx, x, y, w, h, r) {
+function bezierPoint(t, p0, p1, p2, p3) {
+  var mt = 1 - t;
+  return {
+    x: mt * mt * mt * p0.x + 3 * mt * mt * t * p1.x + 3 * mt * t * t * p2.x + t * t * t * p3.x,
+    y: mt * mt * mt * p0.y + 3 * mt * mt * t * p1.y + 3 * mt * t * t * p2.y + t * t * t * p3.y,
+  };
+}
+
+function drawBoxIcon(ctx, x, y, s) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.fillStyle = '#1f1d1a';
+  ctx.strokeStyle = 'rgba(212,32,32,0.8)';
+  ctx.lineWidth = 1.4;
+  ctx.beginPath(); ctx.rect(-s / 2, -s / 2, s, s); ctx.fill(); ctx.stroke();
   ctx.beginPath();
-  ctx.moveTo(x + r, y);
-  ctx.arcTo(x + w, y, x + w, y + h, r);
-  ctx.arcTo(x + w, y + h, x, y + h, r);
-  ctx.arcTo(x, y + h, x, y, r);
-  ctx.arcTo(x, y, x + w, y, r);
-  ctx.closePath();
+  ctx.moveTo(-s / 2, -s / 2); ctx.lineTo(0, -s / 2 - s * 0.3); ctx.lineTo(s / 2, -s / 2);
+  ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(0, -s / 2 - s * 0.3); ctx.lineTo(0, s / 2); ctx.stroke();
+  ctx.restore();
+}
+
+function drawHouseIcon(ctx, x, y, s) {
+  ctx.save();
+  ctx.translate(x, y);
+  ctx.fillStyle = '#1f1d1a';
+  ctx.strokeStyle = 'rgba(212,32,32,0.8)';
+  ctx.lineWidth = 1.4;
+  ctx.beginPath(); ctx.rect(-s / 2, -s * 0.1, s, s * 0.6); ctx.fill(); ctx.stroke();
+  ctx.beginPath();
+  ctx.moveTo(-s * 0.65, -s * 0.1); ctx.lineTo(0, -s * 0.6); ctx.lineTo(s * 0.65, -s * 0.1); ctx.closePath();
+  ctx.fill(); ctx.stroke();
+  ctx.restore();
 }
 
 function drawPocoCanvas(canvas, ctx) {
-  var t = 0;
-  var particles = [];
-  for (var i = 0; i < 7; i++) {
-    particles.push({ x: Math.random(), y: Math.random(), speed: 0.15 + Math.random() * 0.25, size: 1 + Math.random() * 1.4, phase: Math.random() * Math.PI * 2 });
-  }
+  var t = 0, hold = 0;
   return function() {
     var W = canvas.offsetWidth, H = canvas.offsetHeight;
     ctx.clearRect(0, 0, W, H);
 
-    var cx = W * 0.5, cy = H * 0.56;
-    var bagW = Math.min(W, H) * 0.36;
-    var bagH = bagW * 1.05;
-    var top  = cy - bagH / 2, bottom = cy + bagH / 2;
-    var left = cx - bagW / 2, right  = cx + bagW / 2;
-    var bodyTop = top + 12;
+    var p0 = { x: W * 0.14, y: H * 0.64 };
+    var p1 = { x: W * 0.40, y: H * 0.86 };
+    var p2 = { x: W * 0.62, y: H * 0.14 };
+    var p3 = { x: W * 0.86, y: H * 0.38 };
 
-    /* rising fill level inside the bag */
-    var fill  = Math.sin(t * 0.018) * 0.5 + 0.5;
-    var fillY = bottom - (bagH - 12) * fill;
-
-    ctx.save();
-    roundRectPath(ctx, left, bodyTop, bagW, bottom - bodyTop, 10);
-    ctx.clip();
-    var grad = ctx.createLinearGradient(0, bottom, 0, bodyTop);
-    grad.addColorStop(0, 'rgba(212,32,32,0.5)');
-    grad.addColorStop(1, 'rgba(212,32,32,0.04)');
-    ctx.fillStyle = grad;
-    ctx.fillRect(left, fillY, bagW, bottom - fillY);
-    ctx.restore();
-
-    /* bag outline + handles */
-    ctx.strokeStyle = 'rgba(212,32,32,0.75)';
-    ctx.lineWidth = 1.5;
-    roundRectPath(ctx, left, bodyTop, bagW, bottom - bodyTop, 10);
+    /* faint full route */
+    ctx.setLineDash([4, 5]);
+    ctx.strokeStyle = 'rgba(212,32,32,0.22)';
+    ctx.lineWidth = 1.2;
+    ctx.beginPath();
+    ctx.moveTo(p0.x, p0.y);
+    ctx.bezierCurveTo(p1.x, p1.y, p2.x, p2.y, p3.x, p3.y);
     ctx.stroke();
-    ctx.beginPath(); ctx.arc(left + bagW * 0.28, bodyTop, bagW * 0.15, Math.PI, 0); ctx.stroke();
-    ctx.beginPath(); ctx.arc(left + bagW * 0.72, bodyTop, bagW * 0.15, Math.PI, 0); ctx.stroke();
+    ctx.setLineDash([]);
 
-    /* particles rising inside the bag, like items being added */
-    particles.forEach(function(p) {
-      p.y -= p.speed * 0.01;
-      if (p.y < -0.05) { p.y = 1.05; p.x = Math.random(); }
-      var px = left + p.x * bagW;
-      var py = bodyTop + p.y * (bottom - bodyTop);
-      if (py > bodyTop && py < bottom) {
-        ctx.beginPath();
-        ctx.arc(px, py, p.size, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(255,120,120,' + (0.45 + Math.sin(t * 0.05 + p.phase) * 0.3) + ')';
-        ctx.fill();
-      }
-    });
-
-    /* periodic "order complete" checkmark badge */
-    var cycle = t % 260;
-    if (cycle > 210) {
-      var a = Math.sin(((cycle - 210) / 50) * Math.PI);
-      var bx = right - 8, by = top + 6;
-      ctx.beginPath(); ctx.arc(bx, by, 12, 0, Math.PI * 2);
-      ctx.fillStyle = 'rgba(20,18,16,' + a + ')'; ctx.fill();
-      ctx.strokeStyle = 'rgba(212,32,32,' + a + ')'; ctx.lineWidth = 1.5; ctx.stroke();
-      ctx.beginPath();
-      ctx.moveTo(bx - 5, by); ctx.lineTo(bx - 1, by + 4); ctx.lineTo(bx + 5, by - 5);
-      ctx.strokeStyle = 'rgba(240,237,232,' + a + ')'; ctx.lineWidth = 2; ctx.stroke();
+    /* traveled portion, solid */
+    var steps = 40;
+    ctx.strokeStyle = 'rgba(212,32,32,0.7)';
+    ctx.lineWidth = 1.6;
+    ctx.beginPath();
+    for (var i = 0; i <= steps; i++) {
+      var pt = bezierPoint((i / steps) * t, p0, p1, p2, p3);
+      if (i === 0) ctx.moveTo(pt.x, pt.y); else ctx.lineTo(pt.x, pt.y);
     }
+    ctx.stroke();
 
-    t++;
+    var iconSize = Math.min(W, H) * 0.11;
+    drawBoxIcon(ctx, p0.x, p0.y, iconSize);
+    drawHouseIcon(ctx, p3.x, p3.y, iconSize * 1.1);
+
+    /* moving parcel dot */
+    var cur = bezierPoint(t, p0, p1, p2, p3);
+    ctx.shadowColor = 'rgba(212,32,32,0.9)';
+    ctx.shadowBlur = 8;
+    ctx.beginPath(); ctx.arc(cur.x, cur.y, 3.2, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(255,90,90,0.95)'; ctx.fill();
+    ctx.shadowBlur = 0;
+
+    /* arrival pulse rings at the doorstep */
+    if (hold > 0) {
+      var ringP = 1 - hold / 50;
+      ctx.beginPath();
+      ctx.arc(p3.x, p3.y, iconSize * (0.7 + ringP * 1.6), 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(212,32,32,' + (0.5 * (1 - ringP)) + ')';
+      ctx.lineWidth = 1.2; ctx.stroke();
+      hold--;
+      if (hold === 0) t = 0;
+    } else {
+      t += 0.009;
+      if (t >= 1) { t = 1; hold = 50; }
+    }
   };
 }
 
