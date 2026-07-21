@@ -339,6 +339,11 @@ function initContact() {
     }
     if (errorEl) errorEl.classList.remove('show');
 
+    if (typeof emailjs === 'undefined') {
+      if (errorEl) { errorEl.textContent = 'Send failed — please email directly.'; errorEl.classList.add('show'); }
+      return;
+    }
+
     var templateParams = {
       from_name:  document.getElementById('cf-name').value,
       from_email: document.getElementById('cf-email').value,
