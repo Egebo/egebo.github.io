@@ -237,34 +237,83 @@ function drawOpturaCanvas(canvas, ctx) {
   };
 }
 
+function roundRectPath(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
+}
+
 function drawPocoCanvas(canvas, ctx) {
-  var xs   = [0.14, 0.38, 0.62, 0.86];
-  var dash = 0;
+  var t = 0;
+  var particles = [];
+  for (var i = 0; i < 7; i++) {
+    particles.push({ x: Math.random(), y: Math.random(), speed: 0.15 + Math.random() * 0.25, size: 1 + Math.random() * 1.4, phase: Math.random() * Math.PI * 2 });
+  }
   return function() {
     var W = canvas.offsetWidth, H = canvas.offsetHeight;
-    var cy = H * 0.48;
     ctx.clearRect(0, 0, W, H);
-    for (var i = 0; i < xs.length - 1; i++) {
-      var x1 = xs[i] * W + 14, x2 = xs[i + 1] * W - 14;
-      ctx.setLineDash([5, 4]);
-      ctx.lineDashOffset = -dash;
-      ctx.strokeStyle = 'rgba(212,32,32,0.45)';
-      ctx.lineWidth = 1.5;
-      ctx.beginPath(); ctx.moveTo(x1, cy); ctx.lineTo(x2, cy); ctx.stroke();
-    }
-    ctx.setLineDash([]);
-    xs.forEach(function(x) {
-      var xp = x * W;
-      ctx.beginPath(); ctx.arc(xp, cy, 11, 0, Math.PI * 2);
-      ctx.fillStyle = '#1f1d1a'; ctx.fill();
-      ctx.strokeStyle = 'rgba(212,32,32,0.65)'; ctx.lineWidth = 1.5; ctx.stroke();
-      /* pulse ring */
-      var pulse = (Math.sin(dash * 0.08 + xp) * 0.5 + 0.5) * 6;
-      ctx.beginPath(); ctx.arc(xp, cy, 11 + pulse, 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(212,32,32,' + (0.15 - pulse * 0.02) + ')';
-      ctx.lineWidth = 1; ctx.stroke();
+
+    var cx = W * 0.5, cy = H * 0.56;
+    var bagW = Math.min(W, H) * 0.36;
+    var bagH = bagW * 1.05;
+    var top  = cy - bagH / 2, bottom = cy + bagH / 2;
+    var left = cx - bagW / 2, right  = cx + bagW / 2;
+    var bodyTop = top + 12;
+
+    /* rising fill level inside the bag */
+    var fill  = Math.sin(t * 0.018) * 0.5 + 0.5;
+    var fillY = bottom - (bagH - 12) * fill;
+
+    ctx.save();
+    roundRectPath(ctx, left, bodyTop, bagW, bottom - bodyTop, 10);
+    ctx.clip();
+    var grad = ctx.createLinearGradient(0, bottom, 0, bodyTop);
+    grad.addColorStop(0, 'rgba(212,32,32,0.5)');
+    grad.addColorStop(1, 'rgba(212,32,32,0.04)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(left, fillY, bagW, bottom - fillY);
+    ctx.restore();
+
+    /* bag outline + handles */
+    ctx.strokeStyle = 'rgba(212,32,32,0.75)';
+    ctx.lineWidth = 1.5;
+    roundRectPath(ctx, left, bodyTop, bagW, bottom - bodyTop, 10);
+    ctx.stroke();
+    ctx.beginPath(); ctx.arc(left + bagW * 0.28, bodyTop, bagW * 0.15, Math.PI, 0); ctx.stroke();
+    ctx.beginPath(); ctx.arc(left + bagW * 0.72, bodyTop, bagW * 0.15, Math.PI, 0); ctx.stroke();
+
+    /* particles rising inside the bag, like items being added */
+    particles.forEach(function(p) {
+      p.y -= p.speed * 0.01;
+      if (p.y < -0.05) { p.y = 1.05; p.x = Math.random(); }
+      var px = left + p.x * bagW;
+      var py = bodyTop + p.y * (bottom - bodyTop);
+      if (py > bodyTop && py < bottom) {
+        ctx.beginPath();
+        ctx.arc(px, py, p.size, 0, Math.PI * 2);
+        ctx.fillStyle = 'rgba(255,120,120,' + (0.45 + Math.sin(t * 0.05 + p.phase) * 0.3) + ')';
+        ctx.fill();
+      }
     });
-    dash += 0.5;
+
+    /* periodic "order complete" checkmark badge */
+    var cycle = t % 260;
+    if (cycle > 210) {
+      var a = Math.sin(((cycle - 210) / 50) * Math.PI);
+      var bx = right - 8, by = top + 6;
+      ctx.beginPath(); ctx.arc(bx, by, 12, 0, Math.PI * 2);
+      ctx.fillStyle = 'rgba(20,18,16,' + a + ')'; ctx.fill();
+      ctx.strokeStyle = 'rgba(212,32,32,' + a + ')'; ctx.lineWidth = 1.5; ctx.stroke();
+      ctx.beginPath();
+      ctx.moveTo(bx - 5, by); ctx.lineTo(bx - 1, by + 4); ctx.lineTo(bx + 5, by - 5);
+      ctx.strokeStyle = 'rgba(240,237,232,' + a + ')'; ctx.lineWidth = 2; ctx.stroke();
+    }
+
+    t++;
   };
 }
 
