@@ -397,6 +397,10 @@ function initLang() {
       var key = el.getAttribute('data-i18n-tip');
       if (dict[key] != null) el.dataset.tip = dict[key];
     });
+    document.querySelectorAll('[data-i18n-placeholder]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-placeholder');
+      if (dict[key] != null) el.placeholder = dict[key];
+    });
     localStorage.setItem(LANG_KEY, l);
     document.querySelectorAll('[data-i18n-lang]').forEach(function(btn) {
       btn.classList.toggle('active', btn.dataset.i18nLang === l);
