@@ -80,15 +80,20 @@ function initHeroCanvas() {
     { x: 0.145, y: 0.437, label: 'Python',        t: 0.5 },
     { x: 0.269, y: 0.224, label: 'Expo',          t: 2.4 },
   ];
+  /* edges reflect real stack pairings, not a mechanical hub+ring:
+     Looked = React Native + Firebase + Gemini; Jarvis = Python + FastAPI + Gemini;
+     AkademikChatbot = Python + LangChain + ChromaDB; Optura = Flutter + GPT-4o */
   var edges = [
-    [0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9],
-    [1,2],[2,3],[3,4],[4,5],[5,6],[6,7],[7,8],[8,9],[9,1]
+    [0,9], [0,3], [0,2],   // React Native - Expo / Firebase / Gemini
+    [8,6], [8,2], [8,1],   // Python - FastAPI / Gemini / LangChain
+    [1,5], [1,4],          // LangChain - ChromaDB / GPT-4o
+    [7,4],                 // Flutter - GPT-4o
   ];
   var frame = 0;
 
-  /* particles: light pulses traveling along every spoke */
-  var particles = [[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9]].map(function(e, i) {
-    return { edge: e, p: (i / 9), speed: 0.0035 + (i % 3) * 0.0008 };
+  /* particles: light pulses traveling along every real connection */
+  var particles = edges.map(function(e, i) {
+    return { edge: e, p: (i / edges.length), speed: 0.0035 + (i % 3) * 0.0008 };
   });
 
   function draw() {
