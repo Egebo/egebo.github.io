@@ -351,53 +351,55 @@
   </section>
 
   <!-- CONTACT -->
-  <section class="b-card b-contact" id="contact">
-    <div class="bc-left">
-      <span class="b-label mono" data-i18n="contact.idx">06 — Contact</span>
-      <h2 class="bc-heading reveal" data-i18n="contact.title">Yazın bana</h2>
-      <p class="bc-sub reveal" data-d="1" data-i18n="contact.lead">Bir fikrin mi var, yoksa freelance bir iş mi? En hızlı yanıtı e-postadan alırsın.</p>
-      <div class="social-list reveal" data-d="2">
-        <button type="button" class="social" id="emailCopy">
-          <span class="s-left"><span class="s-ic">@</span><span><span class="s-name" data-i18n="social.email">E-posta</span><br><span class="s-handle" id="email-address">bozcaegemen@gmail.com</span></span></span>
-          <span class="s-arr" id="copy-status">↗</span>
-        </button>
-        <a href="https://www.linkedin.com/in/egemen-bozca/" target="_blank" rel="noopener" class="social">
-          <span class="s-left"><span class="s-ic">in</span><span><span class="s-name" data-i18n="social.linkedin">LinkedIn</span><br><span class="s-handle">/in/egemen-bozca</span></span></span>
-          <span class="s-arr">↗</span>
-        </a>
-        <a href="https://www.upwork.com/freelancers/~01e61b4aa3e01ecbdf" target="_blank" rel="noopener" class="social">
-          <span class="s-left"><span class="s-ic">up</span><span><span class="s-name" data-i18n="social.upwork">Upwork</span><br><span class="s-handle">Egemen Bozca</span></span></span>
-          <span class="s-arr">↗</span>
-        </a>
-        <a href="https://github.com/Egebo" target="_blank" rel="noopener" class="social">
-          <span class="s-left"><span class="s-ic">gh</span><span><span class="s-name" data-i18n="social.github">GitHub</span><br><span class="s-handle">@Egebo</span></span></span>
-          <span class="s-arr">↗</span>
-        </a>
+  <section class="contact-section" id="contact">
+    <div class="contact-inner wrap">
+      <div class="bc-left">
+        <span class="section-label reveal" data-i18n="contact.idx">06</span>
+        <h2 class="bc-heading reveal" data-d="1" data-i18n="contact.title">Drop me a line</h2>
+        <p class="bc-sub reveal" data-d="2" data-i18n="contact.lead">Got an idea, or a freelance project in mind? Email gets the fastest reply.</p>
+        <div class="social-list reveal" data-d="2">
+          <button type="button" class="social" id="emailCopy">
+            <span class="s-left"><span class="s-ic">@</span><span><span class="s-name" data-i18n="social.email">Email</span><br><span class="s-handle" id="email-address">bozcaegemen@gmail.com</span></span></span>
+            <span class="s-arr" id="copy-status">↗</span>
+          </button>
+          <a href="https://www.linkedin.com/in/egemen-bozca/" target="_blank" rel="noopener" class="social">
+            <span class="s-left"><span class="s-ic">in</span><span><span class="s-name" data-i18n="social.linkedin">LinkedIn</span><br><span class="s-handle">/in/egemen-bozca</span></span></span>
+            <span class="s-arr">↗</span>
+          </a>
+          <a href="https://www.upwork.com/freelancers/~01e61b4aa3e01ecbdf" target="_blank" rel="noopener" class="social">
+            <span class="s-left"><span class="s-ic">up</span><span><span class="s-name" data-i18n="social.upwork">Upwork</span><br><span class="s-handle">Egemen Bozca</span></span></span>
+            <span class="s-arr">↗</span>
+          </a>
+          <a href="https://github.com/Egebo" target="_blank" rel="noopener" class="social">
+            <span class="s-left"><span class="s-ic">gh</span><span><span class="s-name" data-i18n="social.github">GitHub</span><br><span class="s-handle">@Egebo</span></span></span>
+            <span class="s-arr">↗</span>
+          </a>
+        </div>
       </div>
+      <form class="form reveal" data-d="1" id="contactForm">
+        <div class="form-fields">
+          <div class="field">
+            <label data-i18n="form.name">Name</label>
+            <input type="text" id="name" name="name" required autocomplete="name" data-i18n-ph="form.name.ph" placeholder="Your name">
+          </div>
+          <div class="field">
+            <label data-i18n="form.email">Email</label>
+            <input type="email" id="email" name="email" required autocomplete="email" data-i18n-ph="form.email.ph" placeholder="you@example.com">
+          </div>
+          <div class="field">
+            <label data-i18n="form.msg">Message</label>
+            <textarea id="message" name="message" rows="4" required data-i18n-ph="form.msg.ph" placeholder="Tell me about your project…"></textarea>
+          </div>
+          <button type="submit" class="btn btn--accent" id="submit-btn"><span class="submit-text" data-i18n="form.send">Send message</span><span class="arr">→</span></button>
+          <div class="form-error-msg" id="formError"></div>
+        </div>
+        <div class="form-success" id="formSuccess">
+          <div class="check">✓</div>
+          <h3 data-i18n="form.ok.title">Thank you!</h3>
+          <p style="margin:0.5rem auto 0;text-align:center;font-size:0.9rem;color:var(--fg-2)" data-i18n="form.ok.body">Your message has been received. I'll get back to you soon.</p>
+        </div>
+      </form>
     </div>
-    <form class="form reveal" data-d="1" id="contactForm">
-      <div class="form-fields">
-        <div class="field">
-          <label data-i18n="form.name">İsim</label>
-          <input type="text" id="name" name="name" required autocomplete="name" data-i18n-ph="form.name.ph" placeholder="Adın">
-        </div>
-        <div class="field">
-          <label data-i18n="form.email">E-posta</label>
-          <input type="email" id="email" name="email" required autocomplete="email" data-i18n-ph="form.email.ph" placeholder="seninadin@ornek.com">
-        </div>
-        <div class="field">
-          <label data-i18n="form.msg">Mesaj</label>
-          <textarea id="message" name="message" rows="4" required data-i18n-ph="form.msg.ph" placeholder="Projenden bahset…"></textarea>
-        </div>
-        <button type="submit" class="btn btn--accent" id="submit-btn"><span class="submit-text" data-i18n="form.send">Mesaj gönder</span><span class="arr">→</span></button>
-        <div class="form-error-msg" id="formError"></div>
-      </div>
-      <div class="form-success" id="formSuccess">
-        <div class="check">✓</div>
-        <h3 data-i18n="form.ok.title">Teşekkürler!</h3>
-        <p style="margin:0.5rem auto 0;text-align:center;font-size:0.9rem;color:var(--fg-2)" data-i18n="form.ok.body">Mesajın alındı. En kısa sürede dönüş yapacağım.</p>
-      </div>
-    </form>
   </section>
 
 </main>
@@ -406,8 +408,8 @@
 <footer class="footer">
   <div class="footer-inner wrap">
     <span class="f-brand">Egemen Bozca</span>
-    <span class="f-meta"><span data-i18n="foot.tag">Türkiye'den, kahveyle yapıldı.</span> · © <span id="year">2026</span></span>
-    <a href="#top" class="to-top"><span data-i18n="foot.top">Yukarı çık</span> ↑</a>
+    <span class="f-meta"><span data-i18n="foot.tag">Made with coffee, from Türkiye.</span> · © <span id="year">2026</span></span>
+    <a href="#top" class="to-top"><span data-i18n="foot.top">Back to top</span> ↑</a>
   </div>
 </footer>
 
