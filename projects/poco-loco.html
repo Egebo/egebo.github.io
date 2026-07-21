@@ -5,26 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Poco Loco | Egemen Bozca</title>
 <meta name="description" content="Butik bir çanta markası için sıfırdan geliştirdiğim, iyzico ile canlı ödeme alan e-ticaret sitesi.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E25A34'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='700' font-size='62' fill='white' text-anchor='middle'>E</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E8442A'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='700' font-size='62' fill='white' text-anchor='middle'>E</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=26">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=32">
 <style>
-.cs-nav { display:flex; align-items:center; justify-content:space-between; padding:1rem var(--gutter); border-bottom:1px solid var(--line); position:sticky; top:0; background:color-mix(in srgb,var(--paper) 92%,transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); z-index:100; }
-.cs-back { font-size:0.86rem; font-weight:500; color:var(--ink-2); display:inline-flex; align-items:center; gap:0.4rem; transition:color 0.2s; }
+.cs-nav { display:flex; align-items:center; justify-content:space-between; padding:1rem var(--gutter); border-bottom:1px solid var(--line); position:sticky; top:0; background:color-mix(in srgb,var(--bg) 92%,transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); z-index:100; }
+.cs-nav-right { display:flex; align-items:center; gap:0.7rem; }
+.cs-back { font-size:0.86rem; font-weight:500; color:var(--fg-2); display:inline-flex; align-items:center; gap:0.4rem; transition:color 0.2s; }
 .cs-back:hover { color:var(--accent); }
 .cs-title { font-size:clamp(3rem,8vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.96; margin-bottom:1.4rem; }
-.cs-desc { font-size:clamp(1rem,1.8vw,1.22rem); color:var(--ink-2); max-width:52ch; line-height:1.55; margin-bottom:2rem; }
+.cs-desc { font-size:clamp(1rem,1.8vw,1.22rem); color:var(--fg-2); max-width:52ch; line-height:1.55; margin-bottom:2rem; }
 .cs-meta-row { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2.4rem; }
-.cs-meta-row span { font-family:var(--mono); font-size:0.68rem; padding:0.34rem 0.7rem; border:1px solid var(--line-2); border-radius:99px; color:var(--ink-2); }
+.cs-meta-row span { font-family:var(--mono); font-size:0.68rem; padding:0.34rem 0.7rem; border:1px solid var(--line-2); border-radius:99px; color:var(--fg-2); }
 .cs-cta { display:flex; flex-wrap:wrap; gap:0.7rem; }
 .cs-divider { height:1px; background:var(--line-2); margin:clamp(2.5rem,5vw,4rem) 0; }
-.cs-section-label { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:1.6rem; }
+.cs-section-label { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--fg-3); margin-bottom:1.6rem; }
 .cs-features { display:grid; grid-template-columns:repeat(2,1fr); gap:1.1rem; }
-.cs-feat { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.6rem; }
+.cs-feat { background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius); padding:1.6rem; }
 .cs-feat h3 { font-size:1rem; font-weight:600; letter-spacing:-0.01em; margin-bottom:0.6rem; }
-.cs-feat p { font-size:0.88rem; color:var(--ink-2); line-height:1.5; }
+.cs-feat p { font-size:0.88rem; color:var(--fg-2); line-height:1.5; }
 .cs-feat .fi { font-size:1.5rem; margin-bottom:0.8rem; }
 .cs-stack { display:flex; flex-wrap:wrap; gap:0.55rem; }
 .cs-status-live { display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--mono); font-size:0.62rem; background:rgba(54,179,126,0.12); color:#36b37e; border:1px solid rgba(54,179,126,0.3); border-radius:99px; padding:0.26rem 0.6rem; letter-spacing:0.06em; }
@@ -38,26 +39,29 @@
 
 <nav class="cs-nav">
   <a href="../index.html" class="cs-back">← Egemen Bozca</a>
-  <span class="cs-status-live">poco--loco.com'da yayında</span>
+  <div class="cs-nav-right">
+    <span class="cs-status-live" data-i18n="poco.status">poco--loco.com'da yayında</span>
+    <div class="cs-lang"><button class="cs-lang-btn" data-lang="tr">TR</button><button class="cs-lang-btn" data-lang="en">EN</button></div>
+  </div>
 </nav>
 
 <main>
 <section class="section wrap" style="padding-top:clamp(4rem,9vw,7rem)">
   <p class="eyebrow" style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.6rem;margin-bottom:1.2rem;">
-    <span style="width:28px;height:1px;background:var(--accent);display:inline-block;"></span>
-    Web · E-Ticaret
+    <span style="width:28px;height:1px;background:var(--accent);display:inline-block;flex-shrink:0"></span>
+    <span data-i18n="poco.eyebrow">Web · E-Ticaret</span>
   </p>
   <h1 class="cs-title">Poco Loco</h1>
-  <p class="cs-desc">Butik bir çanta markası için sıfırdan geliştirdiğim, canlı ödeme alan uçtan uca bir e-ticaret sitesi. Ürün kataloğu, sepet, iyzico ile ödeme, sipariş/kargo takibi, promosyon kodları ve bir yönetim paneli.</p>
+  <p class="cs-desc" data-i18n="poco.desc">Butik bir çanta markası için sıfırdan geliştirdiğim, canlı ödeme alan uçtan uca bir e-ticaret sitesi. Ürün kataloğu, sepet, iyzico ile ödeme, sipariş/kargo takibi, promosyon kodları ve bir yönetim paneli.</p>
   <div class="cs-meta-row">
     <span>React · TypeScript</span>
     <span>Supabase</span>
     <span>iyzico Ödeme</span>
     <span>E-Ticaret</span>
-    <span>2026 / Yayında</span>
+    <span data-i18n="poco.meta.date">2026 / Yayında</span>
   </div>
   <div class="cs-cta">
-    <a href="https://poco--loco.com" target="_blank" rel="noopener" class="btn btn--accent">Siteye git <span class="arr">→</span></a>
+    <a href="https://poco--loco.com" target="_blank" rel="noopener" class="btn btn--accent"><span data-i18n="poco.cta">Siteye git</span> <span class="arr">→</span></a>
   </div>
 </section>
 
@@ -68,49 +72,49 @@
 </div>
 
 <section class="section wrap">
-  <p class="cs-section-label">Özellikler</p>
+  <p class="cs-section-label" data-i18n="label.features">Özellikler</p>
   <div class="cs-features">
     <div class="cs-feat">
       <div class="fi">💳</div>
-      <h3>Uçtan Uca Ödeme</h3>
-      <p>iyzico entegrasyonu ile gerçek kart ödemesi; Supabase Edge Functions üzerinde çalışan sipariş oluşturma ve ödeme geri bildirim (callback) akışı.</p>
+      <h3 data-i18n="poco.feat.1.title">Uçtan Uca Ödeme</h3>
+      <p data-i18n="poco.feat.1.desc">iyzico entegrasyonu ile gerçek kart ödemesi; Supabase Edge Functions üzerinde çalışan sipariş oluşturma ve ödeme geri bildirim (callback) akışı.</p>
     </div>
     <div class="cs-feat">
       <div class="fi">📦</div>
-      <h3>Sipariş & Kargo Takibi</h3>
-      <p>Sipariş sonrası bildirim (e-posta), kargo durumu takibi ve promosyon kodu / indirim mantığı (kullanım limiti, son kullanma tarihi kontrolü).</p>
+      <h3 data-i18n="poco.feat.2.title">Sipariş & Kargo Takibi</h3>
+      <p data-i18n="poco.feat.2.desc">Sipariş sonrası bildirim (e-posta), kargo durumu takibi ve promosyon kodu / indirim mantığı (kullanım limiti, son kullanma tarihi kontrolü).</p>
     </div>
     <div class="cs-feat">
       <div class="fi">🛠️</div>
-      <h3>Yönetim Paneli</h3>
-      <p>Ürün, sipariş ve içerik yönetimi için ayrı bir admin arayüzü.</p>
+      <h3 data-i18n="poco.feat.3.title">Yönetim Paneli</h3>
+      <p data-i18n="poco.feat.3.desc">Ürün, sipariş ve içerik yönetimi için ayrı bir admin arayüzü.</p>
     </div>
     <div class="cs-feat">
       <div class="fi">🌐</div>
-      <h3>Çift Dil</h3>
-      <p>i18next ile TR/EN arayüz desteği; form doğrulama zod şemalarıyla, react-hook-form üzerinden yönetiliyor.</p>
+      <h3 data-i18n="poco.feat.4.title">Çift Dil</h3>
+      <p data-i18n="poco.feat.4.desc">i18next ile TR/EN arayüz desteği; form doğrulama zod şemalarıyla, react-hook-form üzerinden yönetiliyor.</p>
     </div>
   </div>
 
   <div class="cs-divider"></div>
 
-  <p class="cs-section-label">Mimari</p>
+  <p class="cs-section-label" data-i18n="label.arch">Mimari</p>
   <div class="cs-features">
     <div class="cs-feat">
       <div class="fi">⚙️</div>
-      <h3>Supabase Edge Functions</h3>
-      <p><code>create-order</code>, <code>iyzico-callback</code>, <code>send-order-notification</code>, <code>notify-contact</code> gibi sunucu taraflı fonksiyonlarla ödeme ve bildirim mantığı istemciden ayrıştırıldı.</p>
+      <h3 data-i18n="poco.arch.1.title">Supabase Edge Functions</h3>
+      <p data-i18n="poco.arch.1.desc"><code>create-order</code>, <code>iyzico-callback</code>, <code>send-order-notification</code>, <code>notify-contact</code> gibi sunucu taraflı fonksiyonlarla ödeme ve bildirim mantığı istemciden ayrıştırıldı.</p>
     </div>
     <div class="cs-feat">
       <div class="fi">🚀</div>
-      <h3>Aktif Geliştirme</h3>
-      <p>~6 haftalık düzenli geliştirme sürecinde 240'ın üzerinde commit; gerçek müşteri siparişleriyle canlıda çalışıyor.</p>
+      <h3 data-i18n="poco.arch.2.title">Aktif Geliştirme</h3>
+      <p data-i18n="poco.arch.2.desc">~6 haftalık düzenli geliştirme sürecinde 240'ın üzerinde commit; gerçek müşteri siparişleriyle canlıda çalışıyor.</p>
     </div>
   </div>
 
   <div class="cs-divider"></div>
 
-  <p class="cs-section-label">Teknoloji</p>
+  <p class="cs-section-label" data-i18n="label.tech">Teknoloji</p>
   <div class="cs-stack">
     <span class="tag">React 18</span>
     <span class="tag">TypeScript</span>
@@ -129,8 +133,9 @@
 <footer class="footer wrap">
   <div class="footer-inner">
     <span class="f-brand">Egemen Bozca</span>
-    <a href="../index.html" class="to-top">← Portfolyoya dön</a>
+    <a href="../index.html" class="to-top" data-i18n="footer.back">← Portfolyoya dön</a>
   </div>
 </footer>
+<script src="cs-lang.js"></script>
 </body>
 </html>

@@ -500,3 +500,20 @@ h1 .accent { color: var(--accent); }
 .f-brand { color: var(--fg); font-family: var(--display); font-weight: 700; font-size: 0.9rem; letter-spacing: -0.02em; }
 .to-top { color: var(--fg-3); transition: color 0.15s; }
 .to-top:hover { color: var(--accent); }
+
+/* ---------- Dark button ---------- */
+.btn--dark { background: var(--fg); color: var(--bg); border-color: var(--fg); font-weight: 700; }
+.btn--dark:hover { background: #333; border-color: #333; transform: translateY(-1px); box-shadow: 0 4px 16px rgba(0,0,0,0.18); }
+
+/* ---------- Case study lang toggle ---------- */
+.cs-lang { display: inline-flex; border: 1.5px solid var(--line-2); border-radius: var(--radius); overflow: hidden; }
+.cs-lang-btn { font-family: var(--mono); font-size: 0.6rem; padding: 0.28rem 0.6rem; color: var(--fg-3); letter-spacing: 0.06em; background: none; border: none; cursor: pointer; transition: color 0.15s, background 0.15s; }
+.cs-lang-btn.active { background: var(--accent); color: #fff; font-weight: 700; }
+
+/* ---------- Legacy token aliases (for case study pages) ---------- */
+:root {
+  --paper: var(--bg);
+  --ink-2: var(--fg-2);
+  --card: var(--bg-2);
+  --muted: var(--fg-3);
+}

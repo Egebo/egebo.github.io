@@ -5,26 +5,27 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Jarvis | Egemen Bozca</title>
 <meta name="description" content="Iron Man esintili sesli kişisel asistan. Whisper STT, Gemini function-calling, TTS. Python, FastAPI, React Native.">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E25A34'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='700' font-size='62' fill='white' text-anchor='middle'>E</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E8442A'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='700' font-size='62' fill='white' text-anchor='middle'>E</text></svg>">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700;800&family=Geist+Mono:wght@400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../style.css?v=26">
+<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="../style.css?v=32">
 <style>
-.cs-nav { display:flex; align-items:center; justify-content:space-between; padding:1rem var(--gutter); border-bottom:1px solid var(--line); position:sticky; top:0; background:color-mix(in srgb,var(--paper) 92%,transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); z-index:100; }
-.cs-back { font-size:0.86rem; font-weight:500; color:var(--ink-2); display:inline-flex; align-items:center; gap:0.4rem; transition:color 0.2s; }
+.cs-nav { display:flex; align-items:center; justify-content:space-between; padding:1rem var(--gutter); border-bottom:1px solid var(--line); position:sticky; top:0; background:color-mix(in srgb,var(--bg) 92%,transparent); backdrop-filter:blur(12px); -webkit-backdrop-filter:blur(12px); z-index:100; }
+.cs-nav-right { display:flex; align-items:center; gap:0.7rem; }
+.cs-back { font-size:0.86rem; font-weight:500; color:var(--fg-2); display:inline-flex; align-items:center; gap:0.4rem; transition:color 0.2s; }
 .cs-back:hover { color:var(--accent); }
 .cs-title { font-size:clamp(3rem,8vw,5.5rem); font-weight:700; letter-spacing:-0.04em; line-height:0.96; margin-bottom:1.4rem; }
-.cs-desc { font-size:clamp(1rem,1.8vw,1.22rem); color:var(--ink-2); max-width:52ch; line-height:1.55; margin-bottom:2rem; }
+.cs-desc { font-size:clamp(1rem,1.8vw,1.22rem); color:var(--fg-2); max-width:52ch; line-height:1.55; margin-bottom:2rem; }
 .cs-meta-row { display:flex; flex-wrap:wrap; gap:0.5rem; margin-bottom:2.4rem; }
-.cs-meta-row span { font-family:var(--mono); font-size:0.68rem; padding:0.34rem 0.7rem; border:1px solid var(--line-2); border-radius:99px; color:var(--ink-2); }
+.cs-meta-row span { font-family:var(--mono); font-size:0.68rem; padding:0.34rem 0.7rem; border:1px solid var(--line-2); border-radius:99px; color:var(--fg-2); }
 .cs-cta { display:flex; flex-wrap:wrap; gap:0.7rem; }
 .cs-divider { height:1px; background:var(--line-2); margin:clamp(2.5rem,5vw,4rem) 0; }
-.cs-section-label { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--muted); margin-bottom:1.6rem; }
+.cs-section-label { font-family:var(--mono); font-size:0.7rem; letter-spacing:0.12em; text-transform:uppercase; color:var(--fg-3); margin-bottom:1.6rem; }
 .cs-features { display:grid; grid-template-columns:repeat(2,1fr); gap:1.1rem; }
-.cs-feat { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.6rem; }
+.cs-feat { background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius); padding:1.6rem; }
 .cs-feat h3 { font-size:1rem; font-weight:600; letter-spacing:-0.01em; margin-bottom:0.6rem; }
-.cs-feat p { font-size:0.88rem; color:var(--ink-2); line-height:1.5; }
+.cs-feat p { font-size:0.88rem; color:var(--fg-2); line-height:1.5; }
 .cs-feat .fi { font-size:1.5rem; margin-bottom:0.8rem; }
 .cs-stack { display:flex; flex-wrap:wrap; gap:0.55rem; }
 .cs-badge-wip { display:inline-flex; align-items:center; gap:0.4rem; font-family:var(--mono); font-size:0.62rem; background:rgba(255,171,0,0.1); color:#e5970a; border:1px solid rgba(255,171,0,0.3); border-radius:99px; padding:0.26rem 0.7rem; }
@@ -34,10 +35,10 @@
 .cs-terminal .sys { color:rgba(226,220,205,0.4); }
 .cs-terminal .jarvis { color:#ffab00; }
 .cs-flow { display:grid; grid-template-columns:repeat(3,1fr); gap:0.6rem; margin-top:1.4rem; position:relative; }
-.cs-flow-step { background:var(--card); border:1px solid var(--line); border-radius:var(--radius); padding:1.2rem; text-align:center; }
+.cs-flow-step { background:var(--bg-2); border:1px solid var(--line); border-radius:var(--radius); padding:1.2rem; text-align:center; }
 .cs-flow-step .fi { font-size:1.6rem; margin-bottom:0.5rem; }
 .cs-flow-step h4 { font-size:0.84rem; font-weight:600; margin-bottom:0.25rem; }
-.cs-flow-step p { font-size:0.75rem; color:var(--ink-2); line-height:1.35; }
+.cs-flow-step p { font-size:0.75rem; color:var(--fg-2); line-height:1.35; }
 .cs-flow-arrow { display:flex; align-items:center; justify-content:center; color:var(--accent); font-size:1.2rem; padding-top:1.5rem; }
 @media (max-width:700px) { .cs-features { grid-template-columns:1fr; } .cs-flow { grid-template-columns:1fr; } .cs-flow-arrow { transform:rotate(90deg); } }
 </style>
@@ -46,17 +47,20 @@
 
 <nav class="cs-nav">
   <a href="../index.html" class="cs-back">← Egemen Bozca</a>
-  <span class="cs-badge-wip">Aktif Geliştirme</span>
+  <div class="cs-nav-right">
+    <span class="cs-badge-wip" data-i18n="jarvis.badge">Aktif Geliştirme</span>
+    <div class="cs-lang"><button class="cs-lang-btn" data-lang="tr">TR</button><button class="cs-lang-btn" data-lang="en">EN</button></div>
+  </div>
 </nav>
 
 <main>
 <section class="section wrap" style="padding-top:clamp(4rem,9vw,7rem)">
   <p class="eyebrow" style="font-family:var(--mono);font-size:0.7rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--accent);display:inline-flex;align-items:center;gap:0.6rem;margin-bottom:1.2rem;">
-    <span style="width:28px;height:1px;background:var(--accent);display:inline-block;"></span>
-    Yapay Zekâ · Ses · Kişisel Proje
+    <span style="width:28px;height:1px;background:var(--accent);display:inline-block;flex-shrink:0"></span>
+    <span data-i18n="jarvis.eyebrow">Yapay Zekâ · Ses · Kişisel Proje</span>
   </p>
   <h1 class="cs-title">Jarvis</h1>
-  <p class="cs-desc">Iron Man'den ilham alan sesli kişisel asistan. "Jarvis" diyerek uyandır, soruyu sor; uygulama sesi metne çevirir, Gemini'ye iletir, yanıtı sesli olarak geri sunar. Windows PC istemcisi ve React Native mobil uç.</p>
+  <p class="cs-desc" data-i18n="jarvis.desc">Iron Man'den ilham alan sesli kişisel asistan. "Jarvis" diyerek uyandır, soruyu sor; uygulama sesi metne çevirir, Gemini'ye iletir, yanıtı sesli olarak geri sunar. Windows PC istemcisi ve React Native mobil uç.</p>
   <div class="cs-meta-row">
     <span>Python · FastAPI</span>
     <span>Whisper (STT)</span>
@@ -67,27 +71,27 @@
     <span>Açık Kaynak</span>
   </div>
   <div class="cs-cta">
-    <a href="https://github.com/Egebo/Jarvis" target="_blank" rel="noopener" class="btn btn--accent">GitHub'da gör <span class="arr">→</span></a>
+    <a href="https://github.com/Egebo/Jarvis" target="_blank" rel="noopener" class="btn btn--accent"><span data-i18n="jarvis.cta">GitHub'da gör</span> <span class="arr">→</span></a>
   </div>
 </section>
 
 <section class="section wrap">
-  <p class="cs-section-label">Nasıl Çalışır</p>
+  <p class="cs-section-label" data-i18n="label.how">Nasıl Çalışır</p>
   <div class="cs-flow">
     <div class="cs-flow-step">
       <div class="fi">🎙️</div>
-      <h4>Uyandırma</h4>
-      <p>"Jarvis" uyandırma kelimesi bulanık eşleştirmeyle algılanır. Whisper transkripsiyonundaki tutarsızlıklara karşı dayanıklı.</p>
+      <h4 data-i18n="jarvis.how.1.title">Uyandırma</h4>
+      <p data-i18n="jarvis.how.1.desc">"Jarvis" uyandırma kelimesi bulanık eşleştirmeyle algılanır. Whisper transkripsiyonundaki tutarsızlıklara karşı dayanıklı.</p>
     </div>
     <div class="cs-flow-step">
       <div class="fi">🧠</div>
-      <h4>Gemini + Function Calling</h4>
-      <p>Komut Gemini'ye iletilir. Sistem kontrolü gerekiyorsa (uygulama aç, dosya oluştur) function-calling ile pyautogui/psutil tetiklenir.</p>
+      <h4 data-i18n="jarvis.how.2.title">Gemini + Function Calling</h4>
+      <p data-i18n="jarvis.how.2.desc">Komut Gemini'ye iletilir. Sistem kontrolü gerekiyorsa (uygulama aç, dosya oluştur) function-calling ile pyautogui/psutil tetiklenir.</p>
     </div>
     <div class="cs-flow-step">
       <div class="fi">🔊</div>
-      <h4>Sesli Yanıt</h4>
-      <p>Yanıt TTS motoruyla seslendirilir. Follow-up modda uyandırma kelimesi gerektirmeden konuşma devam eder.</p>
+      <h4 data-i18n="jarvis.how.3.title">Sesli Yanıt</h4>
+      <p data-i18n="jarvis.how.3.desc">Yanıt TTS motoruyla seslendirilir. Follow-up modda uyandırma kelimesi gerektirmeden konuşma devam eder.</p>
     </div>
   </div>
 
@@ -107,33 +111,33 @@
 </section>
 
 <section class="section wrap">
-  <p class="cs-section-label">Özellikler</p>
+  <p class="cs-section-label" data-i18n="label.features">Özellikler</p>
   <div class="cs-features">
     <div class="cs-feat">
       <div class="fi">🔍</div>
-      <h3>Bulanık Uyandırma</h3>
-      <p>Whisper "Jarvis" kelimesini her seferinde aynı şekilde transkribe etmez. Bulanık eşleştirme algoritması tutarsız sonuçları tolere eder.</p>
+      <h3 data-i18n="jarvis.feat.1.title">Bulanık Uyandırma</h3>
+      <p data-i18n="jarvis.feat.1.desc">Whisper "Jarvis" kelimesini her seferinde aynı şekilde transkribe etmez. Bulanık eşleştirme algoritması tutarsız sonuçları tolere eder.</p>
     </div>
     <div class="cs-feat">
       <div class="fi">💬</div>
-      <h3>Follow-up Modu</h3>
-      <p>Bir komut sonrasında kısa bir pencere boyunca uyandırma kelimesi gerekmez. Doğal diyalog akışını bozmaz.</p>
+      <h3 data-i18n="jarvis.feat.2.title">Follow-up Modu</h3>
+      <p data-i18n="jarvis.feat.2.desc">Bir komut sonrasında kısa bir pencere boyunca uyandırma kelimesi gerekmez. Doğal diyalog akışını bozmaz.</p>
     </div>
     <div class="cs-feat">
       <div class="fi">⚙️</div>
-      <h3>Sistem Kontrolü</h3>
-      <p>Gemini function-calling üzerinden pyautogui ve psutil entegrasyonu. Uygulama açma, sistem bilgisi, hatırlatıcı gibi PC komutlarını çalıştırır.</p>
+      <h3 data-i18n="jarvis.feat.3.title">Sistem Kontrolü</h3>
+      <p data-i18n="jarvis.feat.3.desc">Gemini function-calling üzerinden pyautogui ve psutil entegrasyonu. Uygulama açma, sistem bilgisi, hatırlatıcı gibi PC komutlarını çalıştırır.</p>
     </div>
     <div class="cs-feat">
       <div class="fi">📱</div>
-      <h3>Çapraz Platform</h3>
-      <p>WebSocket üzerinden konuşan Windows PC istemcisi ve React Native mobil uç. Aynı backend ikisine de hizmet verir.</p>
+      <h3 data-i18n="jarvis.feat.4.title">Çapraz Platform</h3>
+      <p data-i18n="jarvis.feat.4.desc">WebSocket üzerinden konuşan Windows PC istemcisi ve React Native mobil uç. Aynı backend ikisine de hizmet verir.</p>
     </div>
   </div>
 </section>
 
 <section class="section wrap">
-  <p class="cs-section-label">Teknoloji</p>
+  <p class="cs-section-label" data-i18n="label.tech">Teknoloji</p>
   <div class="cs-stack">
     <span class="tag">Python</span>
     <span class="tag">FastAPI</span>
@@ -152,8 +156,9 @@
 <footer class="footer wrap">
   <div class="footer-inner">
     <span class="f-brand">Egemen Bozca</span>
-    <a href="../index.html" class="to-top">← Portfolyoya dön</a>
+    <a href="../index.html" class="to-top" data-i18n="footer.back">← Portfolyoya dön</a>
   </div>
 </footer>
+<script src="cs-lang.js"></script>
 </body>
 </html>
