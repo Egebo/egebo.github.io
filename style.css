@@ -264,9 +264,8 @@ body:not(.has-cursor) .cursor { display: none; }
 .proj-card { background: var(--bg); padding: clamp(1.6rem, 3vw, 2.4rem); position: relative; overflow: hidden; transition: background 0.2s; }
 .proj-card:hover { background: var(--bg-2); }
 .proj-card canvas { position: absolute; inset: 0; width: 100%; height: 100%; opacity: 0; transition: opacity 0.4s var(--ease); pointer-events: none; }
-.proj-card:hover canvas { opacity: 1; }
-.proj-card-inner { position: relative; z-index: 1; transition: opacity 0.32s var(--ease); }
-.proj-card:hover .proj-card-inner { opacity: 0; }
+.proj-card:hover canvas { opacity: 0.45; }
+.proj-card-inner { position: relative; z-index: 1; }
 .proj-type { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.10em; text-transform: uppercase; color: var(--fg-3); margin-bottom: 0.8rem; }
 .proj-name { font-family: var(--display); font-size: 1.5rem; font-weight: 800; letter-spacing: -0.03em; margin-bottom: 0.5rem; }
 .proj-desc { font-size: 0.87rem; color: var(--fg-2); line-height: 1.55; margin-bottom: 1.2rem; }
