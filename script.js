@@ -205,17 +205,31 @@ function initRagDiagram() {
 /* ---------- Project canvas draw helpers ---------- */
 function drawJarvisCanvas(canvas, ctx) {
   var bars = 48, t = 0;
+  var seeds = [];
+  for (var i = 0; i < bars; i++) {
+    seeds.push({
+      f1: 0.6 + Math.random() * 1.4, p1: Math.random() * Math.PI * 2,
+      f2: 1.8 + Math.random() * 2.6, p2: Math.random() * Math.PI * 2,
+      envP: Math.random() * Math.PI * 2,
+    });
+  }
   return function() {
     var W = canvas.offsetWidth, H = canvas.offsetHeight;
     var bw = W / bars - 1;
     ctx.clearRect(0, 0, W, H);
-    for (var i = 0; i < bars; i++) {
-      var h = (Math.sin(i * 0.38 + t) * 0.38 + 0.52) * H * 0.55;
-      var alpha = 0.25 + Math.sin(i * 0.38 + t) * 0.18;
-      ctx.fillStyle = 'rgba(212,32,32,' + Math.max(0.07, alpha) + ')';
-      ctx.fillRect(i * (bw + 1), (H - h) / 2, Math.max(1, bw), h);
+    for (var j = 0; j < bars; j++) {
+      var s = seeds[j];
+      /* two mismatched frequencies per bar avoid a uniform traveling wave */
+      var wave = Math.sin(t * 0.05 * s.f1 + s.p1) * 0.6 + Math.sin(t * 0.05 * s.f2 + s.p2) * 0.4;
+      /* slow envelope mimics loud/quiet passages in real audio */
+      var envelope = 0.35 + 0.65 * (Math.sin(t * 0.014 + s.envP) * 0.5 + 0.5);
+      var amp = Math.max(0, wave * 0.5 + 0.5) * envelope;
+      var h = amp * H * 0.62 + H * 0.02;
+      var alpha = 0.16 + amp * 0.38;
+      ctx.fillStyle = 'rgba(212,32,32,' + alpha + ')';
+      ctx.fillRect(j * (bw + 1), (H - h) / 2, Math.max(1, bw), h);
     }
-    t += 0.07;
+    t++;
   };
 }
 
@@ -243,98 +257,90 @@ function drawOpturaCanvas(canvas, ctx) {
   };
 }
 
-function bezierPoint(t, p0, p1, p2, p3) {
-  var mt = 1 - t;
-  return {
-    x: mt * mt * mt * p0.x + 3 * mt * mt * t * p1.x + 3 * mt * t * t * p2.x + t * t * t * p3.x,
-    y: mt * mt * mt * p0.y + 3 * mt * mt * t * p1.y + 3 * mt * t * t * p2.y + t * t * t * p3.y,
-  };
+function roundRectPath(ctx, x, y, w, h, r) {
+  ctx.beginPath();
+  ctx.moveTo(x + r, y);
+  ctx.arcTo(x + w, y, x + w, y + h, r);
+  ctx.arcTo(x + w, y + h, x, y + h, r);
+  ctx.arcTo(x, y + h, x, y, r);
+  ctx.arcTo(x, y, x + w, y, r);
+  ctx.closePath();
 }
 
-function drawBoxIcon(ctx, x, y, s) {
+function drawSparkle(ctx, x, y, size, alpha) {
   ctx.save();
   ctx.translate(x, y);
-  ctx.fillStyle = '#1f1d1a';
-  ctx.strokeStyle = 'rgba(212,32,32,0.8)';
-  ctx.lineWidth = 1.4;
-  ctx.beginPath(); ctx.rect(-s / 2, -s / 2, s, s); ctx.fill(); ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(-s / 2, -s / 2); ctx.lineTo(0, -s / 2 - s * 0.3); ctx.lineTo(s / 2, -s / 2);
-  ctx.stroke();
-  ctx.beginPath(); ctx.moveTo(0, -s / 2 - s * 0.3); ctx.lineTo(0, s / 2); ctx.stroke();
-  ctx.restore();
-}
-
-function drawHouseIcon(ctx, x, y, s) {
-  ctx.save();
-  ctx.translate(x, y);
-  ctx.fillStyle = '#1f1d1a';
-  ctx.strokeStyle = 'rgba(212,32,32,0.8)';
-  ctx.lineWidth = 1.4;
-  ctx.beginPath(); ctx.rect(-s / 2, -s * 0.1, s, s * 0.6); ctx.fill(); ctx.stroke();
-  ctx.beginPath();
-  ctx.moveTo(-s * 0.65, -s * 0.1); ctx.lineTo(0, -s * 0.6); ctx.lineTo(s * 0.65, -s * 0.1); ctx.closePath();
-  ctx.fill(); ctx.stroke();
+  ctx.strokeStyle = 'rgba(255,150,150,' + alpha + ')';
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(-size, 0); ctx.lineTo(size, 0); ctx.stroke();
+  ctx.beginPath(); ctx.moveTo(0, -size); ctx.lineTo(0, size); ctx.stroke();
   ctx.restore();
 }
 
 function drawPocoCanvas(canvas, ctx) {
-  var t = 0, hold = 0;
+  var t = 0;
+  var sparkles = [];
+  for (var i = 0; i < 5; i++) {
+    sparkles.push({ phase: Math.random() * Math.PI * 2, speed: 0.015 + Math.random() * 0.015, ang: Math.random() * Math.PI * 2 });
+  }
   return function() {
     var W = canvas.offsetWidth, H = canvas.offsetHeight;
     ctx.clearRect(0, 0, W, H);
 
-    var p0 = { x: W * 0.14, y: H * 0.64 };
-    var p1 = { x: W * 0.40, y: H * 0.86 };
-    var p2 = { x: W * 0.62, y: H * 0.14 };
-    var p3 = { x: W * 0.86, y: H * 0.38 };
+    var cx = W * 0.5, cy = H * 0.56;
+    var bagW = Math.min(W, H) * 0.4;
+    var bagH = bagW * 1.05;
+    var sway = Math.sin(t * 0.015) * 0.05;
 
-    /* faint full route */
-    ctx.setLineDash([4, 5]);
-    ctx.strokeStyle = 'rgba(212,32,32,0.22)';
-    ctx.lineWidth = 1.2;
-    ctx.beginPath();
-    ctx.moveTo(p0.x, p0.y);
-    ctx.bezierCurveTo(p1.x, p1.y, p2.x, p2.y, p3.x, p3.y);
-    ctx.stroke();
-    ctx.setLineDash([]);
+    ctx.save();
+    ctx.translate(cx, cy);
+    ctx.rotate(sway);
 
-    /* traveled portion, solid */
-    var steps = 40;
-    ctx.strokeStyle = 'rgba(212,32,32,0.7)';
+    var left = -bagW / 2, right = bagW / 2, bodyTop = -bagH / 2 + 14, bottom = bagH / 2;
+
+    /* bag body + handles */
+    ctx.fillStyle = '#1f1d1a';
+    ctx.strokeStyle = 'rgba(212,32,32,0.8)';
     ctx.lineWidth = 1.6;
-    ctx.beginPath();
-    for (var i = 0; i <= steps; i++) {
-      var pt = bezierPoint((i / steps) * t, p0, p1, p2, p3);
-      if (i === 0) ctx.moveTo(pt.x, pt.y); else ctx.lineTo(pt.x, pt.y);
-    }
-    ctx.stroke();
+    roundRectPath(ctx, left, bodyTop, bagW, bottom - bodyTop, 14);
+    ctx.fill(); ctx.stroke();
+    ctx.beginPath(); ctx.arc(left + bagW * 0.28, bodyTop, bagW * 0.16, Math.PI, 0); ctx.stroke();
+    ctx.beginPath(); ctx.arc(left + bagW * 0.72, bodyTop, bagW * 0.16, Math.PI, 0); ctx.stroke();
 
-    var iconSize = Math.min(W, H) * 0.11;
-    drawBoxIcon(ctx, p0.x, p0.y, iconSize);
-    drawHouseIcon(ctx, p3.x, p3.y, iconSize * 1.1);
+    /* clasp detail */
+    ctx.strokeStyle = 'rgba(212,32,32,0.4)'; ctx.lineWidth = 1;
+    ctx.beginPath(); ctx.moveTo(-bagW * 0.14, bodyTop + 8); ctx.lineTo(bagW * 0.14, bodyTop + 8); ctx.stroke();
+    ctx.beginPath(); ctx.arc(0, bodyTop + 8, 3, 0, Math.PI * 2);
+    ctx.fillStyle = 'rgba(212,32,32,0.6)'; ctx.fill();
 
-    /* moving parcel dot */
-    var cur = bezierPoint(t, p0, p1, p2, p3);
-    ctx.shadowColor = 'rgba(212,32,32,0.9)';
-    ctx.shadowBlur = 8;
-    ctx.beginPath(); ctx.arc(cur.x, cur.y, 3.2, 0, Math.PI * 2);
-    ctx.fillStyle = 'rgba(255,90,90,0.95)'; ctx.fill();
-    ctx.shadowBlur = 0;
+    /* diagonal shine sweep, clipped to the bag body */
+    ctx.save();
+    roundRectPath(ctx, left, bodyTop, bagW, bottom - bodyTop, 14);
+    ctx.clip();
+    var sweep = (t % 220) / 220;
+    var sx = left - bagW * 0.5 + sweep * (bagW * 2);
+    var grad = ctx.createLinearGradient(sx - 26, 0, sx + 26, 0);
+    grad.addColorStop(0, 'rgba(255,255,255,0)');
+    grad.addColorStop(0.5, 'rgba(255,255,255,0.16)');
+    grad.addColorStop(1, 'rgba(255,255,255,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(left, bodyTop, bagW, bottom - bodyTop);
+    ctx.restore();
 
-    /* arrival pulse rings at the doorstep */
-    if (hold > 0) {
-      var ringP = 1 - hold / 50;
-      ctx.beginPath();
-      ctx.arc(p3.x, p3.y, iconSize * (0.7 + ringP * 1.6), 0, Math.PI * 2);
-      ctx.strokeStyle = 'rgba(212,32,32,' + (0.5 * (1 - ringP)) + ')';
-      ctx.lineWidth = 1.2; ctx.stroke();
-      hold--;
-      if (hold === 0) t = 0;
-    } else {
-      t += 0.009;
-      if (t >= 1) { t = 1; hold = 50; }
-    }
+    ctx.restore();
+
+    /* boutique sparkles floating around the bag */
+    sparkles.forEach(function(s) {
+      var life = Math.sin(t * s.speed + s.phase) * 0.5 + 0.5;
+      if (life > 0.72) {
+        var alpha = (life - 0.72) / 0.28;
+        var sxp = cx + Math.cos(s.ang) * bagW * 0.62;
+        var syp = cy + Math.sin(s.ang) * bagH * 0.55 - bagH * 0.08;
+        drawSparkle(ctx, sxp, syp, 4 * alpha, alpha * 0.85);
+      }
+    });
+
+    t++;
   };
 }
 
