@@ -118,7 +118,7 @@ window.I18N = {
     "path.3.when": "2019 / 2022",
     "path.3.desc": "Otonom uçuş algoritmaları geliştirdik; Romanya'da dünya birinciliği, Teknofest'te Türkiye ikinciliği ve TÜBİTAK derecesi kazandık.",
     "contact.idx": "06",
-    "contact.title": "Yaz bana",
+    "contact.title": "Bana yazın",
     "contact.lead": "Bir fikrin ya da freelance projen mi var? E-posta en hızlı cevabı alır.",
     "social.email": "E-posta",
     "social.email.copy": "Kopyalandı!",

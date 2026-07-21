@@ -361,8 +361,10 @@ body:not(.has-cursor) .cursor { display: none; }
 .social:hover { border-color: var(--line-2); background: var(--bg-3); }
 .s-left { display: flex; align-items: center; gap: 0.9rem; }
 .s-ic { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; color: var(--fg-3); width: 2rem; text-align: center; }
-.s-name { font-size: 0.87rem; font-weight: 500; display: block; }
-.s-handle { font-family: var(--mono); font-size: 0.65rem; color: var(--fg-3); display: block; }
+.s-left > span { display: flex; flex-direction: column; gap: 0.05rem; }
+.s-left br { display: none; }
+.s-name { font-size: 0.87rem; font-weight: 500; }
+.s-handle { font-family: var(--mono); font-size: 0.65rem; color: var(--fg-3); }
 .s-arr { color: var(--fg-3); font-size: 0.9rem; transition: transform 0.2s; }
 .social:hover .s-arr { transform: translate(2px, -2px); color: var(--accent); }
 .contact-form-col { flex: 1; display: flex; align-items: center; }
