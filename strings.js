@@ -131,7 +131,12 @@ window.I18N = {
     "mf.line3": "Sayısız commit.",
     "mf.coda": "Hepsi aynı sorudan başladı.",
     "foot.tag": "Türkiye'den, kahveyle yapıldı.",
-    "foot.top": "Yukarı çık"
+    "foot.top": "Yukarı çık",
+
+    "mq.rn": "React Native",
+    "mq.ai": "AI Entegrasyonu",
+    "mq.rag": "RAG Sistemleri",
+    "mq.drone": "Drone Yazılımı"
   },
 
   en: {
@@ -265,6 +270,11 @@ window.I18N = {
     "mf.line3": "Countless commits.",
     "mf.coda": "It all started with one question.",
     "foot.tag": "Made with coffee, from Türkiye.",
-    "foot.top": "Back to top"
+    "foot.top": "Back to top",
+
+    "mq.rn": "React Native",
+    "mq.ai": "AI Integration",
+    "mq.rag": "RAG Systems",
+    "mq.drone": "Drone Software"
   }
 };
