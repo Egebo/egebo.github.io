@@ -195,14 +195,14 @@ body:not(.has-cursor) .cursor { display: none; }
 /* ============================================================
    PROJECTS HEAD
    ============================================================ */
-.projects-head { padding: clamp(3rem, 6vw, 5rem) 0 clamp(1.5rem, 3vw, 2.5rem); border-top: 1px solid var(--line); }
+.projects-head { padding: clamp(3rem, 6vw, 5rem) 0 clamp(0.75rem, 1.5vw, 1.25rem); border-top: 1px solid var(--line); scroll-margin-top: 64px; }
 .ph-title { font-family: var(--display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.04em; }
 
 /* ============================================================
    LOOKED — FAN LAYOUT
    ============================================================ */
 .feat-looked-new { border-bottom: 1px solid var(--line); }
-.feat-looked-inner { display: grid; grid-template-columns: 45% 55%; gap: clamp(3rem, 6vw, 5rem); align-items: center; padding-block: clamp(4rem, 8vw, 7rem); }
+.feat-looked-inner { display: grid; grid-template-columns: 45% 55%; gap: clamp(3rem, 6vw, 5rem); align-items: center; padding-block: clamp(1.5rem, 3vw, 2.5rem) clamp(3rem, 6vw, 5rem); }
 .f-eyebrow { font-family: var(--mono); font-size: 0.62rem; letter-spacing: 0.10em; text-transform: uppercase; color: var(--accent); display: flex; align-items: center; gap: 0.5rem; margin-bottom: 0.9rem; }
 .f-eyebrow::before { content: ""; width: 20px; height: 1px; background: var(--accent); }
 .feat-title { font-family: var(--display); font-size: clamp(2.4rem, 5vw, 4rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin-bottom: 1rem; }
