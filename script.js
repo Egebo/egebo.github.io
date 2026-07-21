@@ -183,40 +183,37 @@ function drawJarvisCanvas(canvas, ctx) {
 }
 
 function drawOpturaCanvas(canvas, ctx) {
-  var items = ['🧅  Onion × 2', '🍅  Tomato × 3', '🥛  Milk × 1', '🍞  Bread × 1'];
   var scanY = -20;
   return function() {
     var W = canvas.offsetWidth, H = canvas.offsetHeight;
     ctx.clearRect(0, 0, W, H);
     var sy = scanY % (H + 60) - 20;
-    ctx.shadowColor = 'rgba(212,32,32,0.6)';
-    ctx.shadowBlur = 8;
-    ctx.strokeStyle = 'rgba(212,32,32,0.85)';
+    /* glow trail */
+    var grad = ctx.createLinearGradient(0, sy - 24, 0, sy + 24);
+    grad.addColorStop(0,   'rgba(212,32,32,0)');
+    grad.addColorStop(0.5, 'rgba(212,32,32,0.18)');
+    grad.addColorStop(1,   'rgba(212,32,32,0)');
+    ctx.fillStyle = grad;
+    ctx.fillRect(0, sy - 24, W, 48);
+    /* scan line */
+    ctx.shadowColor = 'rgba(212,32,32,0.7)';
+    ctx.shadowBlur = 10;
+    ctx.strokeStyle = 'rgba(212,32,32,0.9)';
     ctx.lineWidth = 1.5;
     ctx.beginPath(); ctx.moveTo(0, sy); ctx.lineTo(W, sy); ctx.stroke();
     ctx.shadowBlur = 0;
-    items.forEach(function(item, i) {
-      var iy = 48 + i * 30;
-      if (sy > iy) {
-        var alpha = Math.min(1, (sy - iy) / 24);
-        ctx.font = '11px "Geist Mono", monospace';
-        ctx.fillStyle = 'rgba(240,237,232,' + (alpha * 0.65) + ')';
-        ctx.fillText(item, 20, iy);
-      }
-    });
     scanY += 1.4;
   };
 }
 
 function drawPocoCanvas(canvas, ctx) {
-  var steps = ['Cart', 'Order', 'Pay', 'Done'];
-  var xs    = [0.14, 0.38, 0.62, 0.86];
-  var dash  = 0;
+  var xs   = [0.14, 0.38, 0.62, 0.86];
+  var dash = 0;
   return function() {
     var W = canvas.offsetWidth, H = canvas.offsetHeight;
     var cy = H * 0.48;
     ctx.clearRect(0, 0, W, H);
-    for (var i = 0; i < steps.length - 1; i++) {
+    for (var i = 0; i < xs.length - 1; i++) {
       var x1 = xs[i] * W + 14, x2 = xs[i + 1] * W - 14;
       ctx.setLineDash([5, 4]);
       ctx.lineDashOffset = -dash;
@@ -225,14 +222,16 @@ function drawPocoCanvas(canvas, ctx) {
       ctx.beginPath(); ctx.moveTo(x1, cy); ctx.lineTo(x2, cy); ctx.stroke();
     }
     ctx.setLineDash([]);
-    steps.forEach(function(step, i) {
-      var x = xs[i] * W;
-      ctx.beginPath(); ctx.arc(x, cy, 11, 0, Math.PI * 2);
+    xs.forEach(function(x) {
+      var xp = x * W;
+      ctx.beginPath(); ctx.arc(xp, cy, 11, 0, Math.PI * 2);
       ctx.fillStyle = '#1f1d1a'; ctx.fill();
       ctx.strokeStyle = 'rgba(212,32,32,0.65)'; ctx.lineWidth = 1.5; ctx.stroke();
-      ctx.font = '9px "Geist Mono", monospace';
-      ctx.fillStyle = 'rgba(154,150,144,0.8)'; ctx.textAlign = 'center';
-      ctx.fillText(step, x, cy + 24);
+      /* pulse ring */
+      var pulse = (Math.sin(dash * 0.08 + xp) * 0.5 + 0.5) * 6;
+      ctx.beginPath(); ctx.arc(xp, cy, 11 + pulse, 0, Math.PI * 2);
+      ctx.strokeStyle = 'rgba(212,32,32,' + (0.15 - pulse * 0.02) + ')';
+      ctx.lineWidth = 1; ctx.stroke();
     });
     dash += 0.5;
   };

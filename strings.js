@@ -14,8 +14,8 @@ window.I18N = {
     "nav.cta": "İletişime Geç <span class=\"arr\">→</span>",
 
     "hero.eyebrow": "EGEMEN BOZCA · GELİŞTİRİCİ",
-    "hero.line1": "AI sistemleri <span class=\"accent\">kuruyorum.</span>",
-    "hero.line2": "Uygulamalar <span class=\"accent\">shipliyorum.</span>",
+    "hero.line1": "Proje \"tamam\" dendiği yerde,",
+    "hero.line2": "ben <span class=\"accent\">devreye girerim.</span>",
     "hero.h1a": "Mobil ürünleri",
     "hero.h1c": "yayına taşıyorum.",
     "hero.h1": "Mobil ürünleri<br><span class=\"accent\">yayına taşıyorum.</span>",
@@ -32,7 +32,7 @@ window.I18N = {
 
     "about.idx": "01",
     "about.title": "Hakkımda",
-    "about.lead": "Sadece kod yazan biri değilim. Mobil ve web ürünleri geliştirirken asıl ilgim <strong>AI sistemleri</strong>: LLM entegrasyonlarından RAG mimarilerine kadar. Bir fikri çalışan sisteme dönüştürmek beni harekete geçiriyor.",
+    "about.lead": "Bir alanın uzmanı değilim. Benim olayım akla geleni daha iyi hale getirmek: arayüzler, AI pipeline'ları, kullanıcı akışları fark etmez. Şu an mobil ve AI tarafında üretiyorum ancak asıl hedef basit: dokunduğum her proje, öncekinden daha iyi çalışmalı.",
     "about.body": "Sakarya Üniversitesi Bilgisayar Mühendisliği mezunuyum. Mobil ve web alanında freelance çalışıyor, aynı zamanda yapay zekâ sistemleri üzerine projeler üretiyorum. Geçmişte otonom drone yazılımlarıyla uğraştım, Romanya'da dünya birincisi oldum; şimdi odağım AI destekli ürünler ve akıllı sistemler kurmak.",
     "meta.edu.k": "Eğitim",
     "meta.edu.v": "Bilgisayar Mühendisliği",
@@ -175,8 +175,8 @@ window.I18N = {
     "nav.cta": "Get in touch <span class=\"arr\">→</span>",
 
     "hero.eyebrow": "EGEMEN BOZCA · DEVELOPER",
-    "hero.line1": "I build <span class=\"accent\">AI systems.</span>",
-    "hero.line2": "I ship <span class=\"accent\">apps.</span>",
+    "hero.line1": "Good enough",
+    "hero.line2": "isn't <span class=\"accent\">good enough.</span>",
     "hero.h1": "I build mobile apps<br><span class=\"accent\">people actually use.</span>",
     "hero.h1a": "I take mobile products",
     "hero.h1c": "to launch.",
@@ -196,7 +196,7 @@ window.I18N = {
 
     "about.idx": "01",
     "about.title": "About",
-    "about.lead": "I'm not just someone who writes code. While I build mobile and web products, my real interest is <strong>AI systems</strong>: from LLM integrations to RAG architectures. Turning an idea into a working system is what drives me.",
+    "about.lead": "I'm not a specialist. I'm obsessed with making things better — interfaces, AI pipelines, user flows. Mobile and AI are where I build right now. But the real goal is simpler: whatever I touch should work better than it did before.",
     "about.body": "I recently graduated with a Computer Engineering degree from Sakarya University. I freelance in mobile and web, while building projects around AI systems. I used to work on autonomous drone software and won first place in the world in Romania; now my focus is AI-powered products and intelligent systems.",
     "meta.edu.k": "Education",
     "meta.edu.v": "Computer Engineering",
