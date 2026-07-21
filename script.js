@@ -440,6 +440,116 @@ function initRagDiagram() {
   });
 }
 
+/* ---------- Project card canvases ---------- */
+function initProjectCanvases() {
+  var cards = [
+    { sel: '.proj-jarvis', draw: drawJarvisCanvas },
+    { sel: '.proj-optura', draw: drawOpturaCanvas },
+    { sel: '.proj-poco',   draw: drawPocoCanvas   },
+  ];
+
+  cards.forEach(function(c) {
+    var card = document.querySelector(c.sel);
+    if (!card) return;
+    var canvas = card.querySelector('canvas');
+    if (!canvas) return;
+
+    var dpr = window.devicePixelRatio || 1;
+    canvas.width  = card.offsetWidth  * dpr;
+    canvas.height = card.offsetHeight * dpr;
+    var ctx = canvas.getContext('2d');
+    ctx.scale(dpr, dpr);
+
+    var tick = c.draw(canvas, ctx);
+    var raf = null;
+
+    card.addEventListener('mouseenter', function() {
+      function loop() { tick(); raf = requestAnimationFrame(loop); }
+      loop();
+    });
+    card.addEventListener('mouseleave', function() {
+      if (raf) { cancelAnimationFrame(raf); raf = null; }
+      ctx.clearRect(0, 0, canvas.offsetWidth, canvas.offsetHeight);
+    });
+  });
+}
+
+function drawJarvisCanvas(canvas, ctx) {
+  var bars = 48, t = 0;
+  return function() {
+    var W = canvas.offsetWidth, H = canvas.offsetHeight;
+    var bw = W / bars - 1;
+    ctx.clearRect(0, 0, W, H);
+    for (var i = 0; i < bars; i++) {
+      var h = (Math.sin(i * 0.38 + t) * 0.38 + 0.52) * H * 0.55;
+      var alpha = 0.25 + Math.sin(i * 0.38 + t) * 0.18;
+      ctx.fillStyle = 'rgba(212,32,32,' + Math.max(0.07, alpha) + ')';
+      ctx.fillRect(i * (bw + 1), (H - h) / 2, Math.max(1, bw), h);
+    }
+    t += 0.07;
+  };
+}
+
+function drawOpturaCanvas(canvas, ctx) {
+  var items = ['🧅  Onion × 2', '🍅  Tomato × 3', '🥛  Milk × 1', '🍞  Bread × 1'];
+  var scanY = -20;
+  return function() {
+    var W = canvas.offsetWidth, H = canvas.offsetHeight;
+    ctx.clearRect(0, 0, W, H);
+    var sy = scanY % (H + 60) - 20;
+    // scan line glow
+    ctx.shadowColor = 'rgba(212,32,32,0.6)';
+    ctx.shadowBlur = 8;
+    ctx.strokeStyle = 'rgba(212,32,32,0.85)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath(); ctx.moveTo(0, sy); ctx.lineTo(W, sy); ctx.stroke();
+    ctx.shadowBlur = 0;
+    // revealed items
+    items.forEach(function(item, i) {
+      var iy = 48 + i * 30;
+      if (sy > iy) {
+        var alpha = Math.min(1, (sy - iy) / 24);
+        ctx.font = '11px "Geist Mono", monospace';
+        ctx.fillStyle = 'rgba(240,237,232,' + (alpha * 0.65) + ')';
+        ctx.fillText(item, 20, iy);
+      }
+    });
+    scanY += 1.4;
+  };
+}
+
+function drawPocoCanvas(canvas, ctx) {
+  var steps = ['Cart', 'Order', 'Pay', 'Done'];
+  var xs = [0.14, 0.38, 0.62, 0.86];
+  var dash = 0;
+  return function() {
+    var W = canvas.offsetWidth, H = canvas.offsetHeight;
+    var cy = H * 0.48;
+    ctx.clearRect(0, 0, W, H);
+    // connector lines
+    for (var i = 0; i < steps.length - 1; i++) {
+      var x1 = xs[i] * W + 14, x2 = xs[i+1] * W - 14;
+      ctx.setLineDash([5, 4]);
+      ctx.lineDashOffset = -dash;
+      ctx.strokeStyle = 'rgba(212,32,32,0.45)';
+      ctx.lineWidth = 1.5;
+      ctx.beginPath(); ctx.moveTo(x1, cy); ctx.lineTo(x2, cy); ctx.stroke();
+    }
+    ctx.setLineDash([]);
+    // nodes + labels
+    steps.forEach(function(step, i) {
+      var x = xs[i] * W;
+      ctx.beginPath(); ctx.arc(x, cy, 11, 0, Math.PI * 2);
+      ctx.fillStyle = '#1f1d1a'; ctx.fill();
+      ctx.strokeStyle = 'rgba(212,32,32,0.65)'; ctx.lineWidth = 1.5; ctx.stroke();
+      ctx.font = '9px "Geist Mono", monospace';
+      ctx.fillStyle = 'rgba(154,150,144,0.8)'; ctx.textAlign = 'center';
+      ctx.fillText(step, x, cy + 24);
+    });
+    dash += 0.5;
+  };
+}
+
 /* ---------- Nav v8 init ---------- */
 initScrollProgress();
 initNav();
@@ -447,3 +557,4 @@ initHeroCanvas();
 initCursor();
 initLookedScroll();
 initRagDiagram();
+initProjectCanvases();
