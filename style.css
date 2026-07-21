@@ -352,7 +352,8 @@ body:not(.has-cursor) .cursor { display: none; }
    CONTACT
    ============================================================ */
 .contact-section { border-top: 1px solid var(--line); }
-.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 6rem); align-items: start; min-height: clamp(420px, 55vh, 580px); }
+.contact-inner { display: flex; gap: clamp(3rem, 6vw, 6rem); align-items: stretch; }
+.bc-left { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
 .bc-heading { font-family: var(--display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 0.8rem; }
 .bc-sub { font-size: 1rem; color: var(--fg-2); margin-bottom: 2rem; }
 .social-list { display: flex; flex-direction: column; gap: 0.5rem; }
@@ -364,7 +365,8 @@ body:not(.has-cursor) .cursor { display: none; }
 .s-handle { font-family: var(--mono); font-size: 0.65rem; color: var(--fg-3); display: block; }
 .s-arr { color: var(--fg-3); font-size: 0.9rem; transition: transform 0.2s; }
 .social:hover .s-arr { transform: translate(2px, -2px); color: var(--accent); }
-.contact-form-col { align-self: center; }
+.contact-form-col { flex: 1; display: flex; align-items: center; }
+.contact-form-col .form { width: 100%; }
 .form { display: flex; flex-direction: column; gap: 0.75rem; }
 .form-fields { display: flex; flex-direction: column; gap: 0.75rem; }
 .field { display: flex; flex-direction: column; gap: 0.3rem; }
@@ -384,7 +386,8 @@ body:not(.has-cursor) .cursor { display: none; }
 .form-success .check { font-size: 2rem; color: var(--accent); }
 .form-success h3 { font-family: var(--display); font-size: 1.1rem; font-weight: 700; }
 @media (max-width: 720px) {
-  .contact-inner { grid-template-columns: 1fr; }
+  .contact-inner { flex-direction: column; }
+  .contact-form-col { align-items: flex-start; }
 }
 
 /* ============================================================
