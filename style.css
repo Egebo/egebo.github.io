@@ -354,10 +354,10 @@ body:not(.has-cursor) .cursor { display: none; }
 .contact-section { border-top: 1px solid var(--line); }
 .contact-inner { display: flex; gap: clamp(3rem, 6vw, 6rem); align-items: stretch; }
 .bc-left { flex: 1; display: flex; flex-direction: column; justify-content: flex-start; }
-.bc-heading { font-family: var(--display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 0.8rem; }
-.bc-sub { font-size: 1rem; color: var(--fg-2); margin-bottom: 2rem; }
+.bc-heading { font-family: var(--display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 0.35rem; }
+.bc-sub { font-size: 1rem; color: var(--fg-2); margin-bottom: 1.2rem; }
 .social-list { display: flex; flex-direction: column; gap: 0.5rem; }
-.social { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 1rem; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius); transition: border-color 0.2s, background 0.2s; cursor: pointer; width: 100%; }
+.social { display: flex; align-items: center; justify-content: space-between; padding: 0.5rem 0.9rem; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius); transition: border-color 0.2s, background 0.2s; cursor: pointer; width: 100%; text-align: left; }
 .social:hover { border-color: var(--line-2); background: var(--bg-3); }
 .s-left { display: flex; align-items: center; gap: 0.9rem; }
 .s-ic { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; color: var(--fg-3); width: 2rem; text-align: center; }
