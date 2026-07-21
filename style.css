@@ -299,3 +299,58 @@ h1 .accent { color: var(--accent); }
 .rag-caption { font-family: var(--mono); font-size: 0.54rem; color: var(--fg-3); letter-spacing: 0.08em; text-transform: uppercase; }
 .el-badge { font-family: var(--mono); font-size: 0.56rem; letter-spacing: 0.06em; color: var(--fg-3); text-transform: uppercase; }
 .br-meta { display: flex; align-items: center; gap: 0.8rem; flex-wrap: wrap; }
+
+/* ============================================================
+   OTHER PROJECTS GRID
+   ============================================================ */
+.pg-section {
+  padding: clamp(3rem, 6vw, 5rem) var(--gutter);
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--line);
+}
+.pg-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  margin-top: 0;
+}
+.pg-card {
+  background: var(--bg);
+  border: 1.5px solid var(--line);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  display: flex; flex-direction: column;
+  cursor: pointer;
+  transition: border-color 0.2s var(--ease), box-shadow 0.2s var(--ease), transform 0.2s var(--ease);
+}
+.pg-card:hover { border-color: var(--accent); box-shadow: 0 8px 32px rgba(var(--accent-rgb), 0.10); transform: translateY(-3px); }
+.pg-thumb {
+  aspect-ratio: 16/10; background: var(--bg-3); position: relative;
+  overflow: hidden; display: grid; place-items: center; flex-shrink: 0;
+}
+.pg-thumb--voice::after {
+  content: "STT → LLM → TTS";
+  font-family: var(--mono); font-size: 0.68rem; font-weight: 600;
+  color: var(--fg-3); opacity: 0.5; letter-spacing: 0.06em;
+}
+.has-thumb .thumb-img { width: 100%; height: 100%; display: block; }
+.pg-badge {
+  position: absolute; bottom: 0.6rem; left: 0.6rem;
+  font-family: var(--mono); font-size: 0.52rem;
+  background: rgba(255,255,255,0.92); border: 1px solid var(--line-2); color: var(--fg-3);
+  padding: 0.2rem 0.5rem; display: flex; align-items: center; gap: 0.3rem;
+  letter-spacing: 0.06em; z-index: 2; border-radius: 999px; backdrop-filter: blur(4px);
+}
+.pg-live { color: var(--fg) !important; }
+.pg-live .ld { width: 5px; height: 5px; background: #22c55e; border-radius: 50%; flex-shrink: 0; }
+.pg-body { padding: 1.2rem; display: flex; flex-direction: column; gap: 0.5rem; flex: 1; }
+.pg-type { font-family: var(--mono); font-size: 0.54rem; color: var(--fg-3); letter-spacing: 0.08em; }
+.pg-body h3 { font-family: var(--display); font-size: 1.1rem; font-weight: 700; letter-spacing: -0.02em; color: var(--fg); display: flex; align-items: center; gap: 0.35rem; }
+.pa { color: var(--fg-3); font-size: 0.8em; transition: color 0.15s; }
+.pg-card:hover .pa { color: var(--accent); }
+.pg-body p { font-size: 0.84rem; color: var(--fg-2); line-height: 1.65; flex: 1; }
+.proj-live-btn { display: inline-flex; align-items: center; gap: 0.3rem; font-family: var(--mono); font-size: 0.58rem; color: var(--accent); opacity: 0.6; transition: opacity 0.2s; margin-top: 0.3rem; }
+.proj-live-btn:hover { opacity: 1; }
+
+@media (max-width: 720px) { .pg-grid { grid-template-columns: repeat(2, 1fr); } }
+@media (max-width: 480px) { .pg-grid { grid-template-columns: 1fr; } }
