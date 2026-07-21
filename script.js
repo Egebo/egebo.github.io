@@ -386,8 +386,38 @@ function initCursor() {
   tick();
 }
 
+/* ---------- Looked sticky scroll ---------- */
+function initLookedScroll() {
+  var outer = document.querySelector('.feat-looked-outer');
+  if (!outer) return;
+  if (window.matchMedia('(max-width: 780px)').matches) return;
+
+  var screens = outer.querySelectorAll('.phone-screen');
+  var feats = outer.querySelectorAll('.looked-feat');
+
+  function setActive(idx) {
+    screens.forEach(function(s, i) { s.classList.toggle('active', i === idx); });
+    feats.forEach(function(f, i) { f.classList.toggle('active', i === idx); });
+  }
+
+  var ticking = false;
+  window.addEventListener('scroll', function() {
+    if (ticking) return;
+    ticking = true;
+    requestAnimationFrame(function() {
+      var rect = outer.getBoundingClientRect();
+      var scrollable = outer.offsetHeight - window.innerHeight;
+      if (scrollable <= 0) { ticking = false; return; }
+      var progress = Math.max(0, Math.min(1, -rect.top / scrollable));
+      setActive(Math.min(3, Math.floor(progress * 4)));
+      ticking = false;
+    });
+  }, { passive: true });
+}
+
 /* ---------- Nav v8 init ---------- */
 initScrollProgress();
 initNav();
 initHeroCanvas();
 initCursor();
+initLookedScroll();
