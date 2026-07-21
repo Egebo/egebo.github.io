@@ -1,20 +1,19 @@
 <!DOCTYPE html>
-<html lang="tr">
+<html lang="en">
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Egemen Bozca | React Native & AI Developer</title>
-<meta name="description" content="Egemen Bozca: React Native & AI developer. Shipped 4 apps to Google Play & App Store, built RAG-based AI systems, world champion with autonomous drone software. Open to freelance.">
+<meta name="description" content="Egemen Bozca: React Native & AI developer. Shipped apps to Google Play & App Store, built RAG-based AI systems, world champion with autonomous drone software.">
 <link rel="canonical" href="https://egebo.github.io/">
-<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23E8442A'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='700' font-size='62' fill='%23ffffff' text-anchor='middle'>E</text></svg>">
+<link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><rect width='100' height='100' rx='22' fill='%23D42020'/><text x='50' y='72' font-family='system-ui,sans-serif' font-weight='700' font-size='62' fill='%23ffffff' text-anchor='middle'>E</text></svg>">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://egebo.github.io/">
-<meta property="og:title" content="Egemen Bozca | Geliştirici & Yapay Zekâ Sistemleri">
-<meta property="og:description" content="Web & mobil freelancer, yapay zekâ sistemleri meraklısı. React Native, RAG, LLM entegrasyonu. Otonom drone yazılımıyla dünya birincisi.">
+<meta property="og:title" content="Egemen Bozca | Developer & AI Systems">
+<meta property="og:description" content="React Native & AI developer. 4 apps live, RAG systems, world champion drone software.">
 <meta property="og:image" content="https://egebo.github.io/looked_ss/play_1.png">
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="Egemen Bozca | Geliştirici & Yapay Zekâ Sistemleri">
-<meta name="twitter:description" content="Web & mobil freelancer, yapay zekâ sistemleri meraklısı. React Native ile 4 uygulama, RAG sistemleri, otonom drone dünya birincisi.">
+<meta name="twitter:title" content="Egemen Bozca | Developer & AI Systems">
 <meta name="twitter:image" content="https://egebo.github.io/looked_ss/play_1.png">
 <script type="application/ld+json">
 {
@@ -23,56 +22,35 @@
   "name": "Egemen Bozca",
   "url": "https://egebo.github.io",
   "email": "bozcaegemen@gmail.com",
-  "jobTitle": "Freelance Web & Mobile Developer",
-  "description": "Freelance web & mobile developer specializing in React Native and AI systems. Shipped 4 apps on Google Play, built RAG-based AI systems, world champion with autonomous drone software.",
-  "sameAs": [
-    "https://www.linkedin.com/in/egemen-bozca/",
-    "https://github.com/Egebo"
-  ],
-  "alumniOf": {
-    "@type": "CollegeOrUniversity",
-    "name": "Sakarya University"
-  },
-  "knowsAbout": ["React Native", "Python", "RAG", "LLM", "Firebase", "Mobile Development", "AI Systems", "FastAPI"]
+  "jobTitle": "Freelance Mobile & AI Developer",
+  "sameAs": ["https://www.linkedin.com/in/egemen-bozca/","https://github.com/Egebo"]
 }
 </script>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin="">
-<link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@700;800&family=Inter:wght@400;500;600&family=Geist+Mono:wght@400;500&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css?v=32">
+<link rel="stylesheet" href="style.css?v=33">
+<script src="strings.js" defer></script>
 <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"></script>
-<script type="text/javascript">
-  (function () { emailjs.init("mzmL-J9Z59jECtnhm"); })();
-</script>
 </head>
 <body>
 
-<div class="cursor" id="cursor" aria-hidden="true">
-  <div class="c-dot"></div>
-  <div class="c-ring"></div>
-</div>
-<div class="scroll-prog" aria-hidden="true"></div>
+<div class="scroll-prog" id="scrollProg"></div>
+<div class="cursor" aria-hidden="true"><div class="c-dot"></div><div class="c-ring"></div></div>
 
-<!-- ============ NAV ============ -->
-<header class="nav" id="nav">
-  <a href="#top" class="brand">Egemen Bozca</a>
-  <nav class="nav-links" id="navLinks" aria-label="Page navigation">
-    <a href="#projects" data-i18n="nav.projects">Projects</a>
-    <a href="#about" data-i18n="nav.about">About</a>
-    <a href="#work" data-i18n="nav.work">Awards</a>
-    <a href="#contact" data-i18n="nav.contact">Contact</a>
-  </nav>
+<nav class="nav" id="mainNav">
+  <a href="#" class="nav-brand">Egemen Bozca</a>
+  <ul class="nav-links">
+    <li><a href="#projects" data-i18n="nav.work">Work</a></li>
+    <li><a href="#about" data-i18n="nav.about">About</a></li>
+    <li><a href="#work" data-i18n="nav.awards">Awards</a></li>
+    <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
+  </ul>
   <div class="nav-right">
-    <div class="lang-toggle" role="group" aria-label="Language">
-      <button data-lang="en" class="on">EN</button>
-      <button data-lang="tr">TR</button>
+    <div class="nav-lang">
+      <button id="langTR" data-i18n-lang="tr">TR</button>
+      <button id="langEN" data-i18n-lang="en">EN</button>
     </div>
-    <a href="#contact" class="btn btn--accent" style="font-size:0.8rem;padding:0.45rem 1rem;" data-i18n="nav.cta">Get in touch</a>
-    <button class="burger" id="burger" aria-label="Toggle menu" aria-expanded="false">
-      <span></span><span></span><span></span>
-    </button>
+    <a href="#contact" class="btn btn--accent btn--sm nav-cta" data-i18n="nav.cta">Hire me <span class="arr">→</span></a>
   </div>
-</header>
+</nav>
 
 <!-- ============ MARQUEE ============ -->
 <div class="marquee-band" aria-hidden="true">
@@ -407,7 +385,6 @@
   </div>
 </footer>
 
-<script src="strings.js?v=28"></script>
-<script src="script.js?v=28"></script>
+<script src="script.js?v=33"></script>
 </body>
 </html>

@@ -13,7 +13,31 @@
    · contact form (EmailJS) + email copy-to-clipboard
    ============================================================ */
 
-// Hamburger menu
+/* ---------- EmailJS init (key moved from head inline script) ---------- */
+if (typeof emailjs !== 'undefined') { emailjs.init('mzmL-J9Z59jECtnhm'); }
+
+/* ---------- Nav v8 functions ---------- */
+function initScrollProgress() {
+  var bar = document.getElementById('scrollProg');
+  if (!bar) return;
+  window.addEventListener('scroll', function () {
+    var h = document.documentElement.scrollHeight - window.innerHeight;
+    bar.style.width = (h > 0 ? (window.scrollY / h) * 100 : 0) + '%';
+  }, { passive: true });
+}
+
+function initNav() {
+  var nav = document.getElementById('mainNav');
+  if (!nav) return;
+  var THRESHOLD = 60;
+  function update() {
+    nav.classList.toggle('scrolled', window.scrollY > THRESHOLD);
+  }
+  window.addEventListener('scroll', update, { passive: true });
+  update();
+}
+
+// Hamburger menu (v7 — no-op once #burger removed)
 const burger = document.getElementById('burger');
 const navLinks = document.getElementById('navLinks');
 if (burger && navLinks) {
@@ -283,3 +307,7 @@ if (burger && navLinks) {
   applyLang(lang);
 
 })();
+
+/* ---------- Nav v8 init ---------- */
+initScrollProgress();
+initNav();
