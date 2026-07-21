@@ -63,7 +63,7 @@ window.I18N = {
     "ach.2.desc": "Teknofest İHA yarışmasında yaklaşık 10 kişilik takımın koordinasyonu ve otonom uçuş kontrol yazılımı üstlenilmiştir. Takım Türkiye genelinde 2. olmuştur.",
     "ach.3.rank": "Türkiye 3.'sü",
     "ach.3.title": "TÜBİTAK: Akıllı Çocuk Kilidi",
-    "ach.3.desc": "Bir arkadaşla geliştirilen TÜBİTAK 2204 projesinde, arkaya bakan bir kamera arka koltukta gerçekten çocuk olup olmadığını tespit etmiş, sadece ilgili kapıyı kilitlemiştir. Proje Türkiye 3.'sü olmuştur.",
+    "ach.3.desc": "TÜBİTAK 2204 yarışması için arkaya bakan bir kamera aracılığıyla arka koltukta gerçekten çocuk olup olmadığını tespit eden ve sadece ilgili kapıyı kilitleyen bir proje geliştirilmiştir. Proje Türkiye 3.'sü olmuştur.",
 
     "proj.idx": "04",
     "proj.title": "Projeler",
@@ -237,7 +237,7 @@ window.I18N = {
     "ach.2.desc": "At the Teknofest UAV competition, a team of about ten people was coordinated and the autonomous flight control software was built. The team placed 2nd nationally.",
     "ach.3.rank": "Turkey 3rd",
     "ach.3.title": "TÜBİTAK: Smart Child Lock",
-    "ach.3.desc": "For a TÜBİTAK 2204 project built with a friend, a rear-facing camera was used to detect whether a child was actually present in the back seat, locking only the relevant door. The project placed 3rd nationally.",
+    "ach.3.desc": "For the TÜBİTAK 2204 competition, a project was developed that used a rear-facing camera to detect whether a child was actually present in the back seat, locking only the relevant door. The project placed 3rd nationally.",
 
     "proj.idx": "04",
     "proj.title": "Projects",
