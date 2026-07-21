@@ -391,3 +391,51 @@ h1 .accent { color: var(--accent); }
   .about-inner { grid-template-columns: 1fr; }
   .about-meta { padding-top: 0; }
 }
+
+/* ============================================================
+   AWARDS
+   ============================================================ */
+.awards-section {
+  padding: clamp(3.5rem, 7vw, 6rem) var(--gutter);
+  background: var(--bg-2);
+  border-bottom: 1px solid var(--line);
+}
+.aw-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 0; margin-top: 1.5rem; border: 1.5px solid var(--line); border-radius: var(--radius-lg); overflow: hidden; }
+.ach-card {
+  padding: 1.8rem 1.5rem;
+  border-right: 1px solid var(--line);
+  display: flex; flex-direction: column; gap: 0.4rem;
+  transition: background 0.2s;
+}
+.ach-card:last-child { border-right: none; }
+.ach-card:hover { background: var(--bg-3); }
+.ach-year { font-family: var(--mono); font-size: 0.56rem; color: var(--fg-3); letter-spacing: 0.06em; }
+.ach-rank { font-family: var(--mono); font-size: 0.56rem; color: var(--accent); letter-spacing: 0.08em; }
+.ach-medal { font-family: var(--display); font-size: 2.2rem; font-weight: 800; color: var(--fg); letter-spacing: -0.05em; line-height: 1; margin: 0.4rem 0 0.2rem; }
+.ach-medal .sm { font-size: 0.38em; color: var(--fg-3); margin-left: 0.3em; font-weight: 500; }
+.ach-card h3 { font-family: var(--display); font-size: 0.92rem; font-weight: 700; letter-spacing: -0.02em; color: var(--fg); }
+.ach-card p { font-size: 0.81rem; color: var(--fg-2); line-height: 1.62; }
+
+@media (max-width: 600px) {
+  .aw-grid { grid-template-columns: 1fr; }
+  .ach-card { border-right: none; border-bottom: 1px solid var(--line); }
+  .ach-card:last-child { border-bottom: none; }
+}
+
+/* ============================================================
+   EXPERIENCE
+   ============================================================ */
+.exp-section {
+  padding: clamp(3rem, 6vw, 5rem) var(--gutter);
+  background: var(--bg);
+  border-bottom: 1px solid var(--line);
+}
+.timeline { display: flex; flex-direction: column; border-left: 1.5px solid var(--line-2); margin-left: 4px; margin-top: 1.2rem; }
+.tl-item { display: flex; gap: 1.5rem; padding: 0 0 1.8rem 1.8rem; position: relative; }
+.tl-item:last-child { padding-bottom: 0; }
+.tl-item::before { content: ""; position: absolute; left: -5px; top: 5px; width: 8px; height: 8px; background: var(--accent); border-radius: 50%; border: 2px solid var(--bg); box-shadow: 0 0 0 1.5px var(--accent); }
+.tl-when { font-family: var(--mono); font-size: 0.56rem; color: var(--accent); letter-spacing: 0.06em; flex-shrink: 0; padding-top: 0.2rem; min-width: 90px; }
+.tl-body { flex: 1; }
+.tl-kind { font-family: var(--mono); font-size: 0.52rem; color: var(--fg-3); text-transform: uppercase; letter-spacing: 0.12em; display: inline-block; margin-bottom: 0.25rem; }
+.tl-role { font-family: var(--display); font-size: 0.92rem; font-weight: 700; letter-spacing: -0.02em; color: var(--fg); margin-bottom: 0.15rem; }
+.tl-org { font-size: 0.75rem; color: var(--accent); font-weight: 500; }
