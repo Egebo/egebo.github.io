@@ -4,14 +4,14 @@
    ============================================================ */
 window.I18N = {
   tr: {
-    "nav.about": "Hakkında",
+    "nav.about": "Hakkımda",
     "nav.skills": "Beceriler",
-    "nav.work": "İşler",
+    "nav.work": "Projeler",
     "nav.awards": "Başarılar",
     "nav.projects": "Projeler",
     "nav.path": "Deneyim",
     "nav.contact": "İletişim",
-    "nav.cta": "İşe Al <span class=\"arr\">→</span>",
+    "nav.cta": "İletişime Geç <span class=\"arr\">→</span>",
 
     "hero.eyebrow": "EGEMEN BOZCA · GELİŞTİRİCİ",
     "hero.line1": "AI sistemleri <span class=\"accent\">kuruyorum.</span>",
@@ -82,6 +82,9 @@ window.I18N = {
     "proj.featured.f3.desc": "Gelecek günler için kıyafet planla. Geçmiş analizlerini ve kombinlerini istediğin zaman görüntüle.",
     "proj.featured.f4.title": "Dijital Gardırop",
     "proj.featured.f4.desc": "Tüm kıyafetlerin kategoriye göre düzenli. Items, Outfits ve Insights sekmeleriyle tek yerden yönet.",
+    "fan.tab.0": "Ana Sayfa",
+    "fan.tab.1": "AI Stil Analizi",
+    "fan.tab.2": "Dijital Gardrop",
     "proj.live": "Yayında",
     "proj.status.progress": "Devam ediyor",
     "proj.status.done": "Tamamlandı · Bitirme Projesi",
@@ -159,12 +162,12 @@ window.I18N = {
   en: {
     "nav.about": "About",
     "nav.skills": "Skills",
-    "nav.work": "Work",
+    "nav.work": "Projects",
     "nav.awards": "Awards",
     "nav.projects": "Projects",
     "nav.path": "Experience",
     "nav.contact": "Contact",
-    "nav.cta": "Hire me <span class=\"arr\">→</span>",
+    "nav.cta": "Get in touch <span class=\"arr\">→</span>",
 
     "hero.eyebrow": "EGEMEN BOZCA · DEVELOPER",
     "hero.line1": "I build <span class=\"accent\">AI systems.</span>",
@@ -238,6 +241,9 @@ window.I18N = {
     "proj.featured.f3.desc": "Plan outfits for upcoming days. View past analyses and combinations at any time.",
     "proj.featured.f4.title": "Digital Catalog",
     "proj.featured.f4.desc": "All your clothes organized by category. Browse items, outfits and insights in one place.",
+    "fan.tab.0": "Home",
+    "fan.tab.1": "AI Style Analysis",
+    "fan.tab.2": "Digital Wardrobe",
     "proj.live": "Live",
     "proj.status.progress": "In progress",
     "proj.status.done": "Completed · Graduation Project",

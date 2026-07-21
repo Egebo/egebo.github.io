@@ -108,33 +108,35 @@ function initHeroCanvas() {
   draw();
 }
 
-/* ---------- initLookedScroll ---------- */
-function initLookedScroll() {
-  var outer = document.querySelector('.feat-looked-outer');
-  if (!outer) return;
-  if (window.matchMedia('(max-width: 780px)').matches) return;
-
-  var screens = outer.querySelectorAll('.phone-screen');
-  var feats   = outer.querySelectorAll('.looked-feat');
+/* ---------- initLookedFan ---------- */
+function initLookedFan() {
+  var tabs  = document.querySelectorAll('.fan-tab');
+  var cards = document.querySelectorAll('.fan-card');
+  if (!tabs.length) return;
+  var n = cards.length;
 
   function setActive(idx) {
-    screens.forEach(function(s, i) { s.classList.toggle('active', i === idx); });
-    feats.forEach(function(f, i)   { f.classList.toggle('active', i === idx); });
+    tabs.forEach(function(t, i) { t.classList.toggle('active', i === idx); });
+    cards.forEach(function(card, i) {
+      card.classList.remove('fan-front', 'fan-back-left', 'fan-back-right');
+      var rel = (i - idx + n) % n;
+      if (rel === 0)      card.classList.add('fan-front');
+      else if (rel === 1) card.classList.add('fan-back-right');
+      else                card.classList.add('fan-back-left');
+    });
   }
 
-  var ticking = false;
-  window.addEventListener('scroll', function() {
-    if (ticking) return;
-    ticking = true;
-    requestAnimationFrame(function() {
-      var rect = outer.getBoundingClientRect();
-      var scrollable = outer.offsetHeight - window.innerHeight;
-      if (scrollable <= 0) { ticking = false; return; }
-      var progress = Math.max(0, Math.min(1, -rect.top / scrollable));
-      setActive(Math.min(2, Math.floor(progress * 3)));
-      ticking = false;
+  tabs.forEach(function(tab) {
+    tab.addEventListener('click', function() {
+      setActive(parseInt(tab.dataset.fan, 10));
     });
-  }, { passive: true });
+  });
+
+  cards.forEach(function(card) {
+    card.addEventListener('click', function() {
+      setActive(parseInt(card.dataset.fan, 10));
+    });
+  });
 }
 
 /* ---------- initRagDiagram ---------- */
@@ -370,7 +372,7 @@ document.addEventListener('DOMContentLoaded', function() {
   initNav();
   initCursor();
   initHeroCanvas();
-  initLookedScroll();
+  initLookedFan();
   initRagDiagram();
   initProjectCanvases();
   initReveal();

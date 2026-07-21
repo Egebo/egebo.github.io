@@ -38,7 +38,7 @@
 <nav class="nav" id="mainNav">
   <a href="#" class="nav-brand">Egemen Bozca</a>
   <ul class="nav-links">
-    <li><a href="#projects" data-i18n="nav.work">Work</a></li>
+    <li><a href="#projects" data-i18n="nav.work">Projects</a></li>
     <li><a href="#about" data-i18n="nav.about">About</a></li>
     <li><a href="#work" data-i18n="nav.awards">Awards</a></li>
     <li><a href="#contact" data-i18n="nav.contact">Contact</a></li>
@@ -48,7 +48,7 @@
       <button id="langTR" data-i18n-lang="tr">TR</button>
       <button id="langEN" data-i18n-lang="en">EN</button>
     </div>
-    <a href="#contact" class="btn btn--accent nav-cta" data-i18n="nav.cta">Hire me <span class="arr">→</span></a>
+    <a href="#contact" class="btn btn--accent nav-cta" data-i18n="nav.cta">Get in touch <span class="arr">→</span></a>
   </div>
 </nav>
 
@@ -113,68 +113,49 @@
   </div>
 </div>
 
-<!-- LOOKED — STICKY SCROLL -->
-<div class="feat-looked-outer">
+<!-- LOOKED — FAN LAYOUT -->
+<article class="feat-looked-new">
+  <div class="feat-looked-inner wrap">
 
-  <!-- Intro: scrolls normally, disappears above sticky zone -->
-  <div class="feat-looked-intro">
-    <div class="wrap">
-      <div>
-        <p class="f-eyebrow"><span data-i18n="proj.featured.tag">Featured product</span></p>
-        <h2 class="feat-title" data-i18n="proj.featured.name">Looked</h2>
-        <p class="feat-desc" data-i18n="proj.featured.desc">AI-powered personal style assistant. Upload a photo, get instant outfit feedback; add your wardrobe and discover outfit combinations.</p>
-        <div class="feat-meta tags">
-          <span class="tag">React Native</span>
-          <span class="tag">Gemini 2.5 Flash</span>
-          <span class="tag">Firebase</span>
-        </div>
+    <!-- Left: copy -->
+    <div class="looked-copy">
+      <p class="f-eyebrow"><span data-i18n="proj.featured.tag">Featured product</span></p>
+      <h2 class="feat-title" data-i18n="proj.featured.name">Looked</h2>
+      <p class="feat-desc" data-i18n="proj.featured.desc">AI-powered personal style assistant. Upload a photo, get instant outfit feedback; add your wardrobe and discover outfit combinations.</p>
+      <div class="feat-meta tags">
+        <span class="tag">React Native</span>
+        <span class="tag">Gemini 2.5 Flash</span>
+        <span class="tag">Firebase</span>
       </div>
-      <div>
-        <div class="feat-cta">
-          <a href="https://play.google.com/store/apps/details?id=com.egebo.looked&pcampaignid=web_share" target="_blank" rel="noopener" class="btn btn--accent"><span data-i18n="proj.featured.cta">Google Play</span><span class="arr">→</span></a>
-          <a href="https://apps.apple.com/us/app/looked-dijital-stil-asistan%C4%B1/id6776430564" target="_blank" rel="noopener" class="btn btn--dark"><span data-i18n="proj.featured.cta.ios">App Store</span><span class="arr">→</span></a>
-          <a href="projects/looked.html" class="btn btn--ghost" data-i18n="proj.cs">Case study <span class="arr">→</span></a>
-        </div>
+      <div class="feat-cta">
+        <a href="https://play.google.com/store/apps/details?id=com.egebo.looked&pcampaignid=web_share" target="_blank" rel="noopener" class="btn btn--accent"><span data-i18n="proj.featured.cta">Google Play</span><span class="arr">→</span></a>
+        <a href="https://apps.apple.com/us/app/looked-dijital-stil-asistan%C4%B1/id6776430564" target="_blank" rel="noopener" class="btn btn--dark"><span data-i18n="proj.featured.cta.ios">App Store</span><span class="arr">→</span></a>
+        <a href="projects/looked.html" class="btn btn--ghost" data-i18n="proj.cs">Case study <span class="arr">→</span></a>
       </div>
     </div>
+
+    <!-- Right: fan photos + selector tabs -->
+    <div class="looked-fan">
+      <div class="fan-stage">
+        <div class="fan-card fan-front" data-fan="0">
+          <img src="looked_ss/play_1.png" alt="Looked home screen">
+        </div>
+        <div class="fan-card fan-back-right" data-fan="1">
+          <img src="looked_ss/play_2.png" alt="Looked AI style analysis">
+        </div>
+        <div class="fan-card fan-back-left" data-fan="2">
+          <img src="looked_ss/play_4.png" alt="Looked digital wardrobe">
+        </div>
+      </div>
+      <div class="fan-tabs">
+        <button type="button" class="fan-tab active" data-fan="0" data-i18n="fan.tab.0">Ana Sayfa</button>
+        <button type="button" class="fan-tab" data-fan="1" data-i18n="fan.tab.1">AI Stil Analizi</button>
+        <button type="button" class="fan-tab" data-fan="2" data-i18n="fan.tab.2">Dijital Gardrop</button>
+      </div>
+    </div>
+
   </div>
-
-  <!-- Sticky zone: pinned while 400vh outer scrolls -->
-  <div class="feat-looked-sticky">
-
-    <!-- Left: phone frame -->
-    <div class="phone-col">
-      <div class="phone-frame">
-        <div class="phone-screen active">
-          <img src="looked_ss/play_1.png" alt="Looked wardrobe screen">
-        </div>
-        <div class="phone-screen">
-          <img src="looked_ss/play_2.png" alt="Looked style analysis">
-        </div>
-        <div class="phone-screen">
-          <img src="looked_ss/play_4.png" alt="Looked digital wardrobe catalog">
-        </div>
-      </div>
-    </div>
-
-    <!-- Right: feature list -->
-    <div class="features-col">
-      <div class="looked-feat active">
-        <h3 data-i18n="proj.featured.f1.title">Smart Wardrobe</h3>
-        <p data-i18n="proj.featured.f1.desc">Gemini AI detects clothing from photos and auto-tags them. Background removal, category filtering, digital catalog.</p>
-      </div>
-      <div class="looked-feat">
-        <h3 data-i18n="proj.featured.f2.title">AI Style Consulting</h3>
-        <p data-i18n="proj.featured.f2.desc">Upload an outfit, get a 0–100 style score and professional feedback. Automatic suggestions from your wardrobe.</p>
-      </div>
-      <div class="looked-feat">
-        <h3 data-i18n="proj.featured.f4.title">Digital Catalog</h3>
-        <p data-i18n="proj.featured.f4.desc">All your clothes organized by category. Browse items, outfits and insights in one place.</p>
-      </div>
-    </div>
-  </div>
-
-</div>
+</article>
 
 <!-- AKADEMIKCHATBOT — SVG DIAGRAM -->
 <article class="feat-rag">
@@ -292,41 +273,44 @@
 
 <!-- ABOUT -->
 <section class="about-section section" id="about">
-  <div class="about-inner wrap">
-    <div class="about-bio">
-      <p class="about-lead reveal" data-d="1" data-i18n="about.lead">I'm not just someone who writes code. While I build mobile and web products, my real interest is <strong>AI systems</strong>: from LLM integrations to RAG architectures. Turning an idea into a working system is what drives me.</p>
-      <div class="stack-list reveal" data-d="2">
-        <div class="stack-group">
-          <span class="stack-name" data-i18n="skills.m.title">Mobile</span>
-          <div class="tags"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">Firebase</span><span class="tag">Flutter</span></div>
+  <div class="wrap">
+    <h2 class="ph-title reveal" data-i18n="about.title">About</h2>
+    <div class="about-inner">
+      <div class="about-bio">
+        <p class="about-lead reveal" data-d="1" data-i18n="about.lead">I'm not just someone who writes code. While I build mobile and web products, my real interest is <strong>AI systems</strong>: from LLM integrations to RAG architectures. Turning an idea into a working system is what drives me.</p>
+        <div class="stack-list reveal" data-d="2">
+          <div class="stack-group">
+            <span class="stack-name" data-i18n="skills.m.title">Mobile</span>
+            <div class="tags"><span class="tag">React Native</span><span class="tag">Expo</span><span class="tag">Firebase</span><span class="tag">Flutter</span></div>
+          </div>
+          <div class="stack-group">
+            <span class="stack-name" data-i18n="skills.ai.title">AI / ML</span>
+            <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">GPT-4o</span></div>
+          </div>
         </div>
-        <div class="stack-group">
-          <span class="stack-name" data-i18n="skills.ai.title">AI / ML</span>
-          <div class="tags"><span class="tag">Python</span><span class="tag">LLM</span><span class="tag">RAG</span><span class="tag">LangChain</span><span class="tag">GPT-4o</span></div>
+        <div class="about-cv reveal" data-d="3">
+          <a href="cv-en.pdf" download class="btn btn--cv">CV · EN ↓</a>
+          <a href="cv-tr.pdf" download class="btn btn--cv">CV · TR ↓</a>
         </div>
       </div>
-      <div class="about-cv reveal" data-d="3">
-        <a href="cv-en.pdf" download class="btn btn--ghost" style="font-size:0.8rem;padding:0.5rem 1rem;">CV · EN ↓</a>
-        <a href="cv-tr.pdf" download class="btn btn--ghost" style="font-size:0.8rem;padding:0.5rem 1rem;">CV · TR ↓</a>
-      </div>
-    </div>
-    <div class="about-meta reveal" data-d="1">
-      <div class="meta-list">
-        <div class="meta-row">
-          <span class="mk" data-i18n="meta.edu.k">Education</span>
-          <span class="mv"><span data-i18n="meta.edu.v">Computer Engineering</span><small data-i18n="meta.edu.s">Sakarya University · 2026</small></span>
-        </div>
-        <div class="meta-row">
-          <span class="mk" data-i18n="meta.loc.k">Location</span>
-          <span class="mv"><span data-i18n="meta.loc.v">Turkey</span><small data-i18n="meta.loc.s">Open to remote work</small></span>
-        </div>
-        <div class="meta-row">
-          <span class="mk" data-i18n="meta.lang.k">Languages</span>
-          <span class="mv"><span data-i18n="meta.lang.v">Turkish (native)</span><small data-i18n="meta.lang.s">English, Spanish</small></span>
-        </div>
-        <div class="meta-row">
-          <span class="mk" data-i18n="meta.lic.k">License</span>
-          <span class="mv"><span data-i18n="meta.lic.v">UAV0 & UAV1</span><small data-i18n="meta.lic.s">Licensed drone pilot</small></span>
+      <div class="about-meta reveal" data-d="1">
+        <div class="meta-list">
+          <div class="meta-row">
+            <span class="mk" data-i18n="meta.edu.k">Education</span>
+            <span class="mv"><span data-i18n="meta.edu.v">Computer Engineering</span><small data-i18n="meta.edu.s">Sakarya University · 2026</small></span>
+          </div>
+          <div class="meta-row">
+            <span class="mk" data-i18n="meta.loc.k">Location</span>
+            <span class="mv"><span data-i18n="meta.loc.v">Turkey</span><small data-i18n="meta.loc.s">Open to remote work</small></span>
+          </div>
+          <div class="meta-row">
+            <span class="mk" data-i18n="meta.lang.k">Languages</span>
+            <span class="mv"><span data-i18n="meta.lang.v">Turkish (native)</span><small data-i18n="meta.lang.s">English, Spanish</small></span>
+          </div>
+          <div class="meta-row">
+            <span class="mk" data-i18n="meta.lic.k">License</span>
+            <span class="mv"><span data-i18n="meta.lic.v">UAV0 & UAV1</span><small data-i18n="meta.lic.s">Licensed drone pilot</small></span>
+          </div>
         </div>
       </div>
     </div>
