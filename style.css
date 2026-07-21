@@ -352,11 +352,11 @@ body:not(.has-cursor) .cursor { display: none; }
    CONTACT
    ============================================================ */
 .contact-section { border-top: 1px solid var(--line); }
-.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 6rem); align-items: start; }
+.contact-inner { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(3rem, 6vw, 6rem); align-items: start; min-height: clamp(420px, 55vh, 580px); }
 .bc-heading { font-family: var(--display); font-size: clamp(2rem, 4vw, 3rem); font-weight: 800; letter-spacing: -0.04em; line-height: 1.05; margin-bottom: 0.8rem; }
 .bc-sub { font-size: 1rem; color: var(--fg-2); margin-bottom: 2rem; }
 .social-list { display: flex; flex-direction: column; gap: 0.5rem; }
-.social { display: flex; align-items: center; justify-content: space-between; padding: 1rem 1.2rem; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius); transition: border-color 0.2s, background 0.2s; cursor: pointer; width: 100%; }
+.social { display: flex; align-items: center; justify-content: space-between; padding: 0.6rem 1rem; background: var(--bg-2); border: 1px solid var(--line); border-radius: var(--radius); transition: border-color 0.2s, background 0.2s; cursor: pointer; width: 100%; }
 .social:hover { border-color: var(--line-2); background: var(--bg-3); }
 .s-left { display: flex; align-items: center; gap: 0.9rem; }
 .s-ic { font-family: var(--mono); font-size: 0.7rem; font-weight: 500; color: var(--fg-3); width: 2rem; text-align: center; }
