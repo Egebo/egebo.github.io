@@ -86,9 +86,9 @@ function initHeroCanvas() {
   ];
   var frame = 0;
 
-  /* particles: light pulses traveling along a few spokes */
-  var particles = [[0,1],[0,3],[0,5],[0,7],[0,2],[0,6]].map(function(e, i) {
-    return { edge: e, p: (i / 6), speed: 0.0035 + (i % 3) * 0.0008 };
+  /* particles: light pulses traveling along every spoke */
+  var particles = [[0,1],[0,2],[0,3],[0,4],[0,5],[0,6],[0,7],[0,8],[0,9]].map(function(e, i) {
+    return { edge: e, p: (i / 9), speed: 0.0035 + (i % 3) * 0.0008 };
   });
 
   function draw() {
