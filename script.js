@@ -153,7 +153,7 @@ function initRagDiagram() {
     node.addEventListener('mouseenter', function() {
       node.classList.add('active');
       if (lines[idx]) lines[idx].classList.add('active');
-      if (tooltip) { tooltip.textContent = tip; tooltip.classList.add('visible'); }
+      if (tooltip) { tooltip.textContent = node.dataset.tip || ''; tooltip.classList.add('visible'); }
     });
     node.addEventListener('mouseleave', function() {
       node.classList.remove('active');
@@ -298,6 +298,10 @@ function initLang() {
     document.querySelectorAll('[data-i18n]').forEach(function(el) {
       var key = el.getAttribute('data-i18n');
       if (dict[key] != null) el.innerHTML = dict[key];
+    });
+    document.querySelectorAll('[data-i18n-tip]').forEach(function(el) {
+      var key = el.getAttribute('data-i18n-tip');
+      if (dict[key] != null) el.dataset.tip = dict[key];
     });
     localStorage.setItem(LANG_KEY, l);
     document.querySelectorAll('[data-i18n-lang]').forEach(function(btn) {

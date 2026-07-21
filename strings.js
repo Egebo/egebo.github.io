@@ -88,6 +88,11 @@ window.I18N = {
     "proj.live": "Yayında",
     "proj.status.progress": "Devam ediyor",
     "proj.status.done": "Tamamlandı · Bitirme Projesi",
+    "rag.tip.0": "Sorgu türüne göre SQL, RAG veya web taramasına yönlendirir",
+    "rag.tip.1": "PDF → ChromaDB embedding → semantik arama",
+    "rag.tip.2": "Güncel bilgi için üniversite sitesini tarar",
+    "rag.tip.3": "Konuşma bağlamını sorgular arasında korur",
+    "rag.tip.4": "Her konuşma için token kullanımını takip eder",
 
     "proj.1.name": "AkademikChatbot",
     "proj.1.desc": "Eğitim odaklı RAG tabanlı akademik danışman. Bir intent-routing motoru her sorguyu SQL, vektör araması veya web taramasına yönlendirir. Teknik olarak bu portföyün en karmaşık projesi.",
@@ -247,6 +252,11 @@ window.I18N = {
     "proj.live": "Live",
     "proj.status.progress": "In progress",
     "proj.status.done": "Completed · Graduation Project",
+    "rag.tip.0": "Routes to SQL, RAG, or web based on query type",
+    "rag.tip.1": "PDF → ChromaDB embeddings → semantic search",
+    "rag.tip.2": "Crawls university site for up-to-date info",
+    "rag.tip.3": "Preserves context across turns",
+    "rag.tip.4": "Tracks token usage per conversation",
 
     "proj.1.name": "AkademikChatbot",
     "proj.1.desc": "Education-focused RAG-based academic advisor. An intent-routing engine directs each query to SQL, vector search, or web crawl. Technically the most complex project in this portfolio.",
