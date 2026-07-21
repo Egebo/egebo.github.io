@@ -253,11 +253,10 @@ body:not(.has-cursor) .cursor { display: none; }
 .rag-badge { display: inline-flex; align-items: center; gap: 0.4rem; font-family: var(--mono); font-size: 0.6rem; background: rgba(212,32,32,0.1); color: var(--accent); border: 1px solid rgba(212,32,32,0.25); border-radius: 99px; padding: 0.26rem 0.7rem; margin-top: 1.2rem; }
 .rag-diagram-wrap { position: relative; }
 .rag-diagram { width: 100%; overflow: visible; }
-.rag-center-node { fill: var(--bg-3); stroke: var(--accent); stroke-width: 2; transition: stroke-width 0.2s; }
+.rag-center-node { fill: var(--bg-3); stroke: var(--accent); stroke-width: 2; transition: stroke-width 0.2s; transform-box: fill-box; transform-origin: center; animation: centerPulse 3s ease-in-out infinite; }
 .rag-ring-anim { fill: none; stroke: rgba(212,32,32,0.25); stroke-width: 1; animation: orbSpin 22s linear infinite; transform-origin: 200px 160px; }
 @keyframes orbSpin { to { stroke-dashoffset: -200; } }
-.rag-center-node { animation: centerPulse 3s ease-in-out infinite; }
-@keyframes centerPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } transform-box: fill-box; transform-origin: center; }
+@keyframes centerPulse { 0%,100% { transform: scale(1); } 50% { transform: scale(1.06); } }
 .rag-spoke-line { stroke: var(--line-2); stroke-width: 1; stroke-dasharray: 4 4; transition: stroke 0.2s, opacity 0.2s; }
 .rag-spoke-line.active { stroke: var(--accent); opacity: 1; }
 .rag-node-g { cursor: pointer; }
@@ -410,3 +409,11 @@ body:not(.has-cursor) .cursor { display: none; }
 .cs-nav-right { display:flex; align-items:center; gap:0.7rem; }
 .cs-back { font-size:0.86rem; font-weight:500; color:var(--fg-2); display:inline-flex; align-items:center; gap:0.4rem; transition:color 0.2s; }
 .cs-back:hover { color:var(--accent); }
+
+/* ============================================================
+   ACCESSIBILITY: PREFERS-REDUCED-MOTION
+   ============================================================ */
+@media (prefers-reduced-motion: reduce) {
+  .reveal { opacity: 1; transform: none; transition: none; }
+  .marquee-track { animation: none !important; }
+}
