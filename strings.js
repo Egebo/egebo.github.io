@@ -225,7 +225,7 @@ window.I18N = {
     "proj.title": "Projects",
     "proj.featured.tag": "Featured product",
     "proj.featured.name": "Looked",
-    "proj.featured.desc": "AI-powered personal style assistant. Upload a photo, get instant outfit feedback; add your wardrobe and discover combinations the AI — or you — create.",
+    "proj.featured.desc": "AI-powered personal style assistant. Upload a photo, get instant outfit feedback; add your wardrobe and discover outfit combinations.",
     "proj.featured.cta": "Google Play",
     "proj.featured.cta.ios": "App Store",
     "proj.cs": "Case study <span class=\"arr\">→</span>",

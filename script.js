@@ -131,7 +131,7 @@ function initLookedScroll() {
       var scrollable = outer.offsetHeight - window.innerHeight;
       if (scrollable <= 0) { ticking = false; return; }
       var progress = Math.max(0, Math.min(1, -rect.top / scrollable));
-      setActive(Math.min(3, Math.floor(progress * 4)));
+      setActive(Math.min(2, Math.floor(progress * 3)));
       ticking = false;
     });
   }, { passive: true });
