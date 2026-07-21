@@ -330,6 +330,7 @@ body:not(.has-cursor) .cursor { display: none; }
 .tl-kind { font-family: var(--mono); font-size: 0.58rem; letter-spacing: 0.08em; text-transform: uppercase; color: var(--accent); display: inline-block; margin-bottom: 0.3rem; }
 .tl-role { font-size: 0.95rem; font-weight: 600; letter-spacing: -0.01em; }
 .tl-org { font-size: 0.82rem; color: var(--fg-2); margin-top: 0.1rem; }
+.tl-desc { font-size: 0.85rem; color: var(--fg-3); line-height: 1.55; margin-top: 0.6rem; max-width: 58ch; }
 @media (max-width: 500px) {
   .tl-item { grid-template-columns: 1fr; gap: 0.4rem; }
 }
