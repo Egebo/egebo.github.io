@@ -40,7 +40,10 @@ permalink: /poco-loco/
 .cs-stat .num { font-family:var(--display); font-size:1.8rem; font-weight:800; color:var(--accent); letter-spacing:-0.02em; }
 .cs-stat .lbl { font-size:0.78rem; color:var(--fg-2); margin-top:0.3rem; }
 .cs-prose { font-size:0.95rem; color:var(--fg-2); line-height:1.65; max-width:68ch; }
-@media (max-width:700px) { .cs-features { grid-template-columns:1fr; } .cs-stats { grid-template-columns:1fr; } }
+.cs-web-shots { display:grid; grid-template-columns:1.3fr 1fr; gap:1rem; margin-top:1.4rem; }
+.cs-web-shots img { width:100%; height:100%; object-fit:cover; object-position:top center; border-radius:var(--radius); border:1px solid var(--line); display:block; }
+.cs-web-shots .stack { display:grid; gap:1rem; }
+@media (max-width:700px) { .cs-features { grid-template-columns:1fr; } .cs-stats { grid-template-columns:1fr; } .cs-web-shots { grid-template-columns:1fr; } }
 </style>
 </head>
 <body>
@@ -75,7 +78,14 @@ permalink: /poco-loco/
 
 <div class="wrap">
   <div class="cs-logo-hero">
-    <img src="../looked_ss/poco_loco_logo.jpg" alt="poco loco logo" style="filter:invert(1)">
+    <img src="../assets/images/poco_loco_logo.jpg" alt="poco loco logo" style="filter:invert(1)">
+  </div>
+  <div class="cs-web-shots">
+    <img src="../assets/images/poco_1.png" alt="Poco Loco ana sayfa" style="aspect-ratio:16/11">
+    <div class="stack">
+      <img src="../assets/images/poco_2.png" alt="Poco Loco ürün listeleme" style="aspect-ratio:16/9.3">
+      <img src="../assets/images/poco_3.png" alt="Poco Loco ürün detay sayfası" style="aspect-ratio:16/9.3">
+    </div>
   </div>
 </div>
 
