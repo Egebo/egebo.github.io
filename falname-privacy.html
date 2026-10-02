@@ -1,0 +1,73 @@
+---
+permalink: /falname-privacy/
+---
+<!doctype html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Falname Gizlilik Politikası | Egemen Bozca</title>
+<meta name="description" content="Falname uygulamasının veri kullanımı, saklama ve silme uygulamaları.">
+<link rel="canonical" href="https://egebo.github.io/falname-privacy/">
+<link rel="stylesheet" href="/falname-legal.css">
+</head>
+<body>
+<header class="top"><div class="wrap"><a class="brand" href="/">Egemen Bozca</a><nav class="nav" aria-label="Sayfa bağlantıları"><a href="#tr">Türkçe</a><a href="#en">English</a><a href="/falname-delete-account/">Hesap silme</a></nav></div></header>
+<main class="wrap">
+<section id="tr">
+<p class="eyebrow">Falname</p>
+<h1>Gizlilik Politikası</h1>
+<p class="muted">Son güncelleme: 2 Ekim 2026 · Geliştirici: Egemen Bozca</p>
+<p>Bu metin Falname mobil uygulaması ve Falname yükselen burç hesaplama web sayfası için geçerlidir. Sorularınız için <a href="mailto:bozcaegemen@gmail.com">bozcaegemen@gmail.com</a> adresine yazabilirsiniz.</p>
+
+<h2>İşlenen bilgiler</h2>
+<ul>
+<li><strong>Hesap:</strong> Uygulama, misafir kullanımında da Firebase Authentication ile anonim bir kullanıcı kimliği oluşturur. E-posta, Google veya Apple ile giriş yaparsanız e-posta adresiniz ve giriş sağlayıcısının ilettiği temel hesap bilgileri kullanılır.</li>
+<li><strong>Profil ve tercihler:</strong> İsteğe bağlı ad, doğum tarihi, doğum saati, doğum şehri, burç, bildirim saati ve kullanım serisi cihazınızda tutulur.</li>
+<li><strong>Fal geçmişi:</strong> Kaydettiğiniz yorumların türü, başlığı, özeti, metni ve oluşturulma zamanı hesabınıza bağlı olarak Firebase Firestore'da saklanır.</li>
+<li><strong>Yapay zekâlı kahve falı:</strong> Bu özelliği kullandığınızda seçtiğiniz fincan ve isteğe bağlı tabak fotoğrafı, niyet konusu ve girdiyseniz adınız, yorum üretmek için Firebase AI Logic aracılığıyla Google Gemini hizmetine gönderilir. Falname fotoğrafları kendi Firestore veritabanında saklamaz; üretilen yorum fal geçmişine kaydedilebilir. Günlük kullanım sayacı cihazda tutulur.</li>
+</ul>
+<p>Yükselen burç hesaplama web sayfasına girdiğiniz doğum bilgileri tarayıcınızda hesaplanır; bu sayfa onları Falname sunucusuna göndermez veya hesap oluşturmaz.</p>
+
+<h2>Kullanım amacı ve hizmet sağlayıcılar</h2>
+<p>Bu bilgileri oturum açma, kişisel hesaplamalar, fal geçmişini senkronize etme, isteğe bağlı bildirimler ve yapay zekâlı kahve falı için kullanırız. Firebase Authentication, Firestore ve AI Logic/Gemini hizmetleri Google tarafından sağlanır. Google veya Apple ile giriş seçerseniz ilgili giriş sağlayıcısı da işlemde yer alır. Falname uygulamasında reklam SDK'sı kullanılmaz ve veriler reklam amacıyla satılmaz.</p>
+<p>Google hizmetlerinin veri işleme koşulları hakkında <a href="https://firebase.google.com/docs/ai-logic/data-governance">Firebase AI Logic veri yönetimi açıklamasına</a> bakabilirsiniz. Falname'nin kendi veritabanında fotoğraf saklamaması, Google'a iletilen isteğin Google tarafından hiç tutulmadığı anlamına gelmez.</p>
+
+<h2>Saklama ve silme</h2>
+<p>Fal geçmişi, siz silene veya hesabınızın silinmesi tamamlanana kadar hesabınıza bağlı tutulur. Profil ve tercih bilgileri cihazda kalır; hesap silme seçeneğinin bulunduğu uygulama sürümlerinde bu işlem profil ve ilgili tercihleri de temizler. Cihazdaki geçici dosyalar işletim sisteminin önbellek yönetimine tabi olabilir.</p>
+<p>Uygulamanızda <strong>Ayarlar → Hesabımı ve Verilerimi Sil</strong> seçeneği varsa bu yolu kullanabilirsiniz. Seçenek yoksa veya uygulamaya erişemiyorsanız <a href="/falname-delete-account/">hesap ve veri silme sayfasından</a> talep gönderebilirsiniz. Kamera, fotoğraf ve bildirim izinlerini cihaz ayarlarından geri alabilirsiniz.</p>
+
+<h2>Değişiklikler ve iletişim</h2>
+<p>Uygulamanın veri işleme biçimi değişirse bu metin güncellenir. Gizlilik ve veri talepleri için <a href="mailto:bozcaegemen@gmail.com">bozcaegemen@gmail.com</a> adresine yazın.</p>
+</section>
+
+<section id="en" class="language" lang="en">
+<p class="eyebrow">Falname</p>
+<h1>Privacy Policy</h1>
+<p class="muted">Last updated: October 2, 2026 · Developer: Egemen Bozca</p>
+<p>This policy covers the Falname mobile app and Falname's rising-sign calculator website. For questions, contact <a href="mailto:bozcaegemen@gmail.com">bozcaegemen@gmail.com</a>.</p>
+
+<h2>Information processed</h2>
+<ul>
+<li><strong>Account:</strong> Even guest use creates an anonymous Firebase Authentication user ID. If you sign in with email, Google or Apple, we use your email address and basic account information provided by the sign-in provider.</li>
+<li><strong>Profile and preferences:</strong> Optional name, birth date, birth time, birth city, zodiac sign, notification time and usage streak are stored on your device.</li>
+<li><strong>Fortune history:</strong> The type, title, summary, text and creation time of saved readings are stored under your account in Firebase Firestore.</li>
+<li><strong>AI coffee reading:</strong> When you use this feature, your selected cup photo, optional saucer photo, topic and name if provided are sent through Firebase AI Logic to Google Gemini to generate a reading. Falname does not store these photos in its own Firestore database; the generated reading may be saved to your fortune history. A daily usage counter is stored on your device.</li>
+</ul>
+<p>Birth details entered on the rising-sign calculator website are calculated in your browser. That page does not send them to a Falname server or create an account.</p>
+
+<h2>Purpose and service providers</h2>
+<p>We use this information for sign-in, personalized calculations, syncing fortune history, optional notifications and AI coffee readings. Google provides Firebase Authentication, Firestore and AI Logic/Gemini. Google or Apple also participates when you choose its sign-in option. The Falname app does not use an advertising SDK and we do not sell data for advertising.</p>
+<p>See <a href="https://firebase.google.com/docs/ai-logic/data-governance">Firebase AI Logic data governance</a> for Google's applicable processing terms. Falname not storing photos in its own database does not mean Google never retains a submitted request.</p>
+
+<h2>Retention and deletion</h2>
+<p>Fortune history remains linked to your account until you remove it or account deletion is completed. Profile and preference information stays on your device; app versions with an account deletion option also clear the profile and related preferences. Temporary files on the device may be subject to operating-system cache management.</p>
+<p>If your app shows <strong>Ayarlar → Hesabımı ve Verilerimi Sil</strong>, you can use that option. Otherwise, or if you cannot access the app, submit a request through the <a href="/falname-delete-account/#en">account and data deletion page</a>. You can revoke camera, photo and notification permissions in your device settings.</p>
+
+<h2>Changes and contact</h2>
+<p>We will update this policy if the app's data practices change. For privacy or data requests, email <a href="mailto:bozcaegemen@gmail.com">bozcaegemen@gmail.com</a>.</p>
+</section>
+</main>
+<footer><div class="wrap">© 2026 Egemen Bozca · Falname</div></footer>
+</body>
+</html>
