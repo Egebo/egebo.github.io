@@ -4,6 +4,9 @@
   var S = {
     tr: {
       'footer.back': '← Portfolyoya dön',
+      'looked.docs.label': 'Uygulama belgeleri',
+      'looked.docs.privacy': 'Gizlilik politikası <span class="arr">→</span>',
+      'looked.docs.all': 'Tüm uygulama belgeleri <span class="arr">→</span>',
       'label.features': 'Özellikler',
       'label.tech': 'Teknoloji',
       'label.arch': 'Mimari',
@@ -153,6 +156,9 @@
 
     en: {
       'footer.back': '← Back to portfolio',
+      'looked.docs.label': 'App documents',
+      'looked.docs.privacy': 'Privacy policy <span class="arr">→</span>',
+      'looked.docs.all': 'All app documents <span class="arr">→</span>',
       'label.features': 'Features',
       'label.tech': 'Stack',
       'label.arch': 'Architecture',

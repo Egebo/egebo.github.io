@@ -160,6 +160,7 @@ window.I18N = {
     "form.success.title": "Mesaj gönderildi!",
     "form.success.body": "En kısa sürede dönüş yapacağım.",
     "footer.top": "↑ Başa dön",
+    "apps.cta": "Uygulama belgeleri <span class=\"arr\">→</span>",
 
     "mf.line1": "4 uygulama.",
     "mf.line2": "1 dünya birinciliği.",
@@ -334,6 +335,7 @@ window.I18N = {
     "form.success.title": "Message sent!",
     "form.success.body": "I'll get back to you as soon as possible.",
     "footer.top": "↑ Back to top",
+    "apps.cta": "App documents <span class=\"arr\">→</span>",
 
     "mf.line1": "4 apps.",
     "mf.line2": "1 world championship.",

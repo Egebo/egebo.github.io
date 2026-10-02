@@ -1,0 +1,117 @@
+---
+permalink: /apps/
+---
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>App Documents | Egemen Bozca</title>
+<meta name="description" content="Privacy, account deletion and support links for Egemen Bozca's apps.">
+<link rel="canonical" href="https://egebo.github.io/apps/">
+<link rel="stylesheet" href="/style.css?v=33">
+<style>
+.docs-nav { border-bottom: 1px solid var(--line); }
+.docs-nav-inner { display: flex; align-items: center; justify-content: space-between; gap: 1rem; padding-block: 1.25rem; }
+.docs-back { color: var(--fg-2); font-size: .85rem; }
+.docs-back:hover, .docs-link:hover { color: var(--accent); }
+.docs-lang { display: flex; gap: .35rem; }
+.docs-lang button { border: 1px solid var(--line-2); border-radius: var(--radius); padding: .3rem .55rem; font: .7rem var(--mono); color: var(--fg-2); }
+.docs-lang button.active { border-color: var(--accent); color: var(--fg); }
+.docs-main { min-height: calc(100vh - 150px); padding-block: clamp(3.5rem, 8vw, 6rem); }
+.docs-head { max-width: 730px; margin-bottom: 2.5rem; }
+.docs-kicker { color: var(--accent); font: .7rem var(--mono); letter-spacing: .12em; text-transform: uppercase; margin-bottom: .8rem; }
+.docs-title { font: 800 clamp(2.6rem, 6vw, 4.6rem)/1.05 var(--display); letter-spacing: -.045em; margin-bottom: 1rem; }
+.docs-intro { color: var(--fg-2); max-width: 60ch; }
+.docs-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; }
+.docs-card { display: flex; flex-direction: column; gap: .7rem; padding: clamp(1.3rem, 3vw, 2rem); background: var(--bg-2); border: 1px solid var(--line-2); border-radius: var(--radius-lg); }
+.docs-card h2 { font: 700 1.25rem var(--display); letter-spacing: -.02em; }
+.docs-card p { color: var(--fg-2); font-size: .88rem; }
+.docs-links { display: flex; flex-wrap: wrap; gap: .55rem; margin-top: auto; padding-top: .6rem; }
+.docs-link { display: inline-flex; align-items: center; border: 1px solid var(--line-2); border-radius: var(--radius); padding: .48rem .72rem; color: var(--fg); font-size: .82rem; transition: color .15s, border-color .15s; }
+.docs-link:hover { border-color: var(--accent); }
+.docs-card--future { background: transparent; border-style: dashed; }
+.docs-status { color: var(--fg-3); font: .7rem var(--mono); letter-spacing: .04em; }
+@media (max-width: 650px) { .docs-grid { grid-template-columns: 1fr; } }
+</style>
+</head>
+<body>
+<nav class="docs-nav" aria-label="Page navigation">
+  <div class="wrap docs-nav-inner">
+    <a class="f-brand" href="/">Egemen Bozca</a>
+    <div class="docs-lang" aria-label="Language">
+      <button type="button" data-lang="tr" lang="tr">TR</button>
+      <button type="button" data-lang="en" lang="en">EN</button>
+    </div>
+  </div>
+</nav>
+<main class="wrap docs-main">
+  <div class="docs-head">
+    <p class="docs-kicker" data-tr="Uygulamalar" data-en="Apps">Apps</p>
+    <h1 class="docs-title" data-tr="Uygulama belgeleri" data-en="App documents">App documents</h1>
+    <p class="docs-intro" data-tr="Uygulamalarımın gizlilik, veri silme ve destek sayfalarına buradan ulaşabilirsiniz. Her bağlantı ilgili uygulamanın mevcut sayfasına gider." data-en="Find privacy, data deletion and support information for my apps. Each link opens the app's existing page.">Find privacy, data deletion and support information for my apps. Each link opens the app's existing page.</p>
+  </div>
+  <div class="docs-grid">
+    <article class="docs-card">
+      <h2>Looked</h2>
+      <p data-tr="Gizlilik metni, uygulama içinden hesap silme adımlarını da içerir." data-en="The privacy policy also explains how to delete your account in the app.">The privacy policy also explains how to delete your account in the app.</p>
+      <div class="docs-links"><a class="docs-link" href="https://egebo.github.io/looked_privacy/" target="_blank" rel="noopener" data-tr="Gizlilik ve hesap silme ↗" data-en="Privacy and account deletion ↗">Privacy and account deletion ↗</a></div>
+    </article>
+    <article class="docs-card">
+      <h2>Lucida</h2>
+      <p data-tr="Gizlilik metni veri silmeyi açıklar; yardım için ayrı bir destek sayfası bulunur." data-en="The privacy policy explains data deletion; a separate support page is available.">The privacy policy explains data deletion; a separate support page is available.</p>
+      <div class="docs-links">
+        <a class="docs-link" href="https://egebo.github.io/lucida-gizlilik/" target="_blank" rel="noopener" data-tr="Gizlilik ve veri silme ↗" data-en="Privacy and data deletion ↗">Privacy and data deletion ↗</a>
+        <a class="docs-link" href="https://egebo.github.io/lucida-gizlilik/destek.html" target="_blank" rel="noopener" data-tr="Destek ↗" data-en="Support ↗">Support ↗</a>
+      </div>
+    </article>
+    <article class="docs-card">
+      <h2>Kadraj</h2>
+      <p data-tr="Gizlilik metni, uygulama içinden hesap ve veri silme adımlarını açıklar." data-en="The privacy policy explains how to delete your account and data in the app.">The privacy policy explains how to delete your account and data in the app.</p>
+      <div class="docs-links"><a class="docs-link" href="https://kadraj-egebo.web.app/privacy.html" target="_blank" rel="noopener" data-tr="Gizlilik ve hesap silme ↗" data-en="Privacy and account deletion ↗">Privacy and account deletion ↗</a></div>
+    </article>
+    <article class="docs-card">
+      <h2>Falname</h2>
+      <p data-tr="Ayarlar → Hesabımı ve Verilerimi Sil yoluyla hesabını silebilirsin. Yayımlanmış bir gizlilik veya destek sayfası henüz yok." data-en="You can delete your account from Settings using the ‘Hesabımı ve Verilerimi Sil’ option. No published privacy or support page is available yet.">You can delete your account from Settings using the ‘Hesabımı ve Verilerimi Sil’ option. No published privacy or support page is available yet.</p>
+    </article>
+    <article class="docs-card">
+      <h2>HeroLog</h2>
+      <p data-tr="Gizlilik politikası, destek ve hesap/veri silme yönergeleri yayımlanmış durumda." data-en="Privacy, support, and account/data deletion instructions are available online.">Privacy, support, and account/data deletion instructions are available online.</p>
+      <div class="docs-links">
+        <a class="docs-link" href="https://herolog-app.web.app/privacy#en" data-href-tr="https://herolog-app.web.app/privacy" data-href-en="https://herolog-app.web.app/privacy#en" target="_blank" rel="noopener" data-tr="Gizlilik ↗" data-en="Privacy ↗">Privacy ↗</a>
+        <a class="docs-link" href="https://herolog-app.web.app/support#delete" data-href-tr="https://herolog-app.web.app/support#silme" data-href-en="https://herolog-app.web.app/support#delete" target="_blank" rel="noopener" data-tr="Hesap ve veri silme ↗" data-en="Account and data deletion ↗">Account and data deletion ↗</a>
+        <a class="docs-link" href="https://herolog-app.web.app/support#en" data-href-tr="https://herolog-app.web.app/support" data-href-en="https://herolog-app.web.app/support#en" target="_blank" rel="noopener" data-tr="Destek ↗" data-en="Support ↗">Support ↗</a>
+      </div>
+    </article>
+    <article class="docs-card docs-card--future">
+      <h2>Coreward</h2>
+      <p class="docs-status" data-tr="Gelecek uygulama · belgeler yayına çıktığında eklenecek" data-en="Upcoming app · documents will be added when available">Upcoming app · documents will be added when available</p>
+    </article>
+  </div>
+</main>
+<footer class="footer"><div class="footer-inner wrap"><span class="f-brand">Egemen Bozca</span><a class="docs-back" href="/" data-tr="← Portföye dön" data-en="← Back to portfolio">← Back to portfolio</a></div></footer>
+<script>
+(function () {
+  function setLanguage(lang) {
+    document.documentElement.lang = lang;
+    document.title = (lang === 'tr' ? 'Uygulama Belgeleri' : 'App Documents') + ' | Egemen Bozca';
+    document.querySelectorAll('[data-tr][data-en]').forEach(function (element) {
+      element.textContent = element.getAttribute('data-' + lang);
+    });
+    document.querySelectorAll('[data-href-tr][data-href-en]').forEach(function (element) {
+      element.href = element.getAttribute('data-href-' + lang);
+    });
+    document.querySelectorAll('[data-lang]').forEach(function (button) {
+      button.classList.toggle('active', button.getAttribute('data-lang') === lang);
+      button.setAttribute('aria-pressed', String(button.getAttribute('data-lang') === lang));
+    });
+    localStorage.setItem('eb-lang', lang);
+  }
+  document.querySelectorAll('[data-lang]').forEach(function (button) {
+    button.addEventListener('click', function () { setLanguage(button.getAttribute('data-lang')); });
+  });
+  setLanguage(localStorage.getItem('eb-lang') === 'tr' ? 'tr' : 'en');
+}());
+</script>
+</body>
+</html>
